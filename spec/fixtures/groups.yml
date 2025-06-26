@@ -1,0 +1,13 @@
+root:
+  parent:
+  lft: 1
+  rgt: 2
+  name: Hauptgruppe
+  type: Group::Root
+  email: root@example.net
+  zip_code: 2843
+  town: Neu Carlscheid
+  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:root) %>
+
+# TODO add more groups
+# you could generate a good setup manually and dump it with rake fixtures:groups
