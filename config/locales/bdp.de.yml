@@ -3,23 +3,622 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 de:
   activerecord:
     models:
 
       ### GROUPS
 
-      group/root:
-        one: Hauptgruppe
-        other: Hauptgruppen
+      group/bundesebene:
+        one: Bundesebene
+        other: Bundesebenen
 
+      group/bundesvorstand:
+        one: Bundesvorstand
+        other: Bundesvorstände
+
+      group/bundesgeschaeftsstelle:
+        one: Bundesgeschäftsstelle
+        other: Bundesgeschäftsstellen
+
+      group/ombudsrat:
+        one: Ombudsrat
+        other: Ombudsräte
+
+      group/betrieb:
+        one: Betrieb
+        other: Betriebe
+
+      group/bundesversammlung:
+        one: Versammlung
+        other: Versammlungen
+
+      group/projekt:
+        one: Projekt
+        other: Projekte
+
+      group/kontakte:
+        one: Kontakte
+        other: Kontakte
+
+      group/mitglieder:
+        one: Mitglieder
+        other: Mitglieder
+
+      group/arbeitsbereich:
+        one: Arbeitsbereich
+        other: Arbeitsbereiche
+
+      group/arbeitsbereich_woelflingsstufe:
+        one: Arbeitsbereich Wölflingsstufe
+        other: Arbeitsbereiche
+
+      group/arbeitsbereich_pfadfinderstufe:
+        one: Arbeitsbereich Pfadfinder*innenstufe
+        other: Arbeitsbereiche Pfadfinder*innenstufe
+
+      group/arbeitsbereich_ranger_roverstufe:
+        one: Arbeitsbereich Ranger/Rover-Stufe
+        other: Arbeitsbereiche Ranger/Rover-Stufe
+
+      group/arbeitsbereich_stufen:
+        one: Arbeitsbereich Stufen
+        other: Arbeitsbereiche Stufen
+
+      group/arbeitsbereich_erwachsenenarbeit:
+        one: Arbeitsbereich Erwachsenenarbeit
+        other: Arbeitsbereiche Erwachsenenarbeit
+
+      group/arbeitsbereich_ausbildung:
+        one: Arbeitsbereich Ausbildung
+        other: Arbeitsbereiche Ausbildung
+
+      group/arbeitsbereich_internationales:
+        one: Arbeitsbereich Internationales
+        other: Arbeitsbereiche Internationales
+
+      group/arbeitsbereich_intakt:
+        one: Arbeitsbereich intakt
+        other: Arbeitsbereiche intakt
+
+      group/arbeitsbereich_intakt_praevention_und_intervention:
+        one: Arbeitsbereich intakt - Prävention und Intervention
+        other: Arbeitsbereiche intakt - Prävention und Intervention
+
+      group/arbeitsbereich_intakt_psychische_gesundheit:
+        one: Arbeitsbereich intakt - psychische Gesundheit
+        other: Arbeitsbereiche intakt - psychische Gesundheit
+
+      group/arbeitsbereich_intakt_macht_und_miteinander:
+        one: Arbeitsbereich intakt - Macht und Miteinander
+        other: Arbeitsbereiche intakt - Macht und Miteinander
+
+      group/arbeitsbereich_oeffentlichkeitsarbeit_medien:
+        one: Arbeitsbereich Öffentlichkeitsarbeit/Medien
+        other: Arbeitsbereiche Öffentlichkeitsarbeit/Medien
+
+      group/arbeitsbereich_politische_bildung_politik_und_gesellschaft:
+        one: Arbeitsbereich Politische Bildung/Politik und Gesellschaft
+        other: Arbeitsbereiche Politische Bildung/Politik und Gesellschaft
+
+      group/arbeitsbereich_it:
+        one: Arbeitsbereich IT
+        other: Arbeitsbereiche IT
+
+      group/arbeitsbereich_findungskommission:
+        one: Arbeitsbereich Findungskommission
+        other: Arbeitsbereiche Findungskommission
+
+      group/arbeitsbereich_rainbow:
+        one: Arbeitsbereich Rainbow
+        other: Arbeitsbereiche Rainbow
+
+      group/arbeitsbereich_inklusion:
+        one: Arbeitsbereich Inklusion
+        other: Arbeitsbereiche Inklusion
+
+      group/arbeitsbereich_sonstiges:
+        one: Sonstiger Arbeitsbereich
+        other: Sonstige Arbeitsbereiche
+
+      group/gruppierungsspezifisches_gremium:
+        one: Gruppierungsspezifisches Gremium
+        other: Gruppierungsspezifische Gremien
+
+      group/heim_zeltplatz_liegenschaft:
+        one: Heim/Zeltplatz/Liegenschaft
+        other: Heime/Zeltplätze/Liegenschaften
+
+      group/foerderverein:
+        one: Förderverein
+        other: Förderverein
+
+      group/landesverband:
+        one: Landesverband
+        other: Landesverbände
+
+      group/landesvorstand:
+        one: Landesvorstand
+        other: Landesvorstände
+
+      group/landesgeschaeftsstelle:
+        one: Landesgeschäftsstelle
+        other: Landesgeschäftsstellen
+
+      group/landesversammlung:
+        one: Landesversammlung
+        other: Landesversammlungen
+
+      group/bezirk:
+        one: Bezirk
+        other: Bezirke
+
+      group/bezirksgeschaeftsstelle:
+        one: Bezirksgeschäftsstelle
+        other: Bezirksgeschäftsstellen
+
+      group/stamm:
+        one: Stamm
+        other: Stämme
+
+      group/stammes_arbeitsbereich:
+        one: Arbeitsbereich
+        other: Arbeitsbereiche
+
+      group/stammes_arbeitsbereich_woelflingsstufe:
+        one: Arbeitsbereich Wölflingsstufe
+        other: Arbeitsbereiche
+
+      group/stammes_arbeitsbereich_pfadfinderstufe:
+        one: Arbeitsbereich Pfadfinder*innenstufe
+        other: Arbeitsbereiche Pfadfinder*innenstufe
+
+      group/stammes_arbeitsbereich_ranger_roverstufe:
+        one: Arbeitsbereich Ranger/Rover-Stufe
+        other: Arbeitsbereiche Ranger/Rover-Stufe
+
+      group/stammes_arbeitsbereich_stufen:
+        one: Arbeitsbereich Stufen
+        other: Arbeitsbereiche Stufen
+
+      group/stammes_arbeitsbereich_erwachsenenarbeit:
+        one: Arbeitsbereich Erwachsenenarbeit
+        other: Arbeitsbereiche Erwachsenenarbeit
+
+      group/stammes_arbeitsbereich_ausbildung:
+        one: Arbeitsbereich Ausbildung
+        other: Arbeitsbereiche Ausbildung
+
+      group/stammes_arbeitsbereich_internationales:
+        one: Arbeitsbereich Internationales
+        other: Arbeitsbereiche Internationales
+
+      group/stammes_arbeitsbereich_intakt:
+        one: Arbeitsbereich intakt
+        other: Arbeitsbereiche intakt
+
+      group/stammes_arbeitsbereich_intakt_praevention_und_intervention:
+        one: Arbeitsbereich intakt - Prävention und Intervention
+        other: Arbeitsbereiche intakt - Prävention und Intervention
+
+      group/stammes_arbeitsbereich_intakt_psychische_gesundheit:
+        one: Arbeitsbereich intakt - psychische Gesundheit
+        other: Arbeitsbereiche intakt - psychische Gesundheit
+
+      group/stammes_arbeitsbereich_intakt_macht_und_miteinander:
+        one: Arbeitsbereich intakt - Macht und Miteinander
+        other: Arbeitsbereiche intakt - Macht und Miteinander
+
+      group/stammes_arbeitsbereich_oeffentlichkeitsarbeit_medien:
+        one: Arbeitsbereich Öffentlichkeitsarbeit/Medien
+        other: Arbeitsbereiche Öffentlichkeitsarbeit/Medien
+
+      group/stammes_arbeitsbereich_politische_bildung_politik_und_gesellschaft:
+        one: Arbeitsbereich Politische Bildung/Politik und Gesellschaft
+        other: Arbeitsbereiche Politische Bildung/Politik und Gesellschaft
+
+      group/stammes_arbeitsbereich_it:
+        one: Arbeitsbereich IT
+        other: Arbeitsbereiche IT
+
+      group/stammes_arbeitsbereich_findungskommission:
+        one: Arbeitsbereich Findungskommission
+        other: Arbeitsbereiche Findungskommission
+
+      group/stammes_arbeitsbereich_rainbow:
+        one: Arbeitsbereich Rainbow
+        other: Arbeitsbereiche Rainbow
+
+      group/stammes_arbeitsbereich_inklusion:
+        one: Arbeitsbereich Inklusion
+        other: Arbeitsbereiche Inklusion
+
+      group/stammes_arbeitsbereich_sonstiges:
+        one: Sonstiger Arbeitsbereich
+        other: Sonstige Arbeitsbereiche
+
+      group/meute:
+        one: Meute
+        other: Meuten
+
+      group/gilde:
+        one: Gilde
+        other: Gilden
+
+      group/sippe:
+        one: Sippe
+        other: Sippen
+
+      group/runde:
+        one: Runde
+        other: Runden
 
       ### ROLES
 
-      group/root/leader:
-        one: Leitung
-        description: Leitungspersonen verwalten die Applikation.
-      group/root/member:
+      group/bundesebene/mv_admin:
+        one: MV-Administrator*in
+        description: MV-Administrator*in
+      group/bundesebene/erfassung_fuehrungszeugnis:
+        one: Erfasser*in Führungszeugnis
+        description: Erfasser*in Führungszeugnis
+      group/bundesebene/kassenpruefung:
+        one: Kassenprüfer*in
+        description: Kassenprüfer*in
+      group/bundesebene/bundesmitarbeiter:
+        one: Bundesmitarbeiter*in
+        description: Bundesmitarbeiter*in
+
+      group/bundesvorstand/bundesvorsitz:
+        one: Bundesvorsitzende*r
+        description: Bundesvorsitzende*r
+      group/bundesvorstand/bundesvorsitz_stv:
+        one: Stv. Bundesvorsitzende*r
+        description: Stv. Bundesvorsitzende*r
+      group/bundesvorstand/bundesschatzmeister:
+        one: Bundesschatzmeister*in
+        description: Bundesschatzmeister*in
+      group/bundesvorstand/bundesschatzmeister_stv:
+        one: Stv. Bundesschatzmeister*in
+        description: Stv. Bundesschatzmeister*in
+      group/bundesvorstand/empfaenger_aufnahmeantrag_ueber_18:
+        one: Empfänger*in Aufnahmeantrag Über18
+        description: Empfänger*in Aufnahmeantrag Über18
+
+      group/bundesgeschaeftsstelle/bundesgeschaeftsfuehrung:
+        one: Bundesgeschäftsführer*in
+        description: Bundesgeschäftsführer*in
+      group/bundesgeschaeftsstelle/mitgliederverwaltung_bund:
+        one: Mitgliederverwalter*in Bund
+        description: Mitgliederverwalter*in Bund
+      group/bundesgeschaeftsstelle/hauptamtlich_sachbearbeitung:
+        one: Hauptamtliche Sachbearbeiter*in
+        description: Hauptamtliche Sachbearbeiter*in
+      group/bundesgeschaeftsstelle/hauptamtlich_referent:
+        one: Hauptamtliche Referent*in
+        description: Hauptamtliche Referent*in
+      group/bundesgeschaeftsstelle/hauptamtlich:
+        one: Hauptamtliche*r
+        description: Hauptamtliche*r
+
+      group/ombudsrat/mitglied:
         one: Mitglied
-        description: Mitglieder sind alle anderen.
+        description: Mitglied
+
+      group/betrieb/geschaeftsfuehrung:
+        one: Geschäftsführer*in
+        description: Geschäftsführer*in
+
+      group/versammlung/versammlungsleitung:
+        one: Versammlungsleitung
+        description: Versammlungsleitung
+      group/versammlung/protokollfuehrung:
+        one: Protokollführung
+        description: Protokollführung
+      group/versammlung/technik:
+        one: Technik
+        description: Technik
+
+      group/projekt/lagerleitung:
+        one: Lagerleiter*in
+        description: Lagerleiter*in
+      group/projekt/lagerleitung_stv:
+        one: Stv. Lagerleiter*in
+        description: Stv. Lagerleiter*in
+      group/projekt/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/projekt/beauftragt:
+        one: Beauftragte*r
+        description: Beauftragte*r
+      group/projekt/mitgliederverwaltung_grossprojekt:
+        one: Mitgliederverwalter*in Großprojekt
+        description: Mitgliederverwalter*in Großprojekt
+      group/projekt/zugriffsberechtigter_mitgliederverwaltung_grossprojekt:
+        one: Zugriffsberechtige*r Mitgliederverwaltung Großprojekt
+        description: Zugriffsberechtige*r Mitgliederverwaltung Großprojekt
+
+      group/bereich/bereichsleitung:
+        one: Bereichsleitung
+        description: Bereichsleitung
+
+      group/kontakte/adressverwaltung:
+        one: Adressverwaltung
+        description: Adressverwaltung
+      group/kontakte/kontakt:
+        one: Kontakt
+        description: Kontakt
+
+      group/mitglieder/ordentliche_mitgliedschaft:
+        one: Adressverwaltung
+        description: Adressverwaltung
+      group/mitglieder/foerdermitgliedschaft:
+        one: Fördermitgliedschaft
+        description: Fördermitgliedschaft
+      group/mitglieder/zweitmitgliedschaft:
+        one: Zweitmitgliedschaft
+        description: Zweitmitgliedschaft
+
+      group/arbeitsbereich/bundesbeauftragt:
+        one: Bundesbeauftragte*r
+        description: Bundesbeauftragte*r
+      group/arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
+
+      group/gruppierungsspezifisches_gremium/leitung:
+        one: Leiter*in
+        description: Leiter*in
+      group/gruppierungsspezifisches_gremium/mitglied:
+        one: Mitglied
+        description: Mitglied
+
+      group/heim_zeltplatz_liegenschaft/ansprechsperson_vermietung:
+        one: Ansprechperson Vermietung
+        description: Ansprechperson Vermietung
+      group/heim_zeltplatz_liegenschaft/heim_hauswartung:
+        one: Heim-/Hauswart
+        description: Heim-/Hauswart
+      group/heim_zeltplatz_liegenschaft/vorstandsmitglied_hausverein:
+        one: Vorstandsmitglied Hausverein
+        description: Vorstandsmitglied Hausverein
+
+      group/foerderverein/vorsitz:
+        one: Vorsitzende*r
+        description: Vorsitzende*r
+      group/foerderverein/vorsitz_stv:
+        one: Stv. Vorsitzende*r
+        description: Stv. Vorsitzende*r
+      group/foerderverein/schatzmeister:
+        one: Schatzmeister*in
+        description: Schatzmeister*in
+      group/foerderverein/geschaeftsstelle:
+        one: Geschäftsstelle
+        description: Geschäftsstelle
+
+      group/landesverband/landesmitgliederverwaltung:
+        one: Landesmitgliederverwalter*in
+        description: Landesmitgliederverwalter*in
+      group/landesverband/erfassung_fuehrungszeugnis:
+        one: Erfasser*in Führungszeugnis
+        description: Erfasser*in Führungszeugnis
+      group/landesverband/kassenpruefung:
+        one: Kassenprüfer*in
+        description: Kassenprüfer*in
+      group/landesverband/stammeskompass_moderation:
+        one: Stammeskompass-Moderator*in
+        description: Stammeskompass-Moderator*in
+      group/landesverband/landesmitarbeiter:
+        one: Landesmitarbeiter*in
+        description: Landesmitarbeiter*in
+      group/landesverband/juleica_inhaber:
+        one: Juleica-Inhaber*in
+        description: Juleica-Inhaber*in
+      group/landesverband/materialwartung:
+        one: Materialwart*in
+        description: Materialwart*in
+      group/landesverband/bundesdelegiert:
+        one: Bundesdelegierte*r
+        description: Bundesdelegierte*r
+      group/landesverband/bundesdelegiert_ersatz:
+        one: Ersatz-Bundesdelegierte*r
+        description: Ersatz-Bundesdelegierte*r
+      group/landesverband/bundeslager_unterlagerleitung:
+        one: Bundeslager Unterlagerleiter*in
+        description: Bundeslager Unterlagerleiter*in
+      group/landesverband/bundeslager_unterlagerbereichsleitung:
+        one: Bundeslager Unterlagerbereichsleiter*in
+        description: Bundeslager Unterlagerbereichsleiter*in
+      group/landesverband/bundeslager_mitarbeit_unterlager:
+        one: Bundeslager Mitarbeiter*in Unterlager
+        description: Bundeslager Mitarbeiter*in Unterlager
+      group/landesverband/landeswahlobmensch:
+        one: Landeswahlobmensch
+        description: Landeswahlobmensch
+      group/landesverband/zuschussbeauftragt:
+        one: Zuschussbeauftrage*r
+        description: Zuschussbeauftrage*r
+
+      group/landesvorstand/landesvorsitz:
+        one: Landesvorsitzende*r
+        description: Landesvorsitzende*r
+      group/landesvorstand/landesvorsitz_stv:
+        one: Stv. Landesvorsitzende*r
+        description: Stv. Landesvorsitzende*r
+      group/landesvorstand/landesschatzmeister:
+        one: Landesschatzmeister*in
+        description: Landesschatzmeister*in
+      group/landesvorstand/landesschatzmeister_stv:
+        one: Stv. Landesschatzmeister*in
+        description: Stv. Landesschatzmeister*in
+      group/landesvorstand/empfaenger_aufnahmeantrag_lv_unter_18:
+        one: Empfänger*in Aufnahmeantrag LV Unter18
+        description: Empfänger*in Aufnahmeantrag LV Unter18
+      group/landesvorstand/empfaenger_aufnahmeantrag_lv_ueber_18:
+        one: Empfänger*in Aufnahmeantrag LV Über18
+        description: Empfänger*in Aufnahmeantrag LV Über18
+
+      group/landesgeschaeftsstelle/landesgeschaeftsfuehrung:
+        one: Landesgeschäftsführer*in
+        description: Landesgeschäftsführer*in
+      group/landesgeschaeftsstelle/hauptamtlich_sachbearbeitung:
+        one: Hauptamtliche Sachbearbeiter*in
+        description: Hauptamtliche Sachbearbeiter*in
+      group/landesgeschaeftsstelle/hauptamtlich_referent:
+        one: Hauptamtliche Referent*in
+        description: Hauptamtliche Referent*in
+      group/landesgeschaeftsstelle/hauptamtlich:
+        one: Hauptamtliche*r
+        description: Hauptamtliche*r
+
+      group/landesversammlung/versammlungsleitung:
+        one: Versammlungsleiter*in
+        description: Versammlungsleiter*in
+      group/landesversammlung/protokollfuehrung:
+        one: Protokollführer*in
+        description: Protokollführer*in
+      group/landesversammlung/technik:
+        one: Techniker*in
+        description: Techniker*in
+
+      group/bezirk/bezirkssprecher:
+        one: Bezirkssprecher*in
+        description: Bezirkssprecher*in
+      group/bezirk/bezirkssprecher_stv:
+        one: Stv. Bezirkssprecher*in
+        description: Stv. Bezirkssprecher*in
+      group/bezirk/bezirksschatzmeister:
+        one: Bezirksschatzmeister*in
+        description: Bezirksschatzmeister*in
+      group/bezirk/bezirksschatzmeister_stv:
+        one: Stv. Bezirksschatzmeister*in
+        description: Stv. Bezirksschatzmeister*in
+      group/bezirk/bezirksbeauftragt:
+        one: Bezirksbeautragte*r
+        description: Bezirksbeautragte*r
+      group/bezirk/erfassung_fuehrungszeugnis:
+        one: Erfasser*in Führungszeugnis
+        description: Erfasser*in Führungszeugnis
+      group/bezirk/kassenpruefung:
+        one: Kassenprüfer*in
+        description: Kassenprüfer*in
+
+      group/bezirksgeschaeftsstelle/hauptamtlich:
+        one: Hauptamtliche*r
+        description: Hauptamtliche*r
+
+      group/stamm/stammesfuehrung:
+        one: Stammesführer*in
+        description: Stammesführer*in
+      group/stamm/stammesfuehrung_stv:
+        one: Stv. Stammesführer*in
+        description: Stv. Stammesführer*in
+      group/stamm/stammesschatzmeister:
+        one: Stammesschatzmeister*in
+        description: Stammesschatzmeister*in
+      group/stamm/stammesschatzmeister_stv:
+        one: Stv. Stammesschatzmeister*in
+        description: Stv. Stammesschatzmeister*in
+      group/stamm/empfaenger_aufnahmeantrag_stammesfuehrung:
+        one: Empfänger*in Aufnahmeantrag in Stammesführung
+        description: Empfänger*in Aufnahmeantrag in Stammesführung
+      group/stamm/stammesmitgliederverwaltung:
+        one: Stammesmitgliederverwalter*in
+        description: Stammesmitgliederverwalter*in
+      group/stamm/erfassung_fuehrungszeugnis:
+        one: Erfasser*in Führungszeugnis
+        description: Erfasser*in Führungszeugnis
+      group/stamm/kassenpruefung:
+        one: Kassenprüfer*in
+        description: Kassenprüfer*in
+      group/stamm/zuschussbeauftragt:
+        one: Zuschussbeauftrage*r
+        description: Zuschussbeauftrage*r
+      group/stamm/ansprechsperson_bundeslager:
+        one: Ansprechperson Bundeslager
+        description: Ansprechperson Bundeslager
+      group/stamm/stammeskaemmerer:
+        one: Stammeskämmerer*in
+        description: Stammeskämmerer*in
+      group/stamm/materialwartung:
+        one: Materialwart*in
+        description: Materialwart*in
+      group/stamm/ansprechperson_heimvermietung:
+        one: Ansprechperson Heimvermietung
+        description: Ansprechperson Heimvermietung
+      group/stamm/heimwartung:
+        one: Heimwart*in
+        description: Heimwart*in
+      group/stamm/juleica_inhaber:
+        one: Juleica-Inhaber*in
+        description: Juleica-Inhaber*in
+      group/stamm/stammesbeauftragt:
+        one: Stammesbeauftragte*r
+        description: Stammesbeauftragte*r
+      group/stamm/landesdelegiert:
+        one: Landesdelegierte*r
+        description: Landesdelegierte*r
+      group/stamm/landesdelegiert_ersatz:
+        one: Ersatz-Landesdelegierte*r
+        description: Ersatz-Landesdelegierte*r
+      group/stamm/bezirksdelegiert:
+        one: Bezirksdelegierte*r
+        description: Bezirksdelegierte*r
+      group/stamm/stammesgeschaeftsstelle:
+        one: Stammesgeschäftsstelle
+        description: Stammesgeschäftsstelle
+
+      group/stammes_arbeitsbereich/beauftragt:
+        one: Beauftragte*r
+        description: Beauftragte*r
+      group/stammes_arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/stammes_arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/stammes_arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
+
+      group/meute/meutenfuehrung:
+        one: Meutenführer*in
+        description: Meutenführer*in
+      group/meute/meutenfuehrung_stv:
+        one: Stv. Meutenführer*in
+        description: Stv. Meutenführer*in
+      group/meute/woelfling:
+        one: Wölfling
+        description: Wölfling
+
+      group/gilde/gildenfuehrung:
+        one: Gildenführer*in
+        description: Gildenführer*in
+      group/gilde/gildenfuehrung_stv:
+        one: Stv. Gildenführer*in
+        description: Stv. Gildenführer*in
+
+      group/sippe/sippenfuehrung:
+        one: Sippenführer*in
+        description: Sippenführer*in
+      group/sippe/sippenfuehrung_stv:
+        one: Stv. Sippenführer*in
+        description: Stv. Sippenführer*in
+      group/sippe/pfadfinder:
+        one: Pfadfinder*in
+        description: Pfadfinder*in
+
+      group/runde/rundensprecher:
+        one: Rundensprecher*in
+        description: Rundensprecher*in
+      group/runde/rundensprecher_stv:
+        one: Stv. Rundensprecher*in
+        description: Stv. Rundensprecher*in
+      group/runde/ranger_rover:
+        one: Ranger/Rover
+        description: Ranger/Rover

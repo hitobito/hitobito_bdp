@@ -22,6 +22,9 @@ module HitobitoBdp
     config.to_prepare do
       # extend application classes here
       Group.include Bdp::Group
+
+      # :group_and_below_efz may manage the SGB VIII EFZ qualifications of people
+      Role::Permissions << :group_and_below_efz
     end
 
     initializer "bdp.add_settings" do |_app|

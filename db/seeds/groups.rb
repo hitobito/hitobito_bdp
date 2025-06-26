@@ -6,4 +6,4 @@
 #  https://github.com/hitobito/hitobito_bdp.
 
 
-Group::Root.seed_once(:parent_id, name: "Hauptgruppe")
+Group::Bundesebene.seed_once(:parent_id, name: "Hauptgruppe")

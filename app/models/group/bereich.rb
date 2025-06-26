@@ -5,14 +5,17 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-module Bdp::Group
-  extend ActiveSupport::Concern
+class Group::Bereich < ::Group
+  ### ROLES
 
-  included do
-    # Define additional used attributes
-    # self.used_attributes += [:website, :bank_account, :description]
-    # self.superior_attributes = [:bank_account]
-
-    root_types Group::Bundesebene
+  class Bereichsleitung < ::Role
+    self.permissions = [:group_read, :contact_data]
   end
+
+  class Mitarbeiter < ::Role
+    self.permissions = []
+  end
+
+  roles Bereichsleitung,
+    Mitarbeiter
 end

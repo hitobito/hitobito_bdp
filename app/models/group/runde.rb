@@ -5,14 +5,23 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-module Bdp::Group
-  extend ActiveSupport::Concern
+class Group::Runde < ::Group
 
-  included do
-    # Define additional used attributes
-    # self.used_attributes += [:website, :bank_account, :description]
-    # self.superior_attributes = [:bank_account]
+  ### ROLES
 
-    root_types Group::Bundesebene
+  class Rundensprecher < ::Role
+    self.permissions = [:group_read]
   end
+
+  class RundensprecherStv < ::Role
+    self.permissions = [:group_read]
+  end
+
+  class RangerRover < ::Role
+    self.permissions = []
+  end
+
+  roles Rundensprecher,
+    RundensprecherStv,
+    RangerRover
 end
