@@ -5,9 +5,8 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 Fabrication.configure do |config|
   config.fabricator_path = ["spec/fabricators",
-                            "../hitobito_bdp/spec/fabricators"]
+    "../hitobito_bdp/spec/fabricators"]
   config.path_prefix = Rails.root
 end

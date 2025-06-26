@@ -5,7 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 if Rake::Task.task_defined?("spec:features")
   # we DO have feature specs in this wagon.
   Rake::Task["spec:features"].actions.clear

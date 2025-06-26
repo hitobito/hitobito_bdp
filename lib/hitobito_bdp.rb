@@ -5,10 +5,9 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
-require 'wagons'
+require "wagons"
 # require 'your_wagon_dependencies'
-require 'hitobito_bdp/wagon'
+require "hitobito_bdp/wagon"
 
 module HitobitoBdp
 end

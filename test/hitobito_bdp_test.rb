@@ -5,8 +5,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
-require 'test_helper'
+require "test_helper"
 
 class HitobitoBdpTest < ActiveSupport::TestCase
   test "truth" do

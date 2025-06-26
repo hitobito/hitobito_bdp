@@ -5,6 +5,5 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 # define the root directory of the main application
 ENV["APP_ROOT"] ||= File.expand_path("../hitobito", __dir__)

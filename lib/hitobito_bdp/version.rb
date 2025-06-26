@@ -5,7 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 module HitobitoBdp
-  VERSION = '0.0.1'
+  VERSION = "0.0.1"
 end
