@@ -9,7 +9,7 @@ root:
   lft: 1
   rgt: 2
   name: Hauptgruppe
-  type: Group::Root
+  type: Group::Bundesebene
   email: root@example.net
   zip_code: 2843
   town: Neu Carlscheid
