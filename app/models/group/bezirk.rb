@@ -17,18 +17,22 @@ class Group::Bezirk < ::Group
 
   class Bezirkssprecher < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class BezirkssprecherStv < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class Bezirksschatzmeister < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class BezirksschatzmeisterStv < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class Bezirksbeauftragt < ::Role
@@ -37,6 +41,7 @@ class Group::Bezirk < ::Group
 
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:group_and_below_efz]
+    self.two_factor_authentication_enforced = true
   end
 
   class Kassenpruefung < ::Role

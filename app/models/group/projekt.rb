@@ -28,10 +28,12 @@ class Group::Projekt < ::Group
 
   class MitgliederverwaltungGrossprojekt < ::Role
     self.permissions = [:group_full]
+    self.two_factor_authentication_enforced = true
   end
 
   class ZugriffsberechtigterMitgliederverwaltungGrossprojekt < ::Role
     self.permissions = [:layer_and_below_read]
+    self.two_factor_authentication_enforced = true
   end
 
   roles Lagerleitung,

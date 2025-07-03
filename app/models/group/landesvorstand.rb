@@ -12,18 +12,22 @@ class Group::Landesvorstand < ::Group
 
   class Landesvorsitz < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class LandesvorsitzStv < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class Landesschatzmeister < ::Role
     self.permissions = [:layer_and_below_read, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class LandesschatzmeisterStv < ::Role
     self.permissions = [:layer_and_below_read, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class EmpfaengerAufnahmeantragLVUnter18 < ::Role

@@ -44,10 +44,12 @@ class Group::Bundesebene < ::Group
 
   class MVAdmin < ::Role
     self.permissions = [:layer_and_below_full, :admin, :impersonation]
+    self.two_factor_authentication_enforced = true
   end
 
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
+    self.two_factor_authentication_enforced = true
   end
 
   class Kassenpruefung < ::Role

@@ -10,6 +10,7 @@ class Group::Bezirksgeschaeftsstelle < ::Group
 
   class Hauptamtlich < ::Role
     self.permissions = [:group_read]
+    self.two_factor_authentication_enforced = true
   end
 
   roles Hauptamtlich

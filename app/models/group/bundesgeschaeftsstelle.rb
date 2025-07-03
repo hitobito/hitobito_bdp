@@ -10,22 +10,27 @@ class Group::Bundesgeschaeftsstelle < ::Group
 
   class Bundesgeschaeftsfuehrung < ::Role
     self.permissions = [:layer_and_below_full, :admin, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class MitgliederverwaltungBund < ::Role
     self.permissions = [:layer_and_below_full, :admin, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class HauptamtlichSachbearbeitung < ::Role
     self.permissions = [:layer_and_below_full, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class HauptamtlichReferent < ::Role
     self.permissions = [:layer_and_below_read, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class Hauptamtlich < ::Role
     self.permissions = [:contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   roles Bundesgeschaeftsfuehrung,

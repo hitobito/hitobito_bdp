@@ -56,10 +56,12 @@ class Group::Stamm < ::Group
 
   class Stammesmitgliederverwaltung < ::Role
     self.permissions = [:layer_and_below_full]
+    self.two_factor_authentication_enforced = true
   end
 
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
+    self.two_factor_authentication_enforced = true
   end
 
   class Kassenpruefung < ::Role

@@ -12,18 +12,22 @@ class Group::Bundesvorstand < ::Group
 
   class Bundesvorsitz < ::Role
     self.permissions = [:layer_and_below_full, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class BundesvorsitzStv < ::Role
     self.permissions = [:layer_and_below_full, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class Bundesschatzmeister < ::Role
     self.permissions = [:layer_and_below_full, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class BundesschatzmeisterStv < ::Role
     self.permissions = [:layer_and_below_full, :contact_data, :finance]
+    self.two_factor_authentication_enforced = true
   end
 
   class EmpfaengerAufnahmeantragUeber18 < ::Role

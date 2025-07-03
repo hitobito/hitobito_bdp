@@ -42,10 +42,12 @@ class Group::Landesverband < ::Group
 
   class Landesmitgliederverwaltung < ::Role
     self.permissions = [:layer_and_below_full, :contact_data]
+    self.two_factor_authentication_enforced = true
   end
 
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
+    self.two_factor_authentication_enforced = true
   end
 
   class Kassenpruefung < ::Role
