@@ -6,7 +6,6 @@
 #  https://github.com/hitobito/hitobito_bdp.
 
 class Group::Runde < ::Group
-
   ### ROLES
 
   class Rundensprecher < ::Role
