@@ -18,7 +18,7 @@ of Bdp.
         * Stv. Bundesvorsitzende*r: 2FA [:layer_and_below_full, :contact_data]
         * Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance]
         * Stv. Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance]
-        * Rolle: []
+        * Empfänger*in Aufnahmeantrag Über18: []
       * Bundesgeschäftsstelle
         * Bundesgeschäftsführer*in: 2FA [:layer_and_below_full, :admin, :contact_data, :finance]
         * Mitgliederverwalter*in Bund: 2FA [:layer_and_below_full, :admin, :contact_data, :finance]
@@ -30,9 +30,9 @@ of Bdp.
       * Betrieb
         * Geschäftsführer*in: []
       * Versammlung
-        * Rolle: []
-        * Rolle: []
-        * Rolle: []
+        * Versammlungsleitung: []
+        * Protokollführung: []
+        * Technik: []
       * Projekt
         * Lagerleiter*in: [:group_read, :contact_data]
         * Stv. Lagerleiter*in: [:group_read, :contact_data]
@@ -40,9 +40,9 @@ of Bdp.
         * Beauftragte*r: []
         * Mitgliederverwalter*in Großprojekt: 2FA [:group_full]
         * Zugriffsberechtige*r Mitgliederverwaltung Großprojekt: 2FA [:layer_and_below_read]
-      * Gruppe
+      * Bereich
         * Bereichsleitung: [:group_read, :contact_data]
-        * Rolle: []
+        * Mitarbeiter*in: []
     * Landesverband < Bundesebene
       * Landesverband
         * Landesmitgliederverwalter*in: 2FA [:layer_and_below_full, :contact_data]
@@ -64,8 +64,8 @@ of Bdp.
         * Stv. Landesvorsitzende*r: 2FA [:layer_and_below_read, :contact_data]
         * Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance]
         * Stv. Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance]
-        * Rolle: []
-        * Rolle: []
+        * Empfänger*in Aufnahmeantrag LV Unter18: []
+        * Empfänger*in Aufnahmeantrag LV Über18: []
       * Landesgeschäftsstelle
         * Landesgeschäftsführer*in: 2FA [:layer_and_below_full, :contact_data, :finance]
         * Hauptamtliche Sachbearbeiter*in: 2FA [:layer_and_below_read, :contact_data]
@@ -97,7 +97,7 @@ of Bdp.
         * Erfasser*in Führungszeugnis: 2FA [:layer_and_below_read, :group_and_below_efz]
         * Kassenprüfer*in: []
         * Zuschussbeauftrage*r: []
-        * Rolle: []
+        * Ansprechperson Bundeslager: []
         * Stammeskämmerer*in: []
         * Materialwart*in: []
         * Ansprechperson Heimvermietung: []
@@ -129,7 +129,7 @@ of Bdp.
         * Fördermitgliedschaft: []
         * Zweitmitgliedschaft: []
       * Heim/Zeltplatz/Liegenschaft
-        * Rolle: []
+        * Ansprechperson Vermietung: []
         * Heim-/Hauswart: []
         * Vorstandsmitglied Hausverein: []
       * Gruppierungsspezifisches Gremium
@@ -148,7 +148,7 @@ of Bdp.
         * AK Leiter*in: [:group_read]
         * AK Mitarbeiter*in: [:group_read]
         * AK Freie*r Mitarbeiter*in: []
-        * Rolle: [:group_read, :contact_data]
+        * Beauftragte*r: [:group_read, :contact_data]
         * AK Leiter*in: [:group_read, :contact_data]
         * AK Mitarbeiter*in: [:group_read]
         * AK Freie*r Mitarbeiter*in: []

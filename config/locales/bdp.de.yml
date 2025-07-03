@@ -37,6 +37,10 @@ de:
         one: Projekt
         other: Projekte
 
+      group/bereich:
+        one: Bereich
+        other: Bereiche
+
       group/kontakte:
         one: Kontakte
         other: Kontakte
@@ -280,7 +284,7 @@ de:
       group/bundesvorstand/bundesschatzmeister_stv:
         one: Stv. Bundesschatzmeister*in
         description: Stv. Bundesschatzmeister*in
-      group/bundesvorstand/empfaenger_aufnahmeantrag_ueber_18:
+      group/bundesvorstand/empfaenger_aufnahmeantrag_ueber18:
         one: Empfänger*in Aufnahmeantrag Über18
         description: Empfänger*in Aufnahmeantrag Über18
 
@@ -308,13 +312,13 @@ de:
         one: Geschäftsführer*in
         description: Geschäftsführer*in
 
-      group/versammlung/versammlungsleitung:
+      group/bundesversammlung/versammlungsleitung:
         one: Versammlungsleitung
         description: Versammlungsleitung
-      group/versammlung/protokollfuehrung:
+      group/bundesversammlung/protokollfuehrung:
         one: Protokollführung
         description: Protokollführung
-      group/versammlung/technik:
+      group/bundesversammlung/technik:
         one: Technik
         description: Technik
 
@@ -340,6 +344,9 @@ de:
       group/bereich/bereichsleitung:
         one: Bereichsleitung
         description: Bereichsleitung
+      group/bereich/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
 
       group/kontakte/adressverwaltung:
         one: Adressverwaltung
@@ -358,9 +365,9 @@ de:
         one: Zweitmitgliedschaft
         description: Zweitmitgliedschaft
 
-      group/arbeitsbereich/bundesbeauftragt:
-        one: Bundesbeauftragte*r
-        description: Bundesbeauftragte*r
+      group/arbeitsbereich/beauftragt:
+        one: Beauftragte*r
+        description: Beauftragte*r
       group/arbeitsbereich/ak_leitung:
         one: AK Leiter*in
         description: AK Leiter*in
@@ -378,7 +385,7 @@ de:
         one: Mitglied
         description: Mitglied
 
-      group/heim_zeltplatz_liegenschaft/ansprechsperson_vermietung:
+      group/heim_zeltplatz_liegenschaft/ansprechperson_vermietung:
         one: Ansprechperson Vermietung
         description: Ansprechperson Vermietung
       group/heim_zeltplatz_liegenschaft/heim_hauswartung:
@@ -456,10 +463,10 @@ de:
       group/landesvorstand/landesschatzmeister_stv:
         one: Stv. Landesschatzmeister*in
         description: Stv. Landesschatzmeister*in
-      group/landesvorstand/empfaenger_aufnahmeantrag_lv_unter_18:
+      group/landesvorstand/empfaenger_aufnahmeantrag_lv_unter18:
         one: Empfänger*in Aufnahmeantrag LV Unter18
         description: Empfänger*in Aufnahmeantrag LV Unter18
-      group/landesvorstand/empfaenger_aufnahmeantrag_lv_ueber_18:
+      group/landesvorstand/empfaenger_aufnahmeantrag_lv_ueber18:
         one: Empfänger*in Aufnahmeantrag LV Über18
         description: Empfänger*in Aufnahmeantrag LV Über18
 
@@ -539,7 +546,7 @@ de:
       group/stamm/zuschussbeauftragt:
         one: Zuschussbeauftrage*r
         description: Zuschussbeauftrage*r
-      group/stamm/ansprechsperson_bundeslager:
+      group/stamm/ansprechperson_bundeslager:
         one: Ansprechperson Bundeslager
         description: Ansprechperson Bundeslager
       group/stamm/stammeskaemmerer:
