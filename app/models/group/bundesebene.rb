@@ -8,7 +8,8 @@
 class Group::Bundesebene < ::Group
   self.layer = true
 
-  children Group::Bundesvorstand,
+  children Group::Landesverband,
+    Group::Bundesvorstand,
     Group::Bundesgeschaeftsstelle,
     Group::Ombudsrat,
     Group::Betrieb,

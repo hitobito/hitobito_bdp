@@ -9,7 +9,7 @@ class Group::Stamm < ::Group
   self.layer = true
 
   children Group::Mitglieder,
-    Group::StammesArbeitsbereichWölflingsstufe,
+    Group::StammesArbeitsbereichWoelflingsstufe,
     Group::StammesArbeitsbereichPfadfinderstufe,
     Group::StammesArbeitsbereichRangerRoverstufe,
     Group::StammesArbeitsbereichStufen,
@@ -19,7 +19,7 @@ class Group::Stamm < ::Group
     Group::StammesArbeitsbereichIntakt,
     Group::StammesArbeitsbereichOeffentlichkeitsarbeitMedien,
     Group::StammesArbeitsbereichPolitischeBildungPolitikUndGesellschaft,
-    Group::StammesArbeitsbereichIT,
+    Group::StammesArbeitsbereichIt,
     Group::StammesArbeitsbereichFindungskommission,
     Group::StammesArbeitsbereichRainbow,
     Group::StammesArbeitsbereichInklusion,
