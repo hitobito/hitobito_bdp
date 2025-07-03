@@ -10,10 +10,12 @@ class Group::Bereich < ::Group
 
   class Bereichsleitung < ::Role
     self.permissions = [:group_read, :contact_data]
+    self.sgbviii_required = true
   end
 
   class Mitarbeiter < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   roles Bereichsleitung,

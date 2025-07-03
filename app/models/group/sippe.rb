@@ -11,10 +11,12 @@ class Group::Sippe < ::Group
 
   class Sippenfuehrung < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class SippenfuehrungStv < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class Pfadfinder < ::Role

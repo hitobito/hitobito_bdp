@@ -48,6 +48,7 @@ class Group::Landesverband < ::Group
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
     self.two_factor_authentication_enforced = true
+    self.sgbviii_required = true
   end
 
   class Kassenpruefung < ::Role
@@ -56,10 +57,12 @@ class Group::Landesverband < ::Group
 
   class StammeskompassModeration < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Landesmitarbeiter < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class JuleicaInhaber < ::Role
@@ -80,18 +83,22 @@ class Group::Landesverband < ::Group
 
   class BundeslagerUnterlagerleitung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class BundeslagerUnterlagerbereichsleitung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class BundeslagerMitarbeitUnterlager < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Landeswahlobmensch < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Zuschussbeauftragt < ::Role

@@ -50,6 +50,7 @@ class Group::Bundesebene < ::Group
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
     self.two_factor_authentication_enforced = true
+    self.sgbviii_required = true
   end
 
   class Kassenpruefung < ::Role
@@ -58,6 +59,7 @@ class Group::Bundesebene < ::Group
 
   class Bundesmitarbeiter < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   roles MVAdmin,

@@ -12,18 +12,22 @@ class Group::Projekt < ::Group
 
   class Lagerleitung < ::Role
     self.permissions = [:group_read, :contact_data]
+    self.sgbviii_required = true
   end
 
   class LagerleitungStv < ::Role
     self.permissions = [:group_read, :contact_data]
+    self.sgbviii_required = true
   end
 
   class Mitarbeiter < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Beauftragt < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class MitgliederverwaltungGrossprojekt < ::Role

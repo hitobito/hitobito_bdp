@@ -36,18 +36,22 @@ class Group::Stamm < ::Group
 
   class Stammesfuehrung < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class StammesfuehrungStv < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class Stammesschatzmeister < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class StammesschatzmeisterStv < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class EmpfaengerAufnahmeantragStammesfuehrung < ::Role
@@ -62,6 +66,7 @@ class Group::Stamm < ::Group
   class ErfassungFuehrungszeugnis < ::Role
     self.permissions = [:layer_and_below_read, :group_and_below_efz]
     self.two_factor_authentication_enforced = true
+    self.sgbviii_required = true
   end
 
   class Kassenpruefung < ::Role
@@ -98,6 +103,7 @@ class Group::Stamm < ::Group
 
   class Stammesbeauftragt < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Landesdelegiert < ::Role
@@ -114,6 +120,7 @@ class Group::Stamm < ::Group
 
   class Stammesgeschaeftsstelle < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   roles Stammesfuehrung,

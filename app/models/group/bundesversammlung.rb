@@ -10,14 +10,17 @@ class Group::Bundesversammlung < ::Group
 
   class Versammlungsleitung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Protokollfuehrung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Technik < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   roles Versammlungsleitung,

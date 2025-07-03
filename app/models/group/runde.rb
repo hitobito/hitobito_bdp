@@ -11,10 +11,12 @@ class Group::Runde < ::Group
 
   class Rundensprecher < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class RundensprecherStv < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class RangerRover < ::Role

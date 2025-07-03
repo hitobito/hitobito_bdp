@@ -6,18 +6,23 @@
 #  https://github.com/hitobito/hitobito_bdp.
 
 class Group::Landesversammlung < ::Group
+  self.static_name = true
+
   ### ROLES
 
   class Versammlungsleitung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Protokollfuehrung < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   class Technik < ::Role
     self.permissions = []
+    self.sgbviii_required = true
   end
 
   roles Versammlungsleitung,

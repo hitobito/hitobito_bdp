@@ -11,10 +11,12 @@ class Group::Meute < ::Group
 
   class Meutenfuehrung < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class MeutenfuehrungStv < ::Role
     self.permissions = [:group_read]
+    self.sgbviii_required = true
   end
 
   class Woelfling < ::Role
