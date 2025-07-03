@@ -13,4 +13,6 @@ Gem::Specification.new do |s|
   s.description = "Hitobito-Wagon für Gruppenstruktur und Design der BDP"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile"]
+
+  s.add_dependency "hitobito_pfadi_de"
 end
