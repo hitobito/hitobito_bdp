@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[o:hitobito:p:hitobito_bdp:r:wagon]
+file_filter = config/locales/wagon.<lang>.yml
+source_file = config/locales/wagon.de.yml
+source_lang = de
+type        = YML
