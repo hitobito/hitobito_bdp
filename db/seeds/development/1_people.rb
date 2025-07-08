@@ -12,7 +12,7 @@ class BdpPersonSeeder < PersonSeeder
 
   def amount(role_type)
     case role_type.name.demodulize
-    when "Member" then 5
+    when "Woelfling", "Pfadfinder", "RangerRover", "Mitglied" then 3
     else 1
     end
   end
