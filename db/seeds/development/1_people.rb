@@ -33,7 +33,9 @@ puzzlers = [
 ]
 
 devs = {
-  "Customer Name" => "customer@email.com"
+  "Sebastian Köngeter" => "sebastian.koengeter@pfadfinden.de",
+  "Julius Störrle" => "julius.stoerrle@pfadfinden.de",
+  "Eric Schümann" => "Eric.Schuemann@dpsg.de",
 }
 puzzlers.each do |puz|
   devs[puz] = "#{puz.split.last.downcase.gsub("ü", "ue").gsub("ä", "ae")}@puzzle.ch"
