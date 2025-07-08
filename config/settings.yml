@@ -7,6 +7,10 @@
 # Settings relevant for the hitobito_bdp wagon
 # Overrides settings from the main application
 application:
+  logo:
+    image: bdp-logo.svg
+    width: 128
+    height: 83
   languages:
     de: Deutsch
 
