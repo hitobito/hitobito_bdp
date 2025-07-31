@@ -356,8 +356,8 @@ de:
         description: Kontakt
 
       group/mitglieder/ordentliche_mitgliedschaft:
-        one: Adressverwaltung
-        description: Adressverwaltung
+        one: Ordentliche Mitgliedschaft
+        description: Ordentliche Mitgliedschaft
       group/mitglieder/foerdermitgliedschaft:
         one: Fördermitgliedschaft
         description: Fördermitgliedschaft
