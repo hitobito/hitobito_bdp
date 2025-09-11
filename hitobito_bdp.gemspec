@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.version = HitobitoBdp::VERSION
   s.authors = ["Your name"]
   s.email = ["Your email"]
-  s.summary = "Hitobito-Wagon für Gruppenstruktur und Design der BDP"
-  s.description = "Hitobito-Wagon für Gruppenstruktur und Design der BDP"
+  s.summary = "Hitobito-Wagon für Gruppenstruktur und Design der BdP"
+  s.description = "Hitobito-Wagon für Gruppenstruktur und Design der BdP"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile"]
 
