@@ -33,9 +33,13 @@ de:
         one: Versammlung
         other: Versammlungen
 
+      group/projekte:
+        one: Projekte
+        other: Projekte
+
       group/projekt:
         one: Projekt
-        other: Projekte
+        other: Projekt
 
       group/bereich:
         one: Bereich
@@ -49,81 +53,377 @@ de:
         one: Mitglieder
         other: Mitglieder
 
-      group/arbeitsbereich:
-        one: Arbeitsbereich
+      group/bund_arbeitsbereiche:
+        one: Arbeitsbereiche
         other: Arbeitsbereiche
 
-      group/arbeitsbereich_woelflingsstufe:
-        one: Arbeitsbereich Wölflingsstufe
+      group/bund_woelflingsstufe:
+        one: Wölflingsstufe
         other: Arbeitsbereiche
 
-      group/arbeitsbereich_pfadfinderstufe:
-        one: Arbeitsbereich Pfadfinder*innenstufe
-        other: Arbeitsbereiche Pfadfinder*innenstufe
+      group/bund_pfadfinderstufe:
+        one: Pfadfinder*innenstufe
+        other: Pfadfinder*innenstufe
 
-      group/arbeitsbereich_ranger_roverstufe:
-        one: Arbeitsbereich Ranger/Rover-Stufe
-        other: Arbeitsbereiche Ranger/Rover-Stufe
+      group/bund_ranger_roverstufe:
+        one: Ranger/Rover-Stufe
+        other: Ranger/Rover-Stufe
 
-      group/arbeitsbereich_stufen:
-        one: Arbeitsbereich Stufen
-        other: Arbeitsbereiche Stufen
+      group/bund_stufen:
+        one: Stufen
+        other: Stufen
 
-      group/arbeitsbereich_erwachsenenarbeit:
-        one: Arbeitsbereich Erwachsenenarbeit
-        other: Arbeitsbereiche Erwachsenenarbeit
+      group/bund_wachstum_und_staemme:
+        one: Wachstum und Stämme
+        other: Wachstum und Stämme
 
-      group/arbeitsbereich_ausbildung:
-        one: Arbeitsbereich Ausbildung
-        other: Arbeitsbereiche Ausbildung
+      group/bund_erwachsenenarbeit:
+        one: Erwachsenenarbeit
+        other: Erwachsenenarbeit
 
-      group/arbeitsbereich_internationales:
-        one: Arbeitsbereich Internationales
-        other: Arbeitsbereiche Internationales
+      group/bund_ausbildung:
+        one: Ausbildung
+        other: Ausbildung
 
-      group/arbeitsbereich_intakt:
-        one: Arbeitsbereich intakt
-        other: Arbeitsbereiche intakt
+      group/bund_internationales:
+        one: Internationales
+        other: Internationales
 
-      group/arbeitsbereich_intakt_praevention_und_intervention:
-        one: Arbeitsbereich intakt - Prävention und Intervention
-        other: Arbeitsbereiche intakt - Prävention und Intervention
+      group/bund_intakt:
+        one: intakt
+        other: intakt
 
-      group/arbeitsbereich_intakt_psychische_gesundheit:
-        one: Arbeitsbereich intakt - psychische Gesundheit
-        other: Arbeitsbereiche intakt - psychische Gesundheit
+      group/bund_intakt_praevention_und_intervention:
+        one: intakt - Prävention und Intervention
+        other: intakt - Prävention und Intervention
 
-      group/arbeitsbereich_intakt_macht_und_miteinander:
-        one: Arbeitsbereich intakt - Macht und Miteinander
-        other: Arbeitsbereiche intakt - Macht und Miteinander
+      group/bund_intakt_psychische_gesundheit:
+        one: intakt - psychische Gesundheit
+        other: intakt - psychische Gesundheit
 
-      group/arbeitsbereich_oeffentlichkeitsarbeit_medien:
-        one: Arbeitsbereich Öffentlichkeitsarbeit/Medien
-        other: Arbeitsbereiche Öffentlichkeitsarbeit/Medien
+      group/bund_intakt_macht_und_miteinander:
+        one: intakt - Macht und Miteinander
+        other: intakt - Macht und Miteinander
 
-      group/arbeitsbereich_politische_bildung_politik_und_gesellschaft:
-        one: Arbeitsbereich Politische Bildung/Politik und Gesellschaft
-        other: Arbeitsbereiche Politische Bildung/Politik und Gesellschaft
+      group/bund_oeffentlichkeitsarbeit_medien:
+        one: Öffentlichkeitsarbeit/Medien
+        other: Öffentlichkeitsarbeit/Medien
 
-      group/arbeitsbereich_it:
-        one: Arbeitsbereich IT
-        other: Arbeitsbereiche IT
+      group/bund_politische_bildung_politik_und_gesellschaft:
+        one: Politische Bildung/Politik und Gesellschaft
+        other: Politische Bildung/Politik und Gesellschaft
 
-      group/arbeitsbereich_findungskommission:
-        one: Arbeitsbereich Findungskommission
-        other: Arbeitsbereiche Findungskommission
+      group/bund_it:
+        one: IT
+        other: IT
 
-      group/arbeitsbereich_rainbow:
-        one: Arbeitsbereich Rainbow
-        other: Arbeitsbereiche Rainbow
+      group/bund_findungskommission:
+        one: Findungskommission
+        other: Findungskommission
 
-      group/arbeitsbereich_inklusion:
-        one: Arbeitsbereich Inklusion
-        other: Arbeitsbereiche Inklusion
+      group/bund_rainbow:
+        one: Rainbow
+        other: Rainbow
 
-      group/arbeitsbereich_sonstiges:
+      group/bund_inklusion:
+        one: Inklusion
+        other: Inklusion
+
+      group/bund_sonstiges:
         one: Sonstiger Arbeitsbereich
         other: Sonstige Arbeitsbereiche
+
+      group/bund_arbeitsbereich/beauftragt:
+        one: Bundesbeauftragte*r
+        description: Bundesbeauftragte*r
+      group/bund_arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/bund_arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/bund_arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
+
+      group/land_arbeitsbereiche:
+        one: Arbeitsbereiche
+        other: Arbeitsbereiche
+
+      group/land_woelflingsstufe:
+        one: Wölflingsstufe
+        other: Arbeitsbereiche
+
+      group/land_pfadfinderstufe:
+        one: Pfadfinder*innenstufe
+        other: Pfadfinder*innenstufe
+
+      group/land_ranger_roverstufe:
+        one: Ranger/Rover-Stufe
+        other: Ranger/Rover-Stufe
+
+      group/land_stufen:
+        one: Stufen
+        other: Stufen
+
+      group/land_wachstum_und_staemme:
+        one: Wachstum und Stämme
+        other: Wachstum und Stämme
+
+      group/land_erwachsenenarbeit:
+        one: Erwachsenenarbeit
+        other: Erwachsenenarbeit
+
+      group/land_ausbildung:
+        one: Ausbildung
+        other: Ausbildung
+
+      group/land_internationales:
+        one: Internationales
+        other: Internationales
+
+      group/land_intakt:
+        one: intakt
+        other: intakt
+
+      group/land_intakt_praevention_und_intervention:
+        one: intakt - Prävention und Intervention
+        other: intakt - Prävention und Intervention
+
+      group/land_intakt_psychische_gesundheit:
+        one: intakt - psychische Gesundheit
+        other: intakt - psychische Gesundheit
+
+      group/land_intakt_macht_und_miteinander:
+        one: intakt - Macht und Miteinander
+        other: intakt - Macht und Miteinander
+
+      group/land_oeffentlichkeitsarbeit_medien:
+        one: Öffentlichkeitsarbeit/Medien
+        other: Öffentlichkeitsarbeit/Medien
+
+      group/land_politische_bildung_politik_und_gesellschaft:
+        one: Politische Bildung/Politik und Gesellschaft
+        other: Politische Bildung/Politik und Gesellschaft
+
+      group/land_it:
+        one: IT
+        other: IT
+
+      group/land_findungskommission:
+        one: Findungskommission
+        other: Findungskommission
+
+      group/land_rainbow:
+        one: Rainbow
+        other: Rainbow
+
+      group/land_inklusion:
+        one: Inklusion
+        other: Inklusion
+
+      group/land_sonstiges:
+        one: Sonstiger Arbeitsbereich
+        other: Sonstige Arbeitsbereiche
+
+      group/land_arbeitsbereich/beauftragt:
+        one: Landesbeauftragte*r
+        description: Landesbeauftragte*r
+      group/land_arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/land_arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/land_arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
+
+      group/bezirk_arbeitsbereiche:
+        one: Arbeitsbereiche
+        other: Arbeitsbereiche
+
+      group/bezirk_woelflingsstufe:
+        one: Wölflingsstufe
+        other: Arbeitsbereiche
+
+      group/bezirk_pfadfinderstufe:
+        one: Pfadfinder*innenstufe
+        other: Pfadfinder*innenstufe
+
+      group/bezirk_ranger_roverstufe:
+        one: Ranger/Rover-Stufe
+        other: Ranger/Rover-Stufe
+
+      group/bezirk_stufen:
+        one: Stufen
+        other: Stufen
+
+      group/bezirk_wachstum_und_staemme:
+        one: Wachstum und Stämme
+        other: Wachstum und Stämme
+
+      group/bezirk_erwachsenenarbeit:
+        one: Erwachsenenarbeit
+        other: Erwachsenenarbeit
+
+      group/bezirk_ausbildung:
+        one: Ausbildung
+        other: Ausbildung
+
+      group/bezirk_internationales:
+        one: Internationales
+        other: Internationales
+
+      group/bezirk_intakt:
+        one: intakt
+        other: intakt
+
+      group/bezirk_intakt_praevention_und_intervention:
+        one: intakt - Prävention und Intervention
+        other: intakt - Prävention und Intervention
+
+      group/bezirk_intakt_psychische_gesundheit:
+        one: intakt - psychische Gesundheit
+        other: intakt - psychische Gesundheit
+
+      group/bezirk_intakt_macht_und_miteinander:
+        one: intakt - Macht und Miteinander
+        other: intakt - Macht und Miteinander
+
+      group/bezirk_oeffentlichkeitsarbeit_medien:
+        one: Öffentlichkeitsarbeit/Medien
+        other: Öffentlichkeitsarbeit/Medien
+
+      group/bezirk_politische_bildung_politik_und_gesellschaft:
+        one: Politische Bildung/Politik und Gesellschaft
+        other: Politische Bildung/Politik und Gesellschaft
+
+      group/bezirk_it:
+        one: IT
+        other: IT
+
+      group/bezirk_findungskommission:
+        one: Findungskommission
+        other: Findungskommission
+
+      group/bezirk_rainbow:
+        one: Rainbow
+        other: Rainbow
+
+      group/bezirk_inklusion:
+        one: Inklusion
+        other: Inklusion
+
+      group/bezirk_sonstiges:
+        one: Sonstiger Arbeitsbereich
+        other: Sonstige Arbeitsbereiche
+
+      group/bezirk_arbeitsbereich/beauftragt:
+        one: Bezirksbeauftragte*r
+        description: Bezirksbeauftragte*r
+      group/bezirk_arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/bezirk_arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/bezirk_arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
+
+      group/stamm_arbeitsbereiche:
+        one: Arbeitsbereiche
+        other: Arbeitsbereiche
+
+      group/stamm_woelflingsstufe:
+        one: Wölflingsstufe
+        other: Arbeitsbereiche
+
+      group/stamm_pfadfinderstufe:
+        one: Pfadfinder*innenstufe
+        other: Pfadfinder*innenstufe
+
+      group/stamm_ranger_roverstufe:
+        one: Ranger/Rover-Stufe
+        other: Ranger/Rover-Stufe
+
+      group/stamm_stufen:
+        one: Stufen
+        other: Stufen
+
+      group/stamm_wachstum_und_staemme:
+        one: Wachstum und Stämme
+        other: Wachstum und Stämme
+
+      group/stamm_erwachsenenarbeit:
+        one: Erwachsenenarbeit
+        other: Erwachsenenarbeit
+
+      group/stamm_ausbildung:
+        one: Ausbildung
+        other: Ausbildung
+
+      group/stamm_internationales:
+        one: Internationales
+        other: Internationales
+
+      group/stamm_intakt:
+        one: intakt
+        other: intakt
+
+      group/stamm_intakt_praevention_und_intervention:
+        one: intakt - Prävention und Intervention
+        other: intakt - Prävention und Intervention
+
+      group/stamm_intakt_psychische_gesundheit:
+        one: intakt - psychische Gesundheit
+        other: intakt - psychische Gesundheit
+
+      group/stamm_intakt_macht_und_miteinander:
+        one: intakt - Macht und Miteinander
+        other: intakt - Macht und Miteinander
+
+      group/stamm_oeffentlichkeitsarbeit_medien:
+        one: Öffentlichkeitsarbeit/Medien
+        other: Öffentlichkeitsarbeit/Medien
+
+      group/stamm_politische_bildung_politik_und_gesellschaft:
+        one: Politische Bildung/Politik und Gesellschaft
+        other: Politische Bildung/Politik und Gesellschaft
+
+      group/stamm_it:
+        one: IT
+        other: IT
+
+      group/stamm_findungskommission:
+        one: Findungskommission
+        other: Findungskommission
+
+      group/stamm_rainbow:
+        one: Rainbow
+        other: Rainbow
+
+      group/stamm_inklusion:
+        one: Inklusion
+        other: Inklusion
+
+      group/stamm_sonstiges:
+        one: Sonstiger Arbeitsbereich
+        other: Sonstige Arbeitsbereiche
+
+      group/stamm_arbeitsbereich/beauftragt:
+        one: Stammesbeauftragte*r
+        description: Stammesbeauftragte*r
+      group/stamm_arbeitsbereich/ak_leitung:
+        one: AK Leiter*in
+        description: AK Leiter*in
+      group/stamm_arbeitsbereich/ak_mitarbeiter:
+        one: AK Mitarbeiter*in
+        description: AK Mitarbeiter*in
+      group/stamm_arbeitsbereich/ak_freier_mitarbeiter:
+        one: AK Freie*r Mitarbeiter*in
+        description: AK Freie*r Mitarbeiter*in
 
       group/gruppierungsspezifisches_gremium:
         one: Gruppierungsspezifisches Gremium
@@ -136,6 +436,10 @@ de:
       group/foerderverein:
         one: Förderverein
         other: Förderverein
+
+      group/gruppen:
+        one: Gruppen
+        other: Gruppen
 
       group/landesverband:
         one: Landesverband
@@ -161,85 +465,13 @@ de:
         one: Bezirksgeschäftsstelle
         other: Bezirksgeschäftsstellen
 
+      group/bezirksversammlung:
+        one: Bezirksversammlung
+        other: Bezirksversammlungen
+
       group/stamm:
         one: Stamm
         other: Stämme
-
-      group/stammes_arbeitsbereich:
-        one: Arbeitsbereich
-        other: Arbeitsbereiche
-
-      group/stammes_arbeitsbereich_woelflingsstufe:
-        one: Arbeitsbereich Wölflingsstufe
-        other: Arbeitsbereiche
-
-      group/stammes_arbeitsbereich_pfadfinderstufe:
-        one: Arbeitsbereich Pfadfinder*innenstufe
-        other: Arbeitsbereiche Pfadfinder*innenstufe
-
-      group/stammes_arbeitsbereich_ranger_roverstufe:
-        one: Arbeitsbereich Ranger/Rover-Stufe
-        other: Arbeitsbereiche Ranger/Rover-Stufe
-
-      group/stammes_arbeitsbereich_stufen:
-        one: Arbeitsbereich Stufen
-        other: Arbeitsbereiche Stufen
-
-      group/stammes_arbeitsbereich_erwachsenenarbeit:
-        one: Arbeitsbereich Erwachsenenarbeit
-        other: Arbeitsbereiche Erwachsenenarbeit
-
-      group/stammes_arbeitsbereich_ausbildung:
-        one: Arbeitsbereich Ausbildung
-        other: Arbeitsbereiche Ausbildung
-
-      group/stammes_arbeitsbereich_internationales:
-        one: Arbeitsbereich Internationales
-        other: Arbeitsbereiche Internationales
-
-      group/stammes_arbeitsbereich_intakt:
-        one: Arbeitsbereich intakt
-        other: Arbeitsbereiche intakt
-
-      group/stammes_arbeitsbereich_intakt_praevention_und_intervention:
-        one: Arbeitsbereich intakt - Prävention und Intervention
-        other: Arbeitsbereiche intakt - Prävention und Intervention
-
-      group/stammes_arbeitsbereich_intakt_psychische_gesundheit:
-        one: Arbeitsbereich intakt - psychische Gesundheit
-        other: Arbeitsbereiche intakt - psychische Gesundheit
-
-      group/stammes_arbeitsbereich_intakt_macht_und_miteinander:
-        one: Arbeitsbereich intakt - Macht und Miteinander
-        other: Arbeitsbereiche intakt - Macht und Miteinander
-
-      group/stammes_arbeitsbereich_oeffentlichkeitsarbeit_medien:
-        one: Arbeitsbereich Öffentlichkeitsarbeit/Medien
-        other: Arbeitsbereiche Öffentlichkeitsarbeit/Medien
-
-      group/stammes_arbeitsbereich_politische_bildung_politik_und_gesellschaft:
-        one: Arbeitsbereich Politische Bildung/Politik und Gesellschaft
-        other: Arbeitsbereiche Politische Bildung/Politik und Gesellschaft
-
-      group/stammes_arbeitsbereich_it:
-        one: Arbeitsbereich IT
-        other: Arbeitsbereiche IT
-
-      group/stammes_arbeitsbereich_findungskommission:
-        one: Arbeitsbereich Findungskommission
-        other: Arbeitsbereiche Findungskommission
-
-      group/stammes_arbeitsbereich_rainbow:
-        one: Arbeitsbereich Rainbow
-        other: Arbeitsbereiche Rainbow
-
-      group/stammes_arbeitsbereich_inklusion:
-        one: Arbeitsbereich Inklusion
-        other: Arbeitsbereiche Inklusion
-
-      group/stammes_arbeitsbereich_sonstiges:
-        one: Sonstiger Arbeitsbereich
-        other: Sonstige Arbeitsbereiche
 
       group/meute:
         one: Meute
@@ -364,19 +596,6 @@ de:
       group/mitglieder/zweitmitgliedschaft:
         one: Zweitmitgliedschaft
         description: Zweitmitgliedschaft
-
-      group/arbeitsbereich/beauftragt:
-        one: Beauftragte*r
-        description: Beauftragte*r
-      group/arbeitsbereich/ak_leitung:
-        one: AK Leiter*in
-        description: AK Leiter*in
-      group/arbeitsbereich/ak_mitarbeiter:
-        one: AK Mitarbeiter*in
-        description: AK Mitarbeiter*in
-      group/arbeitsbereich/ak_freier_mitarbeiter:
-        one: AK Freie*r Mitarbeiter*in
-        description: AK Freie*r Mitarbeiter*in
 
       group/gruppierungsspezifisches_gremium/leitung:
         one: Leiter*in
@@ -519,6 +738,16 @@ de:
         one: Hauptamtliche*r
         description: Hauptamtliche*r
 
+      group/bezirksversammlung/versammlungsleiter:
+        one: Versammlungsleiter*in
+        description: Versammlungsleiter*in
+      group/bezirksversammlung/protokollführer:
+        one: Protokollführer*in
+        description: Protokollführer*in
+      group/bezirksversammlung/techniker:
+        one: Techniker*in
+        description: Techniker*in
+
       group/stamm/stammesfuehrung:
         one: Stammesführer*in
         description: Stammesführer*in
@@ -579,19 +808,6 @@ de:
       group/stamm/stammesgeschaeftsstelle:
         one: Stammesgeschäftsstelle
         description: Stammesgeschäftsstelle
-
-      group/stammes_arbeitsbereich/beauftragt:
-        one: Beauftragte*r
-        description: Beauftragte*r
-      group/stammes_arbeitsbereich/ak_leitung:
-        one: AK Leiter*in
-        description: AK Leiter*in
-      group/stammes_arbeitsbereich/ak_mitarbeiter:
-        one: AK Mitarbeiter*in
-        description: AK Mitarbeiter*in
-      group/stammes_arbeitsbereich/ak_freier_mitarbeiter:
-        one: AK Freie*r Mitarbeiter*in
-        description: AK Freie*r Mitarbeiter*in
 
       group/meute/meutenfuehrung:
         one: Meutenführer*in
