@@ -33,6 +33,7 @@ of Bdp.
         * Versammlungsleitung: []
         * Protokollführung: []
         * Technik: []
+      * Projekte
       * Projekt
         * Lagerleiter*in: [:group_read, :contact_data]
         * Stv. Lagerleiter*in: [:group_read, :contact_data]
@@ -43,6 +44,26 @@ of Bdp.
       * Bereich
         * Bereichsleitung: [:group_read, :contact_data]
         * Mitarbeiter*in: []
+      * Arbeitsbereiche
+      * Stufen
+      * Wölflingsstufe
+      * Pfadfinder*innenstufe
+      * Ranger/Rover-Stufe
+      * Erwachsenenarbeit
+      * Ausbildung
+      * Internationales
+      * intakt
+      * intakt - Prävention und Intervention
+      * intakt - psychische Gesundheit
+      * intakt - Macht und Miteinander
+      * Öffentlichkeitsarbeit/Medien
+      * Politische Bildung/Politik und Gesellschaft
+      * IT
+      * Findungskommission
+      * Rainbow
+      * Inklusion
+      * Wachstum und Stämme
+      * Sonstiger Arbeitsbereich
     * Landesverband < Bundesebene
       * Landesverband
         * Landesmitgliederverwalter*in: 2FA [:layer_and_below_full, :contact_data]
@@ -75,6 +96,26 @@ of Bdp.
         * Versammlungsleiter*in: []
         * Protokollführer*in: []
         * Techniker*in: []
+      * Arbeitsbereiche
+      * Stufen
+      * Wölflingsstufe
+      * Pfadfinder*innenstufe
+      * Ranger/Rover-Stufe
+      * Erwachsenenarbeit
+      * Ausbildung
+      * Internationales
+      * intakt
+      * intakt - Prävention und Intervention
+      * intakt - psychische Gesundheit
+      * intakt - Macht und Miteinander
+      * Öffentlichkeitsarbeit/Medien
+      * Politische Bildung/Politik und Gesellschaft
+      * IT
+      * Findungskommission
+      * Rainbow
+      * Inklusion
+      * Wachstum und Stämme
+      * Sonstiger Arbeitsbereich
     * Bezirk < Landesverband
       * Bezirk
         * Bezirkssprecher*in: 2FA [:layer_and_below_read, :contact_data]
@@ -86,12 +127,36 @@ of Bdp.
         * Kassenprüfer*in: []
       * Bezirksgeschäftsstelle
         * Hauptamtliche*r: 2FA [:group_read]
+      * Bezirksversammlung
+        * Versammlungsleiter*in: []
+        * Protokollführer*in: []
+        * Techniker*in: []
+      * Arbeitsbereiche
+      * Stufen
+      * Wölflingsstufe
+      * Pfadfinder*innenstufe
+      * Ranger/Rover-Stufe
+      * Erwachsenenarbeit
+      * Ausbildung
+      * Internationales
+      * intakt
+      * intakt - Prävention und Intervention
+      * intakt - psychische Gesundheit
+      * intakt - Macht und Miteinander
+      * Öffentlichkeitsarbeit/Medien
+      * Politische Bildung/Politik und Gesellschaft
+      * IT
+      * Findungskommission
+      * Rainbow
+      * Inklusion
+      * Wachstum und Stämme
+      * Sonstiger Arbeitsbereich
     * Stamm < Bezirk, Landesverband
       * Stamm
         * Stammesführer*in: [:group_read]
         * Stv. Stammesführer*in: [:group_read]
-        * Stammesschatzmeister*in: [:group_read]
-        * Stv. Stammesschatzmeister*in: [:group_read]
+        * Stammesschatzmeister*in: [:group_read, :finance]
+        * Stv. Stammesschatzmeister*in: [:group_read, :finance]
         * Empfänger*in Aufnahmeantrag in Stammesführung: []
         * Stammesmitgliederverwalter*in: 2FA [:layer_and_below_full]
         * Erfasser*in Führungszeugnis: 2FA [:layer_and_below_read, :group_and_below_efz]
@@ -108,6 +173,27 @@ of Bdp.
         * Ersatz-Landesdelegierte*r: []
         * Bezirksdelegierte*r: []
         * Stammesgeschäftsstelle: []
+      * Arbeitsbereiche
+      * Stufen
+      * Wölflingsstufe
+      * Pfadfinder*innenstufe
+      * Ranger/Rover-Stufe
+      * Erwachsenenarbeit
+      * Ausbildung
+      * Internationales
+      * intakt
+      * intakt - Prävention und Intervention
+      * intakt - psychische Gesundheit
+      * intakt - Macht und Miteinander
+      * Öffentlichkeitsarbeit/Medien
+      * Politische Bildung/Politik und Gesellschaft
+      * IT
+      * Findungskommission
+      * Rainbow
+      * Inklusion
+      * Wachstum und Stämme
+      * Sonstiger Arbeitsbereich
+      * Gruppen
       * Meute
         * Meutenführer*in: [:group_read]
         * Stv. Meutenführer*in: [:group_read]
@@ -125,7 +211,7 @@ of Bdp.
         * Ranger/Rover: []
     * Global
       * Mitglieder
-        * Adressverwaltung: []
+        * Ordentliche Mitgliedschaft: []
         * Fördermitgliedschaft: []
         * Zweitmitgliedschaft: []
       * Heim/Zeltplatz/Liegenschaft
@@ -144,11 +230,19 @@ of Bdp.
         * Adressverwaltung: [:group_and_below_full]
         * Kontakt: []
       * Global
-        * Beauftragte*r: [:group_read]
+        * Bezirksbeauftragte*r: [:group_read]
         * AK Leiter*in: [:group_read]
         * AK Mitarbeiter*in: [:group_read]
         * AK Freie*r Mitarbeiter*in: []
-        * Beauftragte*r: [:group_read, :contact_data]
+        * Stammesbeauftragte*r: [:group_read]
+        * AK Leiter*in: [:group_read]
+        * AK Mitarbeiter*in: [:group_read]
+        * AK Freie*r Mitarbeiter*in: []
+        * Landesbeauftragte*r: [:group_read, :contact_data]
+        * AK Leiter*in: [:group_read, :contact_data]
+        * AK Mitarbeiter*in: [:group_read]
+        * AK Freie*r Mitarbeiter*in: []
+        * Bundesbeauftragte*r: [:group_read, :contact_data]
         * AK Leiter*in: [:group_read, :contact_data]
         * AK Mitarbeiter*in: [:group_read]
         * AK Freie*r Mitarbeiter*in: []
