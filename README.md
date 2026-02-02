@@ -14,17 +14,17 @@ of Bdp.
         * Kassenprüfer*in: []
         * Bundesmitarbeiter*in: []
       * Bundesvorstand
-        * Bundesvorsitzende*r: 2FA [:layer_and_below_full, :contact_data]
-        * Stv. Bundesvorsitzende*r: 2FA [:layer_and_below_full, :contact_data]
-        * Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance]
-        * Stv. Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance]
+        * Bundesvorsitzende*r: 2FA [:layer_and_below_full, :contact_data, :assign_restricted_fee_kinds]
+        * Stv. Bundesvorsitzende*r: 2FA [:layer_and_below_full, :contact_data, :assign_restricted_fee_kinds]
+        * Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance, :assign_restricted_fee_kinds]
+        * Stv. Bundesschatzmeister*in: 2FA [:layer_and_below_full, :contact_data, :finance, :assign_restricted_fee_kinds]
         * Empfänger*in Aufnahmeantrag Über18: []
       * Bundesgeschäftsstelle
-        * Bundesgeschäftsführer*in: 2FA [:layer_and_below_full, :admin, :contact_data, :finance]
+        * Bundesgeschäftsführer*in: 2FA [:layer_and_below_full, :admin, :contact_data, :finance, :assign_restricted_fee_kinds]
         * Mitgliederverwalter*in Bund: 2FA [:layer_and_below_full, :admin, :contact_data, :finance]
-        * Hauptamtliche Sachbearbeiter*in: 2FA [:layer_and_below_full, :contact_data]
-        * Hauptamtliche Referent*in: 2FA [:layer_and_below_read, :contact_data]
-        * Hauptamtliche*r: 2FA [:contact_data]
+        * Hauptamtliche Sachbearbeiter*in: 2FA [:layer_and_below_full, :contact_data, :assign_restricted_fee_kinds]
+        * Hauptamtliche Referent*in: 2FA [:layer_and_below_read, :contact_data, :assign_restricted_fee_kinds]
+        * Hauptamtliche*r: 2FA [:contact_data, :assign_restricted_fee_kinds]
       * Ombudsrat
         * Mitglied: []
       * Betrieb
