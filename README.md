@@ -9,7 +9,7 @@ of Bdp.
 <!-- roles:start -->
     * Bundesebene
       * Bundesebene
-        * MV-Administrator*in: 2FA [:layer_and_below_full, :admin, :impersonation]
+        * MV-Administrator*in: 2FA [:layer_and_below_full, :admin, :finance, :impersonation, :assign_restricted_fee_kinds]
         * Erfasser*in Führungszeugnis: 2FA [:layer_and_below_read, :group_and_below_efz]
         * Kassenprüfer*in: []
         * Bundesmitarbeiter*in: []
@@ -21,7 +21,7 @@ of Bdp.
         * Empfänger*in Aufnahmeantrag Über18: []
       * Bundesgeschäftsstelle
         * Bundesgeschäftsführer*in: 2FA [:layer_and_below_full, :admin, :contact_data, :finance, :assign_restricted_fee_kinds]
-        * Mitgliederverwalter*in Bund: 2FA [:layer_and_below_full, :admin, :contact_data, :finance]
+        * Mitgliederverwalter*in Bund: 2FA [:layer_and_below_full, :admin, :contact_data, :finance, :assign_restricted_fee_kinds]
         * Hauptamtliche Sachbearbeiter*in: 2FA [:layer_and_below_full, :contact_data, :assign_restricted_fee_kinds]
         * Hauptamtliche Referent*in: 2FA [:layer_and_below_read, :contact_data, :assign_restricted_fee_kinds]
         * Hauptamtliche*r: 2FA [:contact_data, :assign_restricted_fee_kinds]
@@ -66,7 +66,7 @@ of Bdp.
       * Sonstiger Arbeitsbereich
     * Landesverband < Bundesebene
       * Landesverband
-        * Landesmitgliederverwalter*in: 2FA [:layer_and_below_full, :contact_data]
+        * Landesmitgliederverwalter*in: 2FA [:layer_and_below_full, :contact_data, :assign_restricted_fee_kinds]
         * Erfasser*in Führungszeugnis: 2FA [:layer_and_below_read, :group_and_below_efz]
         * Kassenprüfer*in: []
         * Stammeskompass-Moderator*in: []
@@ -83,8 +83,8 @@ of Bdp.
       * Landesvorstand
         * Landesvorsitzende*r: 2FA [:layer_and_below_read, :contact_data]
         * Stv. Landesvorsitzende*r: 2FA [:layer_and_below_read, :contact_data]
-        * Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance]
-        * Stv. Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance]
+        * Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance, :assign_restricted_fee_kinds]
+        * Stv. Landesschatzmeister*in: 2FA [:layer_and_below_read, :contact_data, :finance, :assign_restricted_fee_kinds]
         * Empfänger*in Aufnahmeantrag LV Unter18: []
         * Empfänger*in Aufnahmeantrag LV Über18: []
       * Landesgeschäftsstelle
@@ -153,10 +153,10 @@ of Bdp.
       * Sonstiger Arbeitsbereich
     * Stamm < Bezirk, Landesverband
       * Stamm
-        * Stammesführer*in: [:group_read]
-        * Stv. Stammesführer*in: [:group_read]
-        * Stammesschatzmeister*in: [:group_read, :finance]
-        * Stv. Stammesschatzmeister*in: [:group_read, :finance]
+        * Stammesführer*in: [:layer_and_below_read]
+        * Stv. Stammesführer*in: [:layer_and_below_read]
+        * Stammesschatzmeister*in: [:layer_and_below_read, :finance]
+        * Stv. Stammesschatzmeister*in: [:layer_and_below_read, :finance]
         * Empfänger*in Aufnahmeantrag in Stammesführung: []
         * Stammesmitgliederverwalter*in: 2FA [:layer_and_below_full]
         * Erfasser*in Führungszeugnis: 2FA [:layer_and_below_read, :group_and_below_efz]
@@ -199,8 +199,8 @@ of Bdp.
         * Stv. Meutenführer*in: [:group_read]
         * Wölfling: []
       * Gilde
-        * Gildenführer*in: [:group_read]
-        * Stv. Gildenführer*in: [:group_read]
+        * Gildenführer*in: [:group_and_below_read]
+        * Stv. Gildenführer*in: [:group_and_below_read]
       * Sippe
         * Sippenführer*in: [:group_read]
         * Stv. Sippenführer*in: [:group_read]
@@ -230,21 +230,21 @@ of Bdp.
         * Adressverwaltung: [:group_and_below_full]
         * Kontakt: []
       * Global
-        * Bezirksbeauftragte*r: [:group_read]
-        * AK Leiter*in: [:group_read]
-        * AK Mitarbeiter*in: [:group_read]
+        * Bezirksbeauftragte*r: [:layer_and_below_read]
+        * AK Leiter*in: [:group_and_below_read]
+        * AK Mitarbeiter*in: [:group_and_below_read]
         * AK Freie*r Mitarbeiter*in: []
-        * Stammesbeauftragte*r: [:group_read]
-        * AK Leiter*in: [:group_read]
-        * AK Mitarbeiter*in: [:group_read]
+        * Stammesbeauftragte*r: [:layer_and_below_read]
+        * AK Leiter*in: [:group_and_below_read]
+        * AK Mitarbeiter*in: [:group_and_below_read]
         * AK Freie*r Mitarbeiter*in: []
-        * Landesbeauftragte*r: [:group_read, :contact_data]
-        * AK Leiter*in: [:group_read, :contact_data]
-        * AK Mitarbeiter*in: [:group_read]
+        * Landesbeauftragte*r: [:layer_and_below_read, :contact_data]
+        * AK Leiter*in: [:group_and_below_read, :contact_data]
+        * AK Mitarbeiter*in: [:group_and_below_read]
         * AK Freie*r Mitarbeiter*in: []
-        * Bundesbeauftragte*r: [:group_read, :contact_data]
-        * AK Leiter*in: [:group_read, :contact_data]
-        * AK Mitarbeiter*in: [:group_read]
+        * Bundesbeauftragte*r: [:layer_and_below_read, :contact_data]
+        * AK Leiter*in: [:group_and_below_read, :contact_data]
+        * AK Mitarbeiter*in: [:group_and_below_read]
         * AK Freie*r Mitarbeiter*in: []
 
 (Output of rake app:hitobito:roles)
