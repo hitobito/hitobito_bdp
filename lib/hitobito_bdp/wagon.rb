@@ -22,6 +22,13 @@ module HitobitoBdp
     config.to_prepare do
       # extend application classes here
       # Group.include Bdp::Group
+
+      Group::Gruppen.children(
+        Group::Meute,
+        Group::Gilde,
+        Group::Sippe,
+        Group::Runde
+      )
     end
 
     initializer "bdp.add_settings" do |_app|
