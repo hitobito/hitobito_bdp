@@ -12,9 +12,9 @@ admin:
 leader:
   person: leader
   group: root
-  type: Group::Sippe::Sippenfuehrung
+  type: Group::StammGruppePfadfinder::Leitung
 
 member:
   person: member
   group: root
-  type: Group::Sippe::Pfadfinder
+  type: Group::StammGruppePfadfinder::Mitglied

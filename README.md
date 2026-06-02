@@ -194,13 +194,13 @@ of Bdp.
       * Wachstum und Stämme
       * Sonstiger Arbeitsbereich
       * Gruppen
+      * Gilde
+        * Gildenführer*in: [:group_and_below_read]
+        * Stv. Gildenführer*in: [:group_and_below_read]
       * Meute
         * Meutenführer*in: [:group_read]
         * Stv. Meutenführer*in: [:group_read]
         * Wölfling: []
-      * Gilde
-        * Gildenführer*in: [:group_and_below_read]
-        * Stv. Gildenführer*in: [:group_and_below_read]
       * Sippe
         * Sippenführer*in: [:group_read]
         * Stv. Sippenführer*in: [:group_read]
