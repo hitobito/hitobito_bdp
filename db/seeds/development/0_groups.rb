@@ -87,84 +87,84 @@ staemme = Group::Stamm.seed(:name, :parent_id,
   }.merge(seeder.group_attributes),
 )
 
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Die Meute",
    parent_id: staemme[0].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Schwarzer Panther",
    parent_id: staemme[1].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Kängurus",
    parent_id: staemme[2].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Geckos",
    parent_id: staemme[2].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Mondvögel",
    parent_id: staemme[2].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Wölflinge",
    parent_id: staemme[3].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Werwölflinge",
    parent_id: staemme[4].id})
-Group::Meute.seed(:name, :parent_id,
+Group::StammGruppeWoelflinge.seed(:name, :parent_id,
   {name: "Baghira",
    parent_id: staemme[5].id})
 
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Die Pfadfinder-Stufe",
    parent_id: staemme[0].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Füchse",
    parent_id: staemme[1].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Schnabeltiere",
    parent_id: staemme[2].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Lemuren",
    parent_id: staemme[2].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Flughörnchen",
    parent_id: staemme[2].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Pfadfinder*innen",
    parent_id: staemme[3].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Mondphönixe",
    parent_id: staemme[4].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Sternkrieger",
    parent_id: staemme[4].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Beluga",
    parent_id: staemme[4].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Eiswölfe",
    parent_id: staemme[4].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Seegurke",
    parent_id: staemme[5].id})
-Group::Sippe.seed(:name, :parent_id,
+Group::StammGruppePfadfinder.seed(:name, :parent_id,
   {name: "Schneeeule",
    parent_id: staemme[5].id})
 
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Ranger & Rover",
    parent_id: staemme[0].id})
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Die Runde",
    parent_id: staemme[1].id})
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Die runde Runde",
    parent_id: staemme[3].id})
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Ranger & Rover",
    parent_id: staemme[4].id})
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Feuerfüchse",
    parent_id: staemme[5].id})
-Group::Runde.seed(:name, :parent_id,
+Group::StammGruppeRover.seed(:name, :parent_id,
   {name: "Singerrunde der Passiven",
    parent_id: staemme[5].id})
 

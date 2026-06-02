@@ -473,19 +473,19 @@ de:
         one: Stamm
         other: Stämme
 
-      group/meute:
+      group/stamm_gruppe_woelflinge:
         one: Meute
         other: Meuten
 
-      group/gilde:
+      group/stamm_gruppe_gilde:
         one: Gilde
         other: Gilden
 
-      group/sippe:
+      group/stamm_gruppe_pfadfinder:
         one: Sippe
         other: Sippen
 
-      group/runde:
+      group/stamm_gruppe_rover:
         one: Runde
         other: Runden
 
@@ -809,39 +809,39 @@ de:
         one: Stammesgeschäftsstelle
         description: Stammesgeschäftsstelle
 
-      group/meute/meutenfuehrung:
+      group/stamm_gruppe_woelflinge/leitung:
         one: Meutenführer*in
         description: Meutenführer*in
-      group/meute/meutenfuehrung_stv:
+      group/stamm_gruppe_woelflinge/hilfsleitung:
         one: Stv. Meutenführer*in
         description: Stv. Meutenführer*in
-      group/meute/woelfling:
+      group/stamm_gruppe_woelflinge/mitglied:
         one: Wölfling
         description: Wölfling
 
-      group/gilde/gildenfuehrung:
+      group/stamm_gruppe_gilde/leitung:
         one: Gildenführer*in
         description: Gildenführer*in
-      group/gilde/gildenfuehrung_stv:
+      group/stamm_gruppe_gilde/hilfsleitung:
         one: Stv. Gildenführer*in
         description: Stv. Gildenführer*in
 
-      group/sippe/sippenfuehrung:
+      group/stamm_gruppe_pfadfinder/leitung:
         one: Sippenführer*in
         description: Sippenführer*in
-      group/sippe/sippenfuehrung_stv:
+      group/stamm_gruppe_pfadfinder/hilfsleitung:
         one: Stv. Sippenführer*in
         description: Stv. Sippenführer*in
-      group/sippe/pfadfinder:
+      group/stamm_gruppe_pfadfinder/mitglied:
         one: Pfadfinder*in
         description: Pfadfinder*in
 
-      group/runde/rundensprecher:
+      group/stamm_gruppe_rover/leitung:
         one: Rundensprecher*in
         description: Rundensprecher*in
-      group/runde/rundensprecher_stv:
+      group/stamm_gruppe_rover/hilfsleitung:
         one: Stv. Rundensprecher*in
         description: Stv. Rundensprecher*in
-      group/runde/ranger_rover:
+      group/stamm_gruppe_rover/mitglied:
         one: Ranger/Rover
         description: Ranger/Rover
