@@ -845,3 +845,7 @@ de:
       group/stamm_gruppe_rover/mitglied:
         one: Ranger/Rover
         description: Ranger/Rover
+    attributes:
+      group:
+        stamm_typen:
+          other: Aufbaugruppe
