@@ -24,6 +24,12 @@ module HitobitoBdp
       # Group.include Bdp::Group
 
       Group::Gruppen.children Group::StammGruppeGilde
+
+      Group::Stamm.used_attributes += [:efz_in_aufnahmeantrag]
+
+      [Group::Bundesebene, Group::Landesverband, Group::Bezirk, Group::Stamm].each do |layer_group|
+        layer_group.used_attributes += [:rechtsform]
+      end
     end
 
     initializer "bdp.add_settings" do |_app|
