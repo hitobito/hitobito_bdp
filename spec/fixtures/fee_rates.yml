@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+#  Copyright (c) 2026, Bund der Pfadfinderinnen und Pfadfinder e.V. This file is part of
+#  hitobito_bdp and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_bdp
+
+
+jahresbeitragssatz:
+  fee_kind: bayern_kind
+  name: Jahresbeitrag
+  amount: 90.0
+  valid_from: 2024-01-01
+
+halbjahresbeitragssatz:
+  fee_kind: bayern_kind
+  name: Halbjahresbeitrag
+  amount: 45.0
+  valid_from: 2025-01-01
+  max_member_months: 6
+
+kleinkinderbeitragssatz:
+  fee_kind: bayern_kind
+  name: Kleinkinderbeitrag
+  amount: 20
+  valid_from: 2025-01-01
+  valid_until: <%= DateTime.current.end_of_year.to_date.iso8601 %>
+  max_age: 8

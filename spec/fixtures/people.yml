@@ -3,7 +3,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 admin:
   first_name: Chief
   last_name: Admin
@@ -24,3 +23,36 @@ member:
   last_name: Member
   email: member0@hitobito.example.com
   primary_group: root
+
+bund_layer_and_below_full:
+  first_name: Bund
+  last_name: Layer & Below Full
+  email: bdp.bund_layer_and_below_full@hitobito.example.com
+  contact_data_visible: true
+  primary_group: root_bundesvorstand
+
+mauersegler_mitgliederverwalter:
+  first_name: Mauersegler
+  last_name: Mitgliederverwalter
+  email: bdp.mauersegler_mitgliederverwalter@hitobito.example.com
+  contact_data_visible: true
+  primary_group: oberbayern_mauersegler
+
+mauersegler_leiter:
+  first_name: Mauersegler
+  last_name: Leiter
+  email: bdp.mauersegler_leiter@hitobito.example.com
+  contact_data_visible: true
+  primary_group: oberbayern_mauersegler_die_pfadfinder
+
+mauersegler_mitglied:
+  first_name: Mauersegler
+  last_name: Mitglied
+  email: bdp.mauersegler_mitglied@hitobito.example.com
+  primary_group: oberbayern_mauersegler_die_pfadfinder
+
+mauersegler_mitglied2:
+  first_name: Mauersegler
+  last_name: Mitglied2
+  email: bdp.mauersegler_mitglied2@hitobito.example.com
+  primary_group: oberbayern_mauersegler_die_woelflinge

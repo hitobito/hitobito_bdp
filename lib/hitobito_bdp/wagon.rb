@@ -21,7 +21,15 @@ module HitobitoBdp
 
     config.to_prepare do
       # extend application classes here
-      # Group.include Bdp::Group
+      Role.prepend Bdp::Role
+      GroupDecorator.prepend Bdp::GroupDecorator
+      ServiceToken.prepend Bdp::ServiceToken
+
+      RoleAbility.prepend Bdp::RoleAbility
+      SelfRegistrationResource.prepend Bdp::SelfRegistrationResource
+
+      Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
+      Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController
 
       Group::Gruppen.children Group::StammGruppeGilde
 
@@ -29,6 +37,20 @@ module HitobitoBdp
 
       [Group::Bundesebene, Group::Landesverband, Group::Bezirk, Group::Stamm].each do |layer_group|
         layer_group.used_attributes += [:rechtsform]
+      end
+
+      Role::Permissions << :create_membership_roles
+
+      [Group::Mitglieder::OrdentlicheMitgliedschaft,
+        Group::Mitglieder::Foerdermitgliedschaft,
+        Group::Mitglieder::Zweitmitgliedschaft].each do |role|
+        role.membership_role = true
+      end
+
+      [Group::Bundesebene::MVAdmin,
+        Group::Bundesgeschaeftsstelle::Bundesgeschaeftsfuehrung,
+        Group::Bundesgeschaeftsstelle::MitgliederverwaltungBund].each do |role|
+        role.permissions += [:create_membership_roles]
       end
     end
 

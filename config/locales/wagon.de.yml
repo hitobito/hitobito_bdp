@@ -849,3 +849,14 @@ de:
       group:
         stamm_typen:
           other: Aufbaugruppe
+      service_token:
+        create_membership_roles: Mitgliedsrollen erstellen
+      role:
+        class:
+          permission:
+            description:
+              create_membership_roles: "Darf Mitgliedsrollen erstellen."
+  groups:
+    self_registration:
+      alert:
+        membership_role_not_allowed: "Für die Aufnahme als Mitglied muss das offizielle Aufnahmetool verwendet werden."

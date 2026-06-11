@@ -9,4 +9,18 @@ require "spec_helper"
 
 describe Group do
   include_examples "group types"
+
+  describe "validate_self_registration_role_type" do
+    let(:group) { groups(:oberbayern_mauersegler_mitglieder) }
+
+    context "with membership role as self_registration_role_type" do
+      before do
+        group.self_registration_role_type = "Group::Mitglieder::OrdentlicheMitgliedschaft"
+      end
+
+      it "is valid" do
+        expect(group).to be_valid
+      end
+    end
+  end
 end

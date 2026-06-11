@@ -3,7 +3,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 admin:
   person: admin
   group: root
@@ -18,3 +17,38 @@ member:
   person: member
   group: root
   type: Group::StammGruppePfadfinder::Mitglied
+
+bund_layer_and_below_full:
+  person: bund_layer_and_below_full
+  group: root_bundesvorstand
+  type: Group::Bundesvorstand::Bundesvorsitz
+
+mauersegler_mitgliederverwalter:
+  person: mauersegler_mitgliederverwalter
+  group: oberbayern_mauersegler
+  type: Group::Stamm::Stammesmitgliederverwaltung
+
+mauersegler_leiter_ordentliche_mitgliedschaft:
+  person: mauersegler_leiter
+  group: oberbayern_mauersegler_mitglieder
+  type: Group::Mitglieder::OrdentlicheMitgliedschaft
+
+mauersegler_leiter_pfadfinder:
+  person: mauersegler_leiter
+  group: oberbayern_mauersegler_die_pfadfinder
+  type: Group::StammGruppePfadfinder::Leitung
+
+mauersegler_mitglied_ordentliche_mitgliedschaft:
+  person: mauersegler_mitglied
+  group: oberbayern_mauersegler_mitglieder
+  type: Group::Mitglieder::OrdentlicheMitgliedschaft
+
+mauersegler_mitglied_pfadfinder:
+  person: mauersegler_mitglied
+  group: oberbayern_mauersegler_die_pfadfinder
+  type: Group::StammGruppePfadfinder::Mitglied
+
+mauersegler_mitglied2_woelflinge:
+  person: mauersegler_mitglied2
+  group: oberbayern_mauersegler_die_woelflinge
+  type: Group::StammGruppeWoelflinge::Mitglied
