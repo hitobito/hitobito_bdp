@@ -7,11 +7,5 @@
 
 module Bdp::Groups::SelfInscriptionController
   extend ActiveSupport::Concern
-  include Bdp::AssertMembershipRoleCreatePermission
-
-  prepended do
-    # Membership roles must not be created via self-inscription.
-    # They can only be created through the official admission tool.
-    before_action :assert_membership_role_create_permission
-  end
+  include Bdp::MissingMembershipRoleCreatePermission
 end

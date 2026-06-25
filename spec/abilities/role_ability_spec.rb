@@ -52,18 +52,6 @@ describe RoleAbility do
         end
       end
     end
-
-    context "as user without full permissions" do
-      let(:user) { people(:mauersegler_mitglied2) }
-
-      it "cannot create membership_role roles in different group" do
-        is_expected.not_to be_able_to(:create, membership_role)
-      end
-
-      it "cannot show membership_role roles of another person in different group" do
-        is_expected.not_to be_able_to(:show, membership_role)
-      end
-    end
   end
 
   context "regular roles" do

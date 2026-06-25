@@ -7,13 +7,5 @@
 
 module Bdp::Groups::SelfRegistrationController
   extend ActiveSupport::Concern
-  include Bdp::AssertMembershipRoleCreatePermission
-
-  # Membership roles must not be created via self-registration.
-  # They can only be created through the official admission tool.
-  # We want the check to happen before the redirect to self-inscription
-  # but after the other before actions, so we override this method.
-  def redirect_to_group_if_necessary
-    assert_membership_role_create_permission || super
-  end
+  include Bdp::MissingMembershipRoleCreatePermission
 end
