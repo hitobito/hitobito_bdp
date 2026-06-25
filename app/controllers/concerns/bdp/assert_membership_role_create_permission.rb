@@ -7,8 +7,8 @@
 
 module Bdp::AssertMembershipRoleCreatePermission
   # Check if the current user has permission to create membership roles.
-  # Membership roles are special roles on which :create is only granted
-  # if the user has a role with :create_membership_roles permission.
+  # Only users/tokens with :create_membership_roles permission can create
+  # membership roles via self-registration or self-inscription.
   def assert_membership_role_create_permission
     role_type = group.self_registration_role_type&.safe_constantize
     return unless role_type&.membership_role

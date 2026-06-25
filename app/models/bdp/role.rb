@@ -15,16 +15,4 @@ module Bdp::Role
     # They are meant to get created by the official admission tool using the api.
     class_attribute :membership_role, default: false
   end
-
-  class_methods do
-    # Override Core's restricted? to mark membership roles as restricted.
-    # This ensures membership roles are treated as restricted by the core
-    # authorization system, preventing them from being created through
-    # regular role assignment flows. The create permission is then
-    # specifically granted via Bdp::RoleAbility for users with
-    # :create_membership_roles permission.
-    def restricted?
-      membership_role || super
-    end
-  end
 end

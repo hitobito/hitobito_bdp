@@ -22,7 +22,6 @@ module HitobitoBdp
     config.to_prepare do
       # extend application classes here
       Role.prepend Bdp::Role
-      GroupDecorator.prepend Bdp::GroupDecorator
       ServiceToken.prepend Bdp::ServiceToken
 
       RoleAbility.prepend Bdp::RoleAbility

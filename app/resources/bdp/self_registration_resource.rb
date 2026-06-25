@@ -15,11 +15,8 @@ module Bdp::SelfRegistrationResource
 
   private
 
-  # Membership roles are restricted by default in the core RoleAbility.
-  # Users/tokens with :create_membership_roles permission get the :create
-  # permission for membership roles.
-  # This additional authorization check ensures that only those users/tokens
-  # can create membership roles through the self-registration API.
+  # Only users/tokens with :create_membership_roles permission can create
+  # membership roles through the self-registration API.
   # As the role instance is not available yet, we create a new temporary
   # instance of the correct role type and group to check the authorization.
   def authorize_membership_role_creation
