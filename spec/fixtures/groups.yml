@@ -4,17 +4,17 @@
 #  https://github.com/hitobito/hitobito_bdp
 
 #  Groups Tree:
-#  root (1, 22)
-#  ├── root_bundesvorstand (2, 3)
-#  └── bayern (4, 21)
-#      ├── bayern_landesvorstand (5, 6)
-#      └── oberbayern (7, 20)
-#          └── oberbayern_mauersegler (8, 19)
-#              ├── oberbayern_mauersegler_mitglieder (9, 10)
-#              └── oberbayern_mauersegler_gruppen (11, 18)
-#                  ├── oberbayern_mauersegler_die_woelflinge (12, 13)
-#                  ├── oberbayern_mauersegler_die_meute (14, 15)
-#                  └── oberbayern_mauersegler_die_pfadfinder (16, 17)
+#  root
+#  ├── root_bundesvorstand
+#  └── bayern
+#      ├── bayern_landesvorstand
+#      └── oberbayern
+#          └── oberbayern_mauersegler
+#              ├── oberbayern_mauersegler_mitglieder
+#              └── oberbayern_mauersegler_gruppen
+#                  ├── oberbayern_mauersegler_die_woelflinge
+#                  ├── oberbayern_mauersegler_die_meute
+#                  └── oberbayern_mauersegler_die_pfadfinder
 
 root:
   parent:
