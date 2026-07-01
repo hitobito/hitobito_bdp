@@ -7,6 +7,7 @@
 
 module Bdp::SelfRegistrationResource
   extend ActiveSupport::Concern
+  include Bdp::MissingMembershipRoleCreatePermission
 
   def authorize_create(model)
     super
@@ -21,9 +22,10 @@ module Bdp::SelfRegistrationResource
   # instance of the correct role type and group to check the authorization.
   def authorize_membership_role_creation
     role_class = role_type&.safe_constantize
-    return unless role_class&.membership_role
-
     role = role_class.new(group: group)
-    current_ability.authorize!(:create, role)
+
+    if missing_membership_role_create_permission?(role)
+      current_ability.authorize!(:create, role)
+    end
   end
 end

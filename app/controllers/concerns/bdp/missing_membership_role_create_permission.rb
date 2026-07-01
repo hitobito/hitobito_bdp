@@ -17,6 +17,6 @@ module Bdp::MissingMembershipRoleCreatePermission
   def missing_membership_role_create_permission?(role)
     return false unless role&.membership_role
 
-    !current_ability&.can?(:create, role)
+    current_ability.nil? || current_ability.cannot?(:create, role)
   end
 end
