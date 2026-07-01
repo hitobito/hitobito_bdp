@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+#  Copyright (c) 2026, Bund der Pfadfinderinnen und Pfadfinder e.V. This file is part of
+#  hitobito_bdp and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_bdp
+
+module Bdp::RoleAbility
+  extend ActiveSupport::Concern
+
+  prepended do
+    on(Role) do
+      general(:create).not_membership_role_or_can_create_membership_roles
+    end
+  end
+
+  def not_membership_role_or_can_create_membership_roles
+    !subject.membership_role ||
+      user_context.all_permissions.include?(:create_membership_roles)
+  end
+end

@@ -3,7 +3,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 top_event_de:
   event_id: <%= ActiveRecord::FixtureSet.identify(:top_event) %>
   locale: de
