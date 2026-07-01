@@ -21,7 +21,6 @@ module HitobitoBdp
 
     config.to_prepare do
       # extend application classes here
-      Role.prepend Bdp::Role
       ServiceToken.prepend Bdp::ServiceToken
 
       RoleAbility.prepend Bdp::RoleAbility
@@ -39,12 +38,6 @@ module HitobitoBdp
       end
 
       Role::Permissions << :create_membership_roles
-
-      [Group::Mitglieder::OrdentlicheMitgliedschaft,
-        Group::Mitglieder::Foerdermitgliedschaft,
-        Group::Mitglieder::Zweitmitgliedschaft].each do |role|
-        role.membership_role = true
-      end
 
       [Group::Bundesebene::MVAdmin,
         Group::Bundesgeschaeftsstelle::Bundesgeschaeftsfuehrung,
