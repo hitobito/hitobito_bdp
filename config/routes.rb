@@ -5,11 +5,15 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-
 Rails.application.routes.draw do
   extend LanguageRouteScope
 
   language_scope do
     # Define wagon routes here
+  end
+
+  scope path: ApplicationResource.endpoint_namespace, module: :json_api,
+    constraints: {format: "jsonapi"}, defaults: {format: "jsonapi"} do
+    resources :membership_registrations, only: [:create], module: :bdp
   end
 end
