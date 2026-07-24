@@ -24,7 +24,10 @@ module HitobitoBdp
       ServiceToken.prepend Bdp::ServiceToken
 
       RoleAbility.prepend Bdp::RoleAbility
-      SelfRegistrationResource.prepend Bdp::SelfRegistrationResource
+      TokenAbility.prepend Bdp::TokenAbility
+
+      Group.prepend Bdp::Group
+      GroupDecorator.prepend Bdp::GroupDecorator
 
       Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
       Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController

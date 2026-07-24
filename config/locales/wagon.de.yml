@@ -856,6 +856,16 @@ de:
           permission:
             description:
               create_membership_roles: "Darf Mitgliedsrollen erstellen."
+  api:
+    errors:
+      resources:
+        membership_registration_resource:
+          role_type:
+            blank: "muss angegeben werden"
+            invalid: "ist nicht gültig"
+          group_id:
+            blank: "muss angegeben werden"
+            invalid: "ist nicht gültig"
   groups:
     self_registration:
       alert:
