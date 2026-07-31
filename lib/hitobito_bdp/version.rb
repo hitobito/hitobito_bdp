@@ -6,5 +6,5 @@
 #  https://github.com/hitobito/hitobito_bdp.
 
 module HitobitoBdp
-  VERSION = "2.10.4"
+  VERSION = "2.10.5"
 end
