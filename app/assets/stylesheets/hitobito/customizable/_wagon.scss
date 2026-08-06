@@ -7,3 +7,279 @@
 #page-header a {
   color: $blue;
 }
+
+.svg-bdp-text {
+  fill: #0e4278;
+}
+
+:root {
+  color-scheme: light;
+}
+
+// Add a $blue-light background color to the body
+body {
+  background-color: $blue-light;
+}
+
+#page {
+  background: $blue-light;
+}
+
+.sheet.parent,
+.sheet.current {
+  background: darken($white, 10%);
+}
+
+// Dark Mode color settings for BdP
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  .svg-bdp-text {
+    fill: #ffffff;
+  }
+  a {
+    color: $green;
+  }
+
+  a:hover {
+    color: $green-dark;
+  }
+
+  #page-header a {
+    color: $green;
+  }
+
+  #page-header a:hover {
+    color: $green-dark;
+  }
+
+  input {
+    background-color: $gray-darker;
+  }
+
+  .sheet, #content {
+    color: $gray-lighter;
+  }
+
+  .breadcrumb ul li {
+    text-shadow: none;
+  }
+
+  .sheet.parent {
+    background: $gray-darker;
+
+    .sheet.parent {
+      background: $gray-darker;
+    }
+  }
+
+  body {
+    background-color: $gray-darker;
+  }
+
+  #page {
+    background: $gray-darker;
+  }
+
+
+  #content {
+    background: $gray-darker;
+  }
+
+  .nav-left {
+    background-color: $gray-darker;
+
+    .nav-left-section {
+      background-color: $gray-darker;
+      border-top-color: $gray-dark;
+
+      &.active {
+        background-color: lighten($gray-darker, 5%);
+      }
+    }
+
+    a {
+      color: $green;
+    }
+
+    .divider {
+      color: $white;
+    }
+
+    a.is-active,
+    li.is-active > a {
+      background-color: rgba($blue, 0.4);
+      border-color: $blue;
+      color: $gray-lighter;
+    }
+
+    div.sheet.parent > .nav > li.active > a {
+      color: $gray-lighter !important;
+    }
+
+    a.is-archived,
+    li.is-archived > a {
+      color: $gray;
+    }
+
+    .nav-left-back {
+      color: $gray-light;
+    }
+  }
+
+  .nav-sub li.active > a {
+    color: $gray-lighter !important;
+  }
+
+  .table-responsive .table {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .table {
+    --bs-table-color: #{$gray-lighter};
+    --bs-table-bg: #{darken($gray-darker, 5%)};
+    --bs-table-border-color: #{$gray-dark};
+    --bs-table-striped-color: #{$gray-lighter};
+    --bs-table-striped-bg: #{darken($gray-darker, 2%)};
+    --bs-table-hover-color: #{$gray-lighter};
+    --bs-table-hover-bg: #{darken($gray-darker, 10%)};
+    --bs-table-active-color: #{$gray-lighter};
+    --bs-table-active-bg: #{darken($gray-darker, 5%)};
+  }
+
+  .table.table-basic td,
+  .table.table-basic th {
+    background-color: transparent;
+  }
+
+  .table.table-basic table td,
+  .table.table-basic table th {
+    border-bottom: none;
+  }
+
+  .table.table-basic td {
+    border-bottom: 1px solid $gray-dark;
+  }
+
+  .table.table-basic table td {
+    border-bottom: none;
+  }
+
+
+  .table-hover tbody tr:hover > td,
+  .table-hover tbody tr:hover > th {
+    background-color: darken($gray-lighter, 10%);
+  }
+
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea,
+  .form-control,
+  .form-select {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+    color-scheme: dark; // lets browser render native widgets (date pickers etc.) dark
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+
+  .input-group-text {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+  }
+
+  // compiled $blue-dark is near-black and invisible on dark backgrounds
+  .btn {
+    color: $white;
+
+    // compiled hover uses $purple background — use a subtle dark fill instead
+    &:hover,
+    &:focus,
+    &:active {
+      background: $gray-dark;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  .contactable {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .btn-outline-primary {
+    --bs-btn-color: #{$white};
+    --bs-btn-border-color: #{$white};
+    --bs-btn-hover-color: #{$black};
+    --bs-btn-hover-bg: #{$white};
+    --bs-btn-hover-border-color: #{$white};
+    --bs-btn-active-color: #{$black};
+    --bs-btn-active-bg: #{$white};
+    --bs-btn-active-border-color: #{$white};
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$gray-darker};
+    --bs-dropdown-color: #{$gray-lighter};
+    --bs-dropdown-border-color: #{$gray-dark};
+    --bs-dropdown-link-color: #{$gray-lighter};
+    --bs-dropdown-link-hover-color: #{$gray-lighter};
+    --bs-dropdown-link-hover-bg: #{darken($gray-darker, 8%)};
+    --bs-dropdown-link-active-color: #{$white};
+    --bs-dropdown-link-active-bg: #{$purple};
+    --bs-dropdown-link-disabled-color: #{$gray};
+    --bs-dropdown-divider-bg: #{$gray-dark};
+  }
+
+  .pagination {
+    --bs-pagination-bg: #{$gray-darker};
+    --bs-pagination-color: #{$gray-lighter};
+    --bs-pagination-border-color: #{$gray-dark};
+    --bs-pagination-hover-bg: #{darken($gray-darker, 8%)};
+    --bs-pagination-hover-color: #{$white};
+    --bs-pagination-hover-border-color: #{$gray-dark};
+    --bs-pagination-active-bg: #{$blue};
+    --bs-pagination-active-color: #{$white};
+    --bs-pagination-active-border-color: #{$blue};
+    --bs-pagination-disabled-bg: #{$gray-darker};
+    --bs-pagination-disabled-color: #{$gray};
+    --bs-pagination-disabled-border-color: #{$gray-dark};
+  }
+
+  .nav-pills .nav-link {
+    color: $gray-lighter;
+
+    &:hover {
+      color: $white;
+      background-color: darken($gray-darker, 8%);
+    }
+
+    &.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  .group-pills {
+    border-color: $gray-dark !important;
+
+    .border-start {
+      border-color: $gray-dark !important;
+    }
+  }
+
+  .progress {
+    background-color: $black;
+    border: 1px solid $gray-dark;
+  }
+
+  .progress-bar {
+    background-color: $blue;
+  }
+}

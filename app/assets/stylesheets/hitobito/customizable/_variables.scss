@@ -14,36 +14,37 @@ $min-contrast-ratio: 1;
 
 // Grays
 // -------------------------
-$black:                 #474E5D !default;
-$gray-darker:           #696E79 !default;
-$gray-dark:             #8b8b8b !default;
-$gray:                  #979CA6 !default;
-$gray-light:            #E8EBF0 !default;
-$gray-lighter:          #F8F9FA !default;
-$white:                 #fff !default;
+$black:                 #000000 !default;
+$gray-darker:           #222423 !default;
+$gray-dark:             #616161 !default;
+$gray:                  #808080 !default;
+$gray-light:            #a1a1a1 !default;
+$gray-lighter:          #e1e1e1 !default;
+$white:                 #ffffff !default;
 
 // Colors
 // ----------------------------
-$blue:                  #1d4899 !default;
-$blue-dark:             darken($blue, 10%) !default;
-$green:                 #ffcb04 !default;
-$green-dark:            darken($green, 10%) !default;
+$blue:                  #0e4278 !default;
+$blue-dark:             #0b2341 !default;
+$blue-light:            #a9bbce !default;
+$green:                 #ffd208 !default;
+$green-dark:            #8b7417 !default;
 
-$orange:                #d30014;
-$orange-dark:           #C75B3B;
+$orange:                #ef7d00;
+$orange-dark:           #e84e1b;
 $purple:                #925D97;
 $purple-dark:           #6A396F;
 
-$text-color:            $black !default;
-$border-color:          $gray-light !default;
+$text-color:            light-dark($black, $gray-lighter) !default;
+$border-color:          light-dark($gray-light, $gray-darker) !default;
 
-$page-background:       $green;
-$content-background:    $gray-light;
+$page-background:       light-dark($white, $black) !default;
+$content-background:    $gray-darker !default; // plain color — used in Sass lighten()
 $footer-background:     $blue;
-$body-background:       $blue;
+$body-background:       light-dark($white, darken($black, 8%)) !default;
 
 $focus-color:           $purple;
-$shadow-color:          $gray-dark;
+$shadow-color:          light-dark($gray-dark, darken($black, 8%));
 $link-color:            $blue !default;
 $link-hover-color:      $purple-dark !default;
 
@@ -55,10 +56,9 @@ $table-color-hover:      lighten($purple, 50%);
 // Typography
 // -------------------------
 
-$sans-font-family:      Aleo, sans-serif;
-$heading-font-family:   Immenhausen, sans-serif;
-$font-family-base:      Aleo, sans-serif;
-$headings-font-weight:  normal !default; // instead of browser default, bold
+$sans-font-family:      sans-serif;
+$heading-font-family:   einfachBdP, sans-serif;
+$font-family-base:      sans-serif;
 
 // Decoration
 // -------------------------
