@@ -12,8 +12,4 @@ Rails.application.routes.draw do
     # Define wagon routes here
   end
 
-  scope path: ApplicationResource.endpoint_namespace, module: :json_api,
-    constraints: {format: "jsonapi"}, defaults: {format: "jsonapi"} do
-    resources :membership_registrations, only: [:create], module: :bdp
-  end
 end
