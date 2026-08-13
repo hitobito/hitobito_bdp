@@ -3,6 +3,9 @@
 //  or later. See the COPYING file at the top-level directory or at
 //  https://github.com/hitobito/hitobito_bdp.
 
+.footer-swoosh {
+    fill: $blue;
+}
 
 #page-header a {
   color: $blue;
@@ -40,19 +43,19 @@ body {
     fill: #ffffff;
   }
   a {
-    color: $green;
+    color: $white;
   }
 
   a:hover {
-    color: $green-dark;
-  }
-
-  #page-header a {
     color: $green;
   }
 
+  #page-header a {
+    color: $white;
+  }
+
   #page-header a:hover {
-    color: $green-dark;
+    color: $green;
   }
 
   input {
@@ -101,17 +104,21 @@ body {
     }
 
     a {
+      color: $white;
+    }
+
+    a:hover {
       color: $green;
     }
 
     .divider {
-      color: $white;
+      color: $gray-lighter;
     }
 
     a.is-active,
     li.is-active > a {
-      background-color: rgba($blue, 0.4);
-      border-color: $blue;
+      background-color: rgba($green, 0.1);
+      border-color: $green;
       color: $gray-lighter;
     }
 
@@ -281,5 +288,9 @@ body {
 
   .progress-bar {
     background-color: $blue;
+  }
+
+  .footer-swoosh {
+    fill: $black;
   }
 }
