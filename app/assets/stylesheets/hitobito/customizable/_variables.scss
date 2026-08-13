@@ -40,7 +40,7 @@ $border-color:          light-dark($gray-light, $gray-darker) !default;
 
 $page-background:       light-dark($white, $black) !default;
 $content-background:    $gray-darker !default; // plain color — used in Sass lighten()
-$footer-background:     $blue;
+$footer-background:     light-dark($blue, $black) !default;
 $body-background:       light-dark($white, darken($black, 8%)) !default;
 
 $focus-color:           $purple;
