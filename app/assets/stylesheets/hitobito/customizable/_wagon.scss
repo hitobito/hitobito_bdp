@@ -22,6 +22,9 @@
 // Add a $blue-light background color to the body
 body {
   background-color: $blue-light;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 #page {
@@ -80,6 +83,9 @@ body {
 
   body {
     background-color: $gray-darker;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
   }
 
   #page {
@@ -244,6 +250,92 @@ body {
     --bs-dropdown-divider-bg: #{$gray-dark};
   }
 
+  [role="listbox"] {
+    background-color: $gray-darker;
+    border: 1px solid $gray-dark;
+    border-radius: 0.25rem;
+
+    [role="option"] {
+      color: $gray-lighter;
+      padding: 0.5rem 0.75rem;
+
+      &:hover {
+        background-color: darken($gray-darker, 8%);
+      }
+
+      mark {
+        background-color: rgba($green, 0.25);
+        color: $white;
+        padding: 0.1rem 0.2rem;
+        border-radius: 0.15rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .autoComplete_wrapper ul {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  #role_info {
+    .well.help {
+      background-color: darken($gray-darker, 5%);
+      border-color: $gray-dark;
+      color: $gray-lighter;
+
+      p {
+        color: $gray-lighter;
+      }
+
+      ul {
+        color: $gray-lighter;
+
+        li {
+          color: $gray-lighter;
+        }
+      }
+    }
+  }
+
+  #job_observations {
+    .bg-light {
+      background-color: darken($gray-darker, 5%) !important;
+    }
+
+    .container-fluid {
+      color: $gray-lighter;
+
+      i {
+        color: $gray-lighter;
+      }
+
+      a {
+        color: $gray-lighter;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .invoice-state {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .alert-success a {
+    color: $gray-darker;
+  }
+
+  .alert-success a:hover {
+    color: $blue;
+  }
+
+  .blue {
+    color: $green;
+  }
+
   .pagination {
     --bs-pagination-bg: #{$gray-darker};
     --bs-pagination-color: #{$gray-lighter};
@@ -273,12 +365,132 @@ body {
     }
   }
 
+  .nav-tabs {
+    border-color: $gray-dark;
+
+    .nav-link {
+      color: $gray-lighter;
+      border-color: transparent;
+
+      &:hover {
+        border-color: $gray-dark;
+        color: $white;
+      }
+
+      &.active {
+        background-color: darken($gray-darker, 5%);
+        border-color: $gray-dark $gray-dark transparent $gray-dark;
+        color: $white;
+      }
+    }
+  }
+
+  .ui-datepicker {
+    background-color: $gray-darker;
+    border: 1px solid $gray-dark;
+    color: $gray-lighter;
+
+    .ui-datepicker-header {
+      background-color: darken($gray-darker, 5%);
+      border-color: $gray-dark;
+      color: $gray-lighter;
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+      background-color: $gray-dark;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+
+      &:hover {
+        background-color: darken($gray-darker, 8%);
+        color: $white;
+      }
+
+      .ui-icon {
+        background-color: transparent;
+        color: $gray-lighter;
+      }
+    }
+
+    .ui-datepicker-month,
+    .ui-datepicker-year {
+      background-color: $gray-darker;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+    }
+
+    .ui-datepicker-calendar {
+      th,
+      td {
+        color: $gray-lighter;
+        border-color: $gray-dark;
+      }
+
+      th {
+        background-color: darken($gray-darker, 5%);
+      }
+    }
+
+    .ui-state-default {
+      background-color: transparent;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+
+      &:hover {
+        background-color: $gray-dark;
+        color: $white;
+      }
+    }
+
+    .ui-state-highlight {
+      background-color: $blue;
+      color: $white;
+      border-color: $blue;
+    }
+
+    .ui-state-disabled {
+      opacity: 0.5;
+      color: $gray;
+    }
+
+    .ui-datepicker-other-month {
+      color: $gray;
+    }
+  }
+
+  .ui-datepicker td .ui-state-default:hover {
+    background-color: $gray-dark;
+    color: $white;
+  }
+
+  .ui-datepicker td .ui-state-active {
+    background-color: $blue;
+    color: $white;
+  }
+
+  .well {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .invoice-form-recipient-fields {
+    background-color: darken($gray-darker, 5%);
+  }
+
   .group-pills {
     border-color: $gray-dark !important;
 
     .border-start {
       border-color: $gray-dark !important;
     }
+  }
+
+  .contactable .address {
+    background-color: $gray-darker;
+  }
+
+  .form-striped fieldset:nth-of-type(2n) {
+    background-color: darken($gray-darker, 5%);
   }
 
   .progress {
