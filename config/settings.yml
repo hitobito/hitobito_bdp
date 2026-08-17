@@ -7,6 +7,7 @@
 # Settings relevant for the hitobito_bdp wagon
 # Overrides settings from the main application
 application:
+  name: BdP Mitgliederverwaltung
   logo:
     image: bdp-logo.svg
     width: 128
