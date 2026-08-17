@@ -570,8 +570,8 @@ de:
         one: Mitgliederverwalter*in Großprojekt
         description: Mitgliederverwalter*in Großprojekt
       group/projekt/zugriffsberechtigter_mitgliederverwaltung_grossprojekt:
-        one: Zugriffsberechtige*r Mitgliederverwaltung Großprojekt
-        description: Zugriffsberechtige*r Mitgliederverwaltung Großprojekt
+        one: Zugriffsberechtigte*r Mitgliederverwaltung Großprojekt
+        description: Zugriffsberechtigte*r Mitgliederverwaltung Großprojekt
 
       group/bereich/bereichsleitung:
         one: Bereichsleitung
@@ -608,8 +608,8 @@ de:
         one: Ansprechperson Vermietung
         description: Ansprechperson Vermietung
       group/heim_zeltplatz_liegenschaft/heim_hauswartung:
-        one: Heim-/Hauswart
-        description: Heim-/Hauswart
+        one: Heim-/Hauswart*in
+        description: Heim-/Hauswart*in
       group/heim_zeltplatz_liegenschaft/vorstandsmitglied_hausverein:
         one: Vorstandsmitglied Hausverein
         description: Vorstandsmitglied Hausverein
@@ -667,8 +667,8 @@ de:
         one: Landeswahlobmensch
         description: Landeswahlobmensch
       group/landesverband/zuschussbeauftragt:
-        one: Zuschussbeauftrage*r
-        description: Zuschussbeauftrage*r
+        one: Zuschussbeauftragte*r
+        description: Zuschussbeauftragte*r
 
       group/landesvorstand/landesvorsitz:
         one: Landesvorsitzende*r
@@ -725,8 +725,8 @@ de:
         one: Stv. Bezirksschatzmeister*in
         description: Stv. Bezirksschatzmeister*in
       group/bezirk/bezirksbeauftragt:
-        one: Bezirksbeautragte*r
-        description: Bezirksbeautragte*r
+        one: Bezirksbeauftragte*r
+        description: Bezirksbeauftragte*r
       group/bezirk/erfassung_fuehrungszeugnis:
         one: Erfasser*in Führungszeugnis
         description: Erfasser*in Führungszeugnis
@@ -773,8 +773,8 @@ de:
         one: Kassenprüfer*in
         description: Kassenprüfer*in
       group/stamm/zuschussbeauftragt:
-        one: Zuschussbeauftrage*r
-        description: Zuschussbeauftrage*r
+        one: Zuschussbeauftragte*r
+        description: Zuschussbeauftragte*r
       group/stamm/ansprechperson_bundeslager:
         one: Ansprechperson Bundeslager
         description: Ansprechperson Bundeslager
@@ -845,6 +845,7 @@ de:
       group/stamm_gruppe_rover/mitglied:
         one: Ranger/Rover
         description: Ranger/Rover
+
     attributes:
       group:
         stamm_typen:
@@ -854,7 +855,42 @@ de:
           permission:
             description:
               create_membership_roles: "Darf Mitgliedsrollen erstellen."
+
+  people:
+    actions_show:
+      impersonate_user_tooltip: "Du kannst die BdP Mitgliederverwaltung so bedienen, als wärst du als diese Person eingeloggt."
+
   groups:
     self_registration:
       alert:
         membership_role_not_allowed: "Für die Aufnahme als Mitglied muss das offizielle Aufnahmetool verwendet werden."
+      show:
+        meta_description: "Selbstregistrierungsseite für die BdP Mitgliederverwaltung"
+
+  devise:
+    sessions:
+      new:
+        sign_in: Anmelden in Polaris - der BdP Mitgliederverwaltung
+        meta_description: "Anmeldeseite für die BdP Mitgliederverwaltung"
+      oauth_info:
+        sign_in: "Anmelden mit dem BdP Login"
+    passwords:
+      new:
+        meta_description: "BdP Login Passwort zurücksetzen Seite"
+    registrations:
+      edit:
+        meta_description: "BdP Login Passwort ändern Seite"
+    mailer:
+      confirmation_instructions:
+        body:
+          footer: "Diese E-Mail wurde von der BdP Mitgliederverwaltung gesendet"
+      unlock_instructions:
+        body:
+          footer: "Diese E-Mail wurde von der BdP Mitgliederverwaltung gesendet"
+
+  mailchimp_synchronizations:
+    wait_for_synchronization: "Ihre Daten werden aktuell an MailChimp gesendet. Dies kann einen Moment dauern. Danach wird die ausgewählte Liste mit den Kontakten aus der BdP Mitgliederverwaltung aktualisiert sein. Der Status der Synchronisation ist auf der Jobübersicht zu sehen: %{overview_link}"
+
+  public_events:
+    show:
+      meta_description: "Öffentliche Kursanmeldeseite der BdP Mitgliederverwaltung"
