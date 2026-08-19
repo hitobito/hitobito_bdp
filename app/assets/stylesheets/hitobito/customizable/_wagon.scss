@@ -26,8 +26,8 @@ html {
 // Add a $blue-light background color to the body
 body {
   background-color: $blue-light;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -35,7 +35,14 @@ body {
   background: $blue-light;
 }
 
-.sheet.parent,
+.spacer {
+  flex: 1;
+}
+
+.sheet.parent {
+  background: darken($white, 10%) !important;
+}
+
 .sheet.current {
   background: darken($white, 10%);
 }
@@ -47,8 +54,13 @@ body {
       margin: 0.5rem 0 0.25rem;
 }
 
+// Adjust logo position when environment header is present
+.environment-header ~ .logo {
+  margin-top: 60px;
+}
+
 a:hover {
-  color: #222423;
+  color: $gray-darker;
 }
 
 // Dark Mode color settings for BdP
@@ -89,18 +101,15 @@ a:hover {
   }
 
   .sheet.parent {
-    background: $gray-darker;
+    background: $gray-darker !important;
 
     .sheet.parent {
-      background: $gray-darker;
+      background: $gray-darker !important;
     }
   }
 
   body {
     background-color: $gray-darker;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
   }
 
   #page {
