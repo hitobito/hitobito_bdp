@@ -22,6 +22,7 @@ module HitobitoBdp
     config.to_prepare do
       # extend application classes here
       RoleAbility.prepend Bdp::RoleAbility
+      PersonDecorator.prepend Bdp::PersonDecorator
 
       Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
       Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController
