@@ -19,6 +19,10 @@
   color-scheme: light;
 }
 
+html {
+  overscroll-behavior-y: none;
+}
+
 // Add a $blue-light background color to the body
 body {
   background-color: $blue-light;
@@ -34,6 +38,17 @@ body {
 .sheet.parent,
 .sheet.current {
   background: darken($white, 10%);
+}
+
+.nav-left .divider {
+      text-transform: uppercase;
+      font-size: 85%;
+      font-weight: bold;
+      margin: 0.5rem 0 0.25rem;
+}
+
+a:hover {
+  color: #222423;
 }
 
 // Dark Mode color settings for BdP
