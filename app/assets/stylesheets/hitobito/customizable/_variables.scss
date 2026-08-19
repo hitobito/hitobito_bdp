@@ -34,6 +34,7 @@ $orange:                #ef7d00;
 $orange-dark:           #e84e1b;
 $purple:                #925D97;
 $purple-dark:           #6A396F;
+$kothe:                 #222423;
 
 $text-color:            light-dark($black, $gray-lighter) !default;
 $border-color:          light-dark($gray-light, $gray-darker) !default;
@@ -43,10 +44,10 @@ $content-background:    $gray-darker !default; // plain color — used in Sass l
 $footer-background:     light-dark($blue, $black) !default;
 $body-background:       light-dark($white, darken($black, 8%)) !default;
 
-$focus-color:           $purple;
+$focus-color:           $kothe;
 $shadow-color:          light-dark($gray-dark, darken($black, 8%));
 $link-color:            $blue !default;
-$link-hover-color:      $purple-dark !default;
+$link-hover-color:      $kothe !default;
 
 $footer-color:          $white;
 $footer-color-hover:    $white;
@@ -68,6 +69,9 @@ $border-radius:         6px;
 // -------------------------
 $v-space:               24px;
 
+// Sizing
+// -------------------------
+$logo-height: 45px;
 
 // FLUID GRID
 // --------------------------------------------------
