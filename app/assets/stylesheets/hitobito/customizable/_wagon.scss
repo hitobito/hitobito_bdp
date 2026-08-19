@@ -32,7 +32,32 @@ body {
 }
 
 #page {
-  background: $blue-light;
+  background: inherit;
+  padding: 0;
+
+  .main-header {
+    background-color: #fff;
+    height: 45px;
+
+    #page-header {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  > div.container-fluid {
+    padding-top: 1.5rem;
+    /*background: linear-gradient(180deg,rgba(255, 210, 8, 1) 0%, rgba(255, 210, 8, 1) 15vh, rgba(255, 210, 8, 0) 15vh);*/
+    background: linear-gradient(180deg,$blue 0%, $blue 15vh, rgba(0, 0, 0, 0) 15vh);
+  }
+}
+
+.logo {
+  margin-top:0;
+  padding: 0;
+}
+.logo-image {
+  object-position: left center;
+  text-align: left;
 }
 
 .spacer {
@@ -56,11 +81,29 @@ body {
 
 // Adjust logo position when environment header is present
 .environment-header ~ .logo {
-  margin-top: 60px;
+  margin-top: 59px;
 }
 
 a:hover {
-  color: $gray-darker;
+  color: $kothe;
+}
+
+.btn {
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background: $kothe;
+    text-shadow: 0 -1px 1px false $kothe;
+    border-color: $kothe;
+  }
+}
+
+// When logged out, the header postitioning must be adjusted 
+.is-logged-out #page, #page.is-nav-not-rendered {
+  padding-top: 0rem;
+
+  > .container-fluid { padding-top: 10vh}
 }
 
 // Dark Mode color settings for BdP
@@ -72,6 +115,7 @@ a:hover {
   .svg-bdp-text {
     fill: #ffffff;
   }
+
   a {
     color: $white;
   }
@@ -112,10 +156,17 @@ a:hover {
     background-color: $gray-darker;
   }
 
-  #page {
+  /*#page {
     background: $gray-darker;
+  }*/
+
+  #page > .main-header {
+    background-color: inherit;
   }
 
+  #page > div.container-fluid {
+    background: linear-gradient(180deg,$blue-dark 0%, $blue-dark 15vh, rgba(0, 0, 0, 0) 15vh);
+  }
 
   #content {
     background: $gray-darker;
