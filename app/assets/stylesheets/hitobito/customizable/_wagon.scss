@@ -37,10 +37,17 @@ body {
 
   .main-header {
     background-color: #fff;
-    height: 45px;
+    height: 60px;
+
+    > div.container-fluid {
+      min-width: unset;
+      display: flex;
+      margin-inline-end: 0.5rem;
+    }
 
     #page-header {
       margin-bottom: 0.25rem;
+      flex-grow: 1;
     }
   }
 
@@ -56,6 +63,7 @@ body {
   padding: 0;
 }
 .logo-image {
+  display: flex;
   object-position: left center;
   text-align: left;
 }
@@ -81,7 +89,7 @@ body {
 
 // Adjust logo position when environment header is present
 .environment-header ~ .logo {
-  margin-top: 59px;
+  margin-top: 58px;
 }
 
 a:hover {
