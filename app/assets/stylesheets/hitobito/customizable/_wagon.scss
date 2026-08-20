@@ -36,8 +36,9 @@ body {
   padding: 0;
 
   .main-header {
-    background-color: #fff;
+    background-color: $white;
     height: 60px;
+    box-shadow: 0 2px 4px rgba($black, 0.4);
 
     > div.container-fluid {
       min-width: unset;
@@ -54,18 +55,28 @@ body {
   > div.container-fluid {
     padding-top: 1.5rem;
     /*background: linear-gradient(180deg,rgba(255, 210, 8, 1) 0%, rgba(255, 210, 8, 1) 15vh, rgba(255, 210, 8, 0) 15vh);*/
-    background: linear-gradient(180deg,$blue 0%, $blue 15vh, rgba(0, 0, 0, 0) 15vh);
+    background: linear-gradient(180deg,$blue 0%, $blue 15vh, $transparent 15vh);
   }
 }
 
 .logo {
-  margin-top:0;
+  margin: 0 0 0 1rem;
   padding: 0;
 }
 .logo-image {
   display: flex;
-  object-position: left center;
-  text-align: left;
+}
+
+.environment-header {
+  z-index: 1000;
+}
+
+.environment-header ~ .logo {
+  margin-top: 58px;
+}
+
+.environment-header ~ main:has(> .info-bar) ~ .logo {
+  margin-top: 102px;
 }
 
 .spacer {
@@ -85,11 +96,6 @@ body {
       font-size: 85%;
       font-weight: bold;
       margin: 0.5rem 0 0.25rem;
-}
-
-// Adjust logo position when environment header is present
-.environment-header ~ .logo {
-  margin-top: 58px;
 }
 
 a:hover {
@@ -173,7 +179,7 @@ a:hover {
   }
 
   #page > div.container-fluid {
-    background: linear-gradient(180deg,$blue-dark 0%, $blue-dark 15vh, rgba(0, 0, 0, 0) 15vh);
+    background: linear-gradient(180deg,$blue-dark 0%, $blue-dark 15vh, $transparent 15vh);
   }
 
   #content {
@@ -243,6 +249,10 @@ a:hover {
     --bs-table-hover-bg: #{darken($gray-darker, 10%)};
     --bs-table-active-color: #{$gray-lighter};
     --bs-table-active-bg: #{darken($gray-darker, 5%)};
+  }
+
+  .table.table-grouped th {
+    background-color: $gray-darker;
   }
 
   .table.table-basic td,
@@ -453,7 +463,7 @@ a:hover {
 
     .nav-link {
       color: $gray-lighter;
-      border-color: transparent;
+      border-color: $transparent;
 
       &:hover {
         border-color: $gray-dark;
@@ -462,7 +472,7 @@ a:hover {
 
       &.active {
         background-color: darken($gray-darker, 5%);
-        border-color: $gray-dark $gray-dark transparent $gray-dark;
+        border-color: $gray-dark $gray-dark $transparent $gray-dark;
         color: $white;
       }
     }
@@ -491,7 +501,7 @@ a:hover {
       }
 
       .ui-icon {
-        background-color: transparent;
+        background-color: $transparent;
         color: $gray-lighter;
       }
     }
@@ -587,5 +597,84 @@ a:hover {
 
   .footer-swoosh {
     fill: $black;
+  }
+
+  .chip {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .chip.chip-add:hover {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .accordion {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-header {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-body {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-button {
+    color: $gray-lighter !important;
+  }
+
+  .accordion-button:after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d3d3d3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+
+  .bg-white {
+    background-color: darken($gray-darker, 5%) !important;
+  }
+
+  .form-select {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+  }
+
+  .form-select:disabled {
+    background-color: lighten($gray-darker, 5%);
+  }
+
+  .ts-dropdown .active {
+    background-color: lighten($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .label-columns .controls label:hover {
+    background-color: $transparent;
+  }
+
+  .popover {
+    --bs-popover-bg: #{$gray-darker};
+    --bs-popover-color: #{$gray-lighter};
+    --bs-popover-body-color: #{$gray-lighter};
+    --bs-popover-header-bg: $transparent;
+  }
+
+  .popover-header {
+    background-color: darken($gray-darker, 10%);
+    color: $gray-lighter;
+  }
+
+  .bs-popover-bottom > .popover-arrow::after, .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after {
+    border-bottom-color: darken($gray-darker, 10%);
+  }
+
+  a.anchor {
+    color: $gray-lighter;
   }
 }
