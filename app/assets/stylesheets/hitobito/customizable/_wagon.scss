@@ -7,6 +7,89 @@
     fill: $blue;
 }
 
+// Shared left inset for the footer content and the logo above it, replacing
+// the old dedicated `.margin-left-col` grid column.
+$footer-gutter-left: 2rem;
+
+.footer-logo-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: $footer-gutter-left;
+}
+
+.footer-logo {
+  height: 5rem;
+  width: auto;
+}
+
+.footer-content {
+  padding-left: $footer-gutter-left;
+}
+
+// Underline decoration mirroring beitritt.pfadfinden.de's footer nav links.
+// Implemented as a CSS mask (rather than embedding the SVG in the markup) so
+// it can pick up currentColor and swap between the normal/hover link colors
+// for free.
+$footer-nav-link-hover-color: #ffe984;
+$footer-nav-link-decoration: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 525 11'%3E%3Cpath fill='black' d='M41.841 2.682 7.26 2.574 2.396 2.56c-3.193-.01-3.196 4.95 0 4.96l34.582.107 4.863.015c3.193.01 3.197-4.95 0-4.96m58.463 0L66.98 5.187l-4.79.36c-1.337.101-2.482 1.068-2.482 2.481 0 1.264 1.138 2.581 2.481 2.48l33.324-2.506 4.791-.36c1.336-.1 2.481-1.068 2.481-2.48 0-1.264-1.137-2.58-2.48-2.48m60.273-.266-33.442 2.741-4.765.39c-1.335.11-2.48 1.062-2.48 2.481 0 1.257 1.138 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.063 2.48-2.48 0-1.258-1.138-2.592-2.48-2.482m62.078-.712-34.582-.107-4.864-.015c-3.192-.01-3.197 4.95 0 4.96l34.582.108 4.864.015c3.192.01 3.197-4.95 0-4.96m58.463 0L247.794 4.21l-4.79.36c-1.337.101-2.48 1.068-2.48 2.48 0 1.265 1.135 2.582 2.48 2.481l33.323-2.506 4.792-.36c1.336-.1 2.48-1.068 2.48-2.48 0-1.265-1.137-2.582-2.48-2.48m59.53.132-34.583-.108-4.863-.015c-3.192-.01-3.197 4.951 0 4.961l39.445.122c3.193.01 3.197-4.95 0-4.96m58.463 0-33.324 2.505-4.79.361c-1.337.1-2.48 1.068-2.48 2.48 0 1.264 1.136 2.581 2.48 2.48l33.323-2.505 4.791-.36c1.336-.1 2.481-1.069 2.481-2.48 0-1.265-1.138-2.582-2.48-2.48m60.273-.266-33.442 2.74-4.765.391c-1.335.11-2.48 1.061-2.48 2.48 0 1.257 1.137 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.062 2.48-2.48 0-1.258-1.138-2.59-2.48-2.48M522.128.005l-33.44 2.741-4.766.39c-1.335.11-2.48 1.062-2.48 2.48 0 1.258 1.137 2.591 2.48 2.481l33.442-2.74 4.764-.39c1.336-.11 2.481-1.063 2.481-2.482 0-1.257-1.138-2.59-2.48-2.48'/%3E%3C/svg%3E");
+
+#page-footer .footer-content .footer-nav-link,
+#page-footer .footer-content .footer-changelog a {
+  position: relative;
+  display: inline-block;
+  color: $green;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  padding-bottom: 10px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background-color: currentColor;
+    mask: {
+      image: $footer-nav-link-decoration;
+      repeat: no-repeat;
+      position: left center;
+      size: auto 100%;
+    }
+    -webkit-mask-image: $footer-nav-link-decoration;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    -webkit-mask-size: auto 100%;
+  }
+
+  &:hover,
+  &:focus {
+    color: $footer-nav-link-hover-color;
+  }
+}
+
+#page-footer .footer-content .footer-nav-link {
+  margin-bottom: 1rem;
+}
+
+#page-footer .footer-content .footer-links {
+  margin-bottom: 0;
+}
+
+#page-footer .footer-content .footer-changelog {
+  a[data-bs-toggle="collapse"] i.fa-chevron-right {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  a[data-bs-toggle="collapse"][aria-expanded="true"] i.fa-chevron-right {
+    transform: rotate(90deg);
+  }
+}
+
 #page-header a {
   color: $blue;
 }
@@ -31,14 +114,55 @@ body {
   min-height: 100vh;
 }
 
+// Height of the blue-yellow bar added above the header (see #page::before below),
+// added on top of the .logo offsets that already compensate for .environment-header
+$top-bar-height: 15px;
+
+// Where the blue/yellow cut falls along the bar's width, and how much horizontal
+// run its diagonal covers. The run is a fixed px value (not %) so the angle stays
+// static instead of flattening out as the viewport gets wider.
+$top-bar-split: 70%;
+$top-bar-slant: 6px;
+
 #page {
+  position: relative;
   background: inherit;
   padding: 0;
+
+  // Blue-yellow bar above the header, mirroring beitritt.pfadfinden.de.
+  // ::before reserves the layout space and paints the blue portion;
+  // ::after overlays the yellow portion, sliced off at an angle.
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $top-bar-height;
+    background-color: $blue;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    // 1px taller than the bar and overlapping into .main-header below: some
+    // browsers round the two pseudo-elements' heights a fraction of a px apart,
+    // which otherwise leaves a hairline sliver of the ::before color showing.
+    height: calc(#{$top-bar-height} + 1px);
+    background-color: $green;
+    clip-path: polygon(
+      calc(#{$top-bar-split} - #{$top-bar-slant}) 0,
+      100% 0,
+      100% 100%,
+      calc(#{$top-bar-split} + #{$top-bar-slant}) 100%
+    );
+  }
 
   .main-header {
     background-color: $white;
     height: 60px;
-    box-shadow: 0 2px 4px rgba($black, 0.4);
+    box-shadow: 0 2px 4px rgba($kothe, 0.2);
 
     > div.container-fluid {
       min-width: unset;
@@ -53,14 +177,40 @@ body {
   }
 
   > div.container-fluid {
+    position: relative;
+    // Establishes a real stacking context so the ::before's z-index: -1 stays
+    // contained here (just above this element's own background) instead of
+    // escaping to an ancestor that also lacks a z-index.
+    isolation: isolate;
     padding-top: 1.5rem;
     /*background: linear-gradient(180deg,rgba(255, 210, 8, 1) 0%, rgba(255, 210, 8, 1) 15vh, rgba(255, 210, 8, 0) 15vh);*/
     background: linear-gradient(180deg,$blue 0%, $blue 15vh, $transparent 15vh);
+
+    // Continues the header bar's diagonal accent down through
+    // the blue backdrop area. Sits behind the sheet/nav content (z-index: -1).
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      // 1px taller, overlapping past the 15vh mark, for the same reason as
+      // #page::after above: guards against a hairline gap from subpixel rounding.
+      height: calc(15vh + 1px);
+      background-color: $green;
+      clip-path: polygon(
+        calc(#{$top-bar-split} + 50px) 0,
+        100% 0,
+        100% 100%,
+        calc(#{$top-bar-split} + 170px) 100%
+      );
+      z-index: -1;
+    }
   }
 }
 
 .logo {
-  margin: 0 0 0 1rem;
+  margin: $top-bar-height 0 0 1rem;
   padding: 0;
 }
 .logo-image {
@@ -72,11 +222,11 @@ body {
 }
 
 .environment-header ~ .logo {
-  margin-top: 58px;
+  margin-top: 58px + $top-bar-height;
 }
 
 .environment-header ~ main:has(> .info-bar) ~ .logo {
-  margin-top: 102px;
+  margin-top: 102px + $top-bar-height;
 }
 
 .spacer {
@@ -84,11 +234,11 @@ body {
 }
 
 .sheet.parent {
-  background: darken($white, 10%) !important;
+  background: $gray-lighter !important;
 }
 
 .sheet.current {
-  background: darken($white, 10%);
+  background: darken($white, 10%); /* needed? */
 }
 
 .nav-left .divider {
@@ -178,8 +328,22 @@ a:hover {
     background-color: inherit;
   }
 
+  #page::before {
+    background-color: $black;
+  }
+
+  #page::after {
+    background-color: $blue-dark;
+  }
+
   #page > div.container-fluid {
     background: linear-gradient(180deg,$blue-dark 0%, $blue-dark 15vh, $transparent 15vh);
+
+    // $blue-dark would be invisible against this element's own $blue-dark
+    // background above, so use $black to stay visible as a distinct accent.
+    &::before {
+      background-color: $black;
+    }
   }
 
   #content {
