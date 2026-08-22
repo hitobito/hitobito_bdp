@@ -215,6 +215,7 @@ $top-bar-slant: 6px;
 }
 .logo-image {
   display: flex;
+  align-items: center;
 }
 
 .environment-header {
@@ -844,5 +845,27 @@ a:hover {
 
   .ts-control {
     color: $gray-lighter;
+  }
+
+  .documentation-markdown code {
+    background-color: inherit;
+    color: var(--bs-code-color);
+  }
+
+  .documentation-markdown pre {
+    background-color: $black;
+  }
+
+  .documentation-markdown a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  .documentation-markdown a:hover {
+    color: $green;
+  }
+
+  .documentation-markdown blockquote {
+    color: $green;
   }
 }
