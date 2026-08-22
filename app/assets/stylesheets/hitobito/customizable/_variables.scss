@@ -47,7 +47,7 @@ $footer-background:     light-dark($blue, $black) !default;
 $body-background:       light-dark($white, darken($black, 8%)) !default;
 
 $focus-color:           $kothe;
-$shadow-color:          light-dark($gray-dark, darken($black, 8%));
+$shadow-color:          light-dark(rgba($kothe, 0.5), darken($black, 8%));
 $link-color:            $blue !default;
 $link-hover-color:      $kothe !default;
 

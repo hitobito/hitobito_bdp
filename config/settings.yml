@@ -11,6 +11,12 @@ application:
     image: bdp-logo.svg
     width: 128
     height: 83
+  footer:
+    logo_image: bdp-wortmarke.svg
+    logo_url: https://www.pfadfinden.de
+    links:
+      Dokumentation: https://meinbdp.de/spaces/POLARIS/pages/452101963/Mitgliederverwaltung+Polaris+Startseite
+      Datenschutzerklärung: https://pfadfinden.de/datenschutzerklaerung
   languages:
     de: Deutsch
 
