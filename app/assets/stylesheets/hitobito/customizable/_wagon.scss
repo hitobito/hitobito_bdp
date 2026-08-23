@@ -4,12 +4,8 @@
 //  https://github.com/hitobito/hitobito_bdp.
 
 .footer-swoosh {
-    fill: $blue;
+  fill: $blue;
 }
-
-// Shared left inset for the footer content and the logo above it, replacing
-// the old dedicated `.margin-left-col` grid column.
-$footer-gutter-left: 2rem;
 
 .footer-logo-wrapper {
   display: flex;
@@ -28,12 +24,9 @@ $footer-gutter-left: 2rem;
   padding-left: $footer-gutter-left;
 }
 
-// Underline decoration mirroring beitritt.pfadfinden.de's footer nav links.
-// Implemented as a CSS mask (rather than embedding the SVG in the markup) so
-// it can pick up currentColor and swap between the normal/hover link colors
-// for free.
-$footer-nav-link-hover-color: #ffe984;
-$footer-nav-link-decoration: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 525 11'%3E%3Cpath fill='black' d='M41.841 2.682 7.26 2.574 2.396 2.56c-3.193-.01-3.196 4.95 0 4.96l34.582.107 4.863.015c3.193.01 3.197-4.95 0-4.96m58.463 0L66.98 5.187l-4.79.36c-1.337.101-2.482 1.068-2.482 2.481 0 1.264 1.138 2.581 2.481 2.48l33.324-2.506 4.791-.36c1.336-.1 2.481-1.068 2.481-2.48 0-1.264-1.137-2.58-2.48-2.48m60.273-.266-33.442 2.741-4.765.39c-1.335.11-2.48 1.062-2.48 2.481 0 1.257 1.138 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.063 2.48-2.48 0-1.258-1.138-2.592-2.48-2.482m62.078-.712-34.582-.107-4.864-.015c-3.192-.01-3.197 4.95 0 4.96l34.582.108 4.864.015c3.192.01 3.197-4.95 0-4.96m58.463 0L247.794 4.21l-4.79.36c-1.337.101-2.48 1.068-2.48 2.48 0 1.265 1.135 2.582 2.48 2.481l33.323-2.506 4.792-.36c1.336-.1 2.48-1.068 2.48-2.48 0-1.265-1.137-2.582-2.48-2.48m59.53.132-34.583-.108-4.863-.015c-3.192-.01-3.197 4.951 0 4.961l39.445.122c3.193.01 3.197-4.95 0-4.96m58.463 0-33.324 2.505-4.79.361c-1.337.1-2.48 1.068-2.48 2.48 0 1.264 1.136 2.581 2.48 2.48l33.323-2.505 4.791-.36c1.336-.1 2.481-1.069 2.481-2.48 0-1.265-1.138-2.582-2.48-2.48m60.273-.266-33.442 2.74-4.765.391c-1.335.11-2.48 1.061-2.48 2.48 0 1.257 1.137 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.062 2.48-2.48 0-1.258-1.138-2.59-2.48-2.48M522.128.005l-33.44 2.741-4.766.39c-1.335.11-2.48 1.062-2.48 2.48 0 1.258 1.137 2.591 2.48 2.481l33.442-2.74 4.764-.39c1.336-.11 2.481-1.063 2.481-2.482 0-1.257-1.138-2.59-2.48-2.48'/%3E%3C/svg%3E");
+#page-footer {
+  z-index: -1;
+}
 
 #page-footer .footer-content .footer-nav-link,
 #page-footer .footer-content .footer-changelog a {
@@ -95,7 +88,25 @@ $footer-nav-link-decoration: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3
 }
 
 .svg-bdp-text {
-  fill: #0e4278;
+  fill: $blue;
+}
+
+html body.is-logged-out.oauth-dialog div#page {
+  &::before {
+    height: 0vh;
+  }
+  
+  &::after {
+    content: none;
+  }
+  
+  & .container-fluid {
+    width: 100vw;
+
+    &::before {
+      z-index: -1;
+    }
+  }
 }
 
 :root {
@@ -113,16 +124,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-// Height of the blue-yellow bar added above the header (see #page::before below),
-// added on top of the .logo offsets that already compensate for .environment-header
-$top-bar-height: 15px;
-
-// Where the blue/yellow cut falls along the bar's width, and how much horizontal
-// run its diagonal covers. The run is a fixed px value (not %) so the angle stays
-// static instead of flattening out as the viewport gets wider.
-$top-bar-split: 70%;
-$top-bar-slant: 6px;
 
 #page {
   position: relative;
@@ -163,6 +164,7 @@ $top-bar-slant: 6px;
     background-color: $white;
     height: 60px;
     box-shadow: 0 2px 4px rgba($kothe, 0.2);
+    z-index: 0;
 
     > div.container-fluid {
       min-width: unset;
@@ -184,7 +186,12 @@ $top-bar-slant: 6px;
     isolation: isolate;
     padding-top: 1.5rem;
     /*background: linear-gradient(180deg,rgba(255, 210, 8, 1) 0%, rgba(255, 210, 8, 1) 15vh, rgba(255, 210, 8, 0) 15vh);*/
-    background: linear-gradient(180deg,$blue 0%, $blue 15vh, $transparent 15vh);
+    background: linear-gradient(
+      180deg,
+      $blue 0%,
+      $blue 15vh,
+      $transparent 15vh
+    );
 
     // Continues the header bar's diagonal accent down through
     // the blue backdrop area. Sits behind the sheet/nav content (z-index: -1).
@@ -204,7 +211,6 @@ $top-bar-slant: 6px;
         100% 100%,
         calc(#{$top-bar-split} + 170px) 100%
       );
-      z-index: -1;
     }
   }
 }
@@ -243,10 +249,10 @@ $top-bar-slant: 6px;
 }
 
 .nav-left .divider {
-      text-transform: uppercase;
-      font-size: 85%;
-      font-weight: bold;
-      margin: 0.5rem 0 0.25rem;
+  text-transform: uppercase;
+  font-size: 85%;
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem;
 }
 
 a:hover {
@@ -264,11 +270,14 @@ a:hover {
   }
 }
 
-// When logged out, the header postitioning must be adjusted 
-.is-logged-out #page, #page.is-nav-not-rendered {
+// When logged out, the header postitioning must be adjusted
+.is-logged-out #page,
+#page.is-nav-not-rendered {
   padding-top: 0rem;
 
-  > .container-fluid { padding-top: 10vh}
+  > .container-fluid {
+    padding-top: 10vh;
+  }
 }
 
 // Dark Mode color settings for BdP
@@ -278,7 +287,7 @@ a:hover {
   }
 
   .svg-bdp-text {
-    fill: #ffffff;
+    fill: $white;
   }
 
   a {
@@ -301,7 +310,8 @@ a:hover {
     background-color: $gray-darker;
   }
 
-  .sheet, #content {
+  .sheet,
+  #content {
     color: $gray-lighter;
   }
 
@@ -333,17 +343,33 @@ a:hover {
     background-color: $black;
   }
 
+  #page:has(nav.is-visible)::before {
+    background-color: $blue-dark;
+    transition: all 300ms ease-in-out;
+  }
+
+  #page:has(nav.is-visible)::after {
+    position: unset;
+    transition: all 300ms ease-in-out;
+  }
+
   #page::after {
     background-color: $blue-dark;
   }
 
   #page > div.container-fluid {
-    background: linear-gradient(180deg,$blue-dark 0%, $blue-dark 15vh, $transparent 15vh);
+    background: linear-gradient(
+      180deg,
+      $black 0%,
+      $black 15vh,
+      $transparent 15vh
+    );
 
     // $blue-dark would be invisible against this element's own $blue-dark
     // background above, so use $black to stay visible as a distinct accent.
     &::before {
-      background-color: $black;
+      background-color: $blue-dark;
+      z-index: -1;
     }
   }
 
@@ -438,13 +464,14 @@ a:hover {
     border-bottom: none;
   }
 
-
   .table-hover tbody tr:hover > td,
   .table-hover tbody tr:hover > th {
     background-color: darken($gray-lighter, 10%);
   }
 
-  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not(
+      [type="checkbox"]
+    ):not([type="radio"]):not([type="range"]),
   select,
   textarea,
   .form-control,
@@ -797,7 +824,7 @@ a:hover {
   }
 
   .accordion-button:not(.collapsed)::after {
-      --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   }
 
   .bg-white {
@@ -835,7 +862,8 @@ a:hover {
     color: $gray-lighter;
   }
 
-  .bs-popover-bottom > .popover-arrow::after, .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after {
+  .bs-popover-bottom > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after {
     border-bottom-color: darken($gray-darker, 10%);
   }
 
