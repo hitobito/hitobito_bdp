@@ -284,7 +284,7 @@ a:hover {
 }
 
 .autoComplete_wrapper ul li:hover {
-  background-color: rgba($gray-light, 0.2);
+  background-color: rgba($gray-light, 0.3);
   color: $black;
 
   & > mark {
@@ -296,6 +296,15 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+  }
+
+  .autoComplete_wrapper ul li:hover {
+    background-color: rgba($gray-dark, 0.3);
+    color: $white;
+
+    & > mark {
+      color: $white;
+    }
   }
 
   .svg-bdp-text {
