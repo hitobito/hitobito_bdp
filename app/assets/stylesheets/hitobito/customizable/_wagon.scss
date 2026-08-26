@@ -164,7 +164,7 @@ body {
     background-color: $white;
     height: 60px;
     box-shadow: 0 2px 4px rgba($kothe, 0.2);
-    z-index: 0;
+    z-index: 1;
 
     > div.container-fluid {
       min-width: unset;
