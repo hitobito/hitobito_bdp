@@ -95,11 +95,11 @@ html body.is-logged-out.oauth-dialog div#page {
   &::before {
     height: 0vh;
   }
-  
+
   &::after {
     content: none;
   }
-  
+
   & .container-fluid {
     width: 100vw;
 
@@ -280,6 +280,15 @@ a:hover {
 
   > .container-fluid {
     padding-top: 10vh;
+  }
+}
+
+.autoComplete_wrapper ul li:hover {
+  background-color: rgba($gray-light, 0.2);
+  color: $black;
+
+  & > mark {
+    color: $black;
   }
 }
 
