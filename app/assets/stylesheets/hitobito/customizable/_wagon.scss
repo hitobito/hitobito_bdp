@@ -211,6 +211,7 @@ body {
         100% 100%,
         calc(#{$top-bar-split} + 170px) 100%
       );
+      z-index: -1;
     }
   }
 }
@@ -222,6 +223,8 @@ body {
 .logo-image {
   display: flex;
   align-items: center;
+  max-width: 200px;
+  max-height: 60px;
 }
 
 .environment-header {
