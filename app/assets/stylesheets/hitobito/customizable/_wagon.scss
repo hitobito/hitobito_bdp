@@ -29,10 +29,6 @@ footer#page-footer-bdp {
   padding-left: $footer-gutter-left;
 }
 
-#page-footer {
-  z-index: -1;
-}
-
 #page-footer .footer-content .footer-nav-link,
 #page-footer .footer-content .footer-changelog a {
   position: relative;
@@ -97,20 +93,18 @@ footer#page-footer-bdp {
 }
 
 html body.is-logged-out.oauth-dialog div#page {
-  &::before {
-    height: 0vh;
-  }
+  .main-header {
+    &::before {
+      height: 0vh;
+    }
 
-  &::after {
-    content: none;
+    &::after {
+      content: none;
+    }
   }
 
   & .container-fluid {
     width: 100vw;
-
-    &::before {
-      z-index: -1;
-    }
   }
 }
 
@@ -133,41 +127,42 @@ body {
   padding: 0;
   background-color: $blue-light;
 
-  // Blue-yellow bar above the header, mirroring beitritt.pfadfinden.de.
-  // ::before reserves the layout space and paints the blue portion;
-  // ::after overlays the yellow portion, sliced off at an angle.
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: $top-bar-height;
-    background-color: $blue;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    // 1px taller than the bar and overlapping into .main-header below: some
-    // browsers round the two pseudo-elements' heights a fraction of a px apart,
-    // which otherwise leaves a hairline sliver of the ::before color showing.
-    height: calc(#{$top-bar-height} + 1px);
-    background-color: $green;
-    clip-path: polygon(
-      calc(#{$top-bar-split} - #{$top-bar-slant}) 0,
-      100% 0,
-      100% 100%,
-      calc(#{$top-bar-split} + #{$top-bar-slant}) 100%
-    );
-  }
-
   .main-header {
+    position: relative;
     background-color: $white;
     height: 60px;
+    margin-top: $top-bar-height;
     box-shadow: 0 2px 4px rgba($kothe, 0.2);
-    z-index: 1;
+
+    // Blue-yellow bar above the header
+    // Drawn into the margin-top reserved above via a negative offset;
+    // ::before paints the blue portion, ::after overlays the yellow
+    // portion, sliced off at an angle.
+    &::before {
+      content: "";
+      position: absolute;
+      top: -#{$top-bar-height};
+      left: 0;
+      width: 100%;
+      height: $top-bar-height;
+      background-color: $blue;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -#{$top-bar-height};
+      left: 0;
+      right: 0;
+      height: #{$top-bar-height};
+      background-color: $green;
+      clip-path: polygon(
+        calc(#{$top-bar-split} - #{$top-bar-slant}) 0,
+        100% 0,
+        100% 100%,
+        calc(#{$top-bar-split} + #{$top-bar-slant}) 100%
+      );
+    }
 
     > div.container-fluid {
       min-width: unset;
@@ -181,23 +176,20 @@ body {
     }
   }
 
+  $page-background-blue-yellow-bar-height: 15vh;
+
   > div.container-fluid {
     position: relative;
-    // Establishes a real stacking context so the ::before's z-index: -1 stays
-    // contained here (just above this element's own background) instead of
-    // escaping to an ancestor that also lacks a z-index.
-    isolation: isolate;
     padding-top: 1.5rem;
-    /*background: linear-gradient(180deg,rgba(255, 210, 8, 1) 0%, rgba(255, 210, 8, 1) 15vh, rgba(255, 210, 8, 0) 15vh);*/
     background: linear-gradient(
       180deg,
       $blue 0%,
-      $blue 15vh,
-      $transparent 15vh
+      $blue $page-background-blue-yellow-bar-height,
+      $transparent $page-background-blue-yellow-bar-height
     );
 
     // Continues the header bar's diagonal accent down through
-    // the blue backdrop area. Sits behind the sheet/nav content (z-index: -1).
+    // the blue backdrop area.
     &::before {
       content: "";
       position: absolute;
@@ -206,7 +198,7 @@ body {
       right: 0;
       // 1px taller, overlapping past the 15vh mark, for the same reason as
       // #page::after above: guards against a hairline gap from subpixel rounding.
-      height: calc(15vh + 1px);
+      height: $page-background-blue-yellow-bar-height;
       background-color: $green;
       clip-path: polygon(
         calc(#{$top-bar-split} + 50px) 0,
@@ -214,7 +206,6 @@ body {
         100% 100%,
         calc(#{$top-bar-split} + 170px) 100%
       );
-      z-index: -1;
     }
   }
 }
@@ -230,12 +221,21 @@ body {
   max-height: 60px;
 }
 
+// Position the header just above the logo but behind the mobile menü 
+// (Default from layout.scss is = to logo, which pushes it to the back)
 .environment-header {
-  z-index: 1000;
+  z-index: 95;
 }
 
 .spacer {
   flex: 1;
+}
+
+// The topmost sheet only (not nested .sheet.parent > .sheet children) —
+// gives it its own containing block now that #page establishes a stacking
+// context, so content positioned inside it doesn't fall back to #page.
+#page .sheet:not(.sheet .sheet) {
+  position: relative;
 }
 
 .sheet.parent {
@@ -285,11 +285,6 @@ a:hover {
   & > mark {
     color: $black;
   }
-}
-
-header.main-header:has(~ div.container-fluid nav.nav-left.is-visible) {
-  z-index: 0 !important;
-  transition: all 300ms ease-in-out;
 }
 
 // Dark Mode color settings for BdP
@@ -360,21 +355,21 @@ header.main-header:has(~ div.container-fluid nav.nav-left.is-visible) {
     background-color: inherit;
   }
 
-  #page::before {
+  #page .main-header::before {
     background-color: $black;
   }
 
-  #page:has(nav.is-visible)::before {
+  #page:has(nav.is-visible) .main-header::before {
     background-color: $blue-dark;
     transition: all 300ms ease-in-out;
   }
 
-  #page:has(nav.is-visible)::after {
+  #page:has(nav.is-visible) .main-header::after {
     position: unset;
     transition: all 300ms ease-in-out;
   }
 
-  #page::after {
+  #page .main-header::after {
     background-color: $blue-dark;
   }
 
@@ -390,7 +385,6 @@ header.main-header:has(~ div.container-fluid nav.nav-left.is-visible) {
     // background above, so use $black to stay visible as a distinct accent.
     &::before {
       background-color: $blue-dark;
-      z-index: -1;
     }
   }
 
