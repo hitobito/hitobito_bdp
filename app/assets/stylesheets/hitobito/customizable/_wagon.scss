@@ -232,11 +232,15 @@ body {
 }
 
 .environment-header ~ .logo {
-  margin-top: 58px + $top-bar-height;
+  top: 58px + $top-bar-height;
 }
 
 .environment-header ~ main:has(> .info-bar) ~ .logo {
-  margin-top: 102px + $top-bar-height;
+  top: 102px + $top-bar-height;
+}
+
+main:has(> .info-bar) ~ .logo {
+  top: 28px + $top-bar-height;
 }
 
 .spacer {
