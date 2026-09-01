@@ -15,7 +15,8 @@ footer#page-footer-bdp {
 .footer-logo-wrapper {
   display: flex;
   justify-content: flex-start;
-  padding-block: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left: $footer-gutter-left;
 }
 
@@ -94,7 +95,7 @@ footer#page-footer-bdp {
 html body.is-logged-out.oauth-dialog div#page {
   .main-header {
     &::before {
-      height: 0;
+      height: 0vh;
     }
 
     &::after {
@@ -153,7 +154,7 @@ body {
       top: -#{$top-bar-height};
       left: 0;
       right: 0;
-      height: $top-bar-height;
+      height: #{$top-bar-height};
       background-color: $green;
       clip-path: polygon(
         calc(#{$top-bar-split} - #{$top-bar-slant}) 0,
@@ -175,6 +176,8 @@ body {
     }
   }
 
+  $page-background-blue-yellow-bar-height: 15vh;
+
   > div.container-fluid {
     position: relative;
     padding-top: 1.5rem;
@@ -193,6 +196,8 @@ body {
       top: 0;
       left: 0;
       right: 0;
+      // 1px taller, overlapping past the 15vh mark, for the same reason as
+      // #page::after above: guards against a hairline gap from subpixel rounding.
       height: $page-background-blue-yellow-bar-height;
       background-color: $green;
       clip-path: polygon(
@@ -207,7 +212,7 @@ body {
 
 .logo {
   margin: $top-bar-height 0 0 1rem;
-  padding-inline: 0;
+  padding: 0;
 }
 .logo-image {
   display: flex;
@@ -237,6 +242,10 @@ body {
   background: $gray-lighter !important;
 }
 
+.sheet.current {
+  background: darken($white, 10%); /* needed? */
+}
+
 .nav-left .divider {
   text-transform: uppercase;
   font-size: 85%;
@@ -254,6 +263,7 @@ a:hover {
   &:active {
     color: $white;
     background: $kothe;
+    text-shadow: 0 -1px 1px false $kothe;
     border-color: $kothe;
   }
 }
@@ -261,7 +271,7 @@ a:hover {
 // When logged out, the header postitioning must be adjusted
 .is-logged-out #page,
 #page.is-nav-not-rendered {
-  padding-top: 0;
+  padding-top: 0rem;
 
   > .container-fluid {
     padding-top: 10vh;
@@ -327,6 +337,10 @@ a:hover {
 
   .sheet.parent {
     background: $gray-darker !important;
+
+    .sheet.parent {
+      background: $gray-darker !important;
+    }
   }
 
   body {
@@ -363,8 +377,8 @@ a:hover {
     background: linear-gradient(
       180deg,
       $black 0%,
-      $black $page-background-blue-yellow-bar-height,
-      $transparent $page-background-blue-yellow-bar-height
+      $black 15vh,
+      $transparent 15vh
     );
 
     // $blue-dark would be invisible against this element's own $blue-dark
@@ -801,7 +815,17 @@ a:hover {
     background-color: darken($gray-darker, 5%);
   }
 
-  .accordion, .accordion-header, .accordion-body {
+  .accordion {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-header {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-body {
     background-color: darken($gray-darker, 5%);
     color: $gray-lighter;
   }
@@ -845,6 +869,7 @@ a:hover {
     --bs-popover-bg: #{$gray-darker};
     --bs-popover-color: #{$gray-lighter};
     --bs-popover-body-color: #{$gray-lighter};
+    --bs-popover-header-bg: $transparent;
   }
 
   .popover-header {
