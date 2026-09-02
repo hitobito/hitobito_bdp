@@ -14,51 +14,80 @@ $min-contrast-ratio: 1;
 
 // Grays
 // -------------------------
-$black:                 #474E5D !default;
-$gray-darker:           #696E79 !default;
-$gray-dark:             #8b8b8b !default;
-$gray:                  #979CA6 !default;
-$gray-light:            #E8EBF0 !default;
-$gray-lighter:          #F8F9FA !default;
-$white:                 #fff !default;
+$black:                 #000000 !default;
+$gray-darker:           #222423 !default;
+$gray-dark:             #616161 !default;
+$gray:                  #808080 !default;
+$gray-light:            #a9bbce !default;
+$gray-lighter:          #eff2f6 !default; /* #f8f9fa*/
+$white:                 #ffffff !default;
 
 // Colors
 // ----------------------------
-$blue:                  #1d4899 !default;
-$blue-dark:             darken($blue, 10%) !default;
-$green:                 #ffcb04 !default;
-$green-dark:            darken($green, 10%) !default;
+$blue:                  #0e4278 !default;
+$blue-dark:             #0b2341 !default;
+$blue-light:            #a9bbce !default;
+$green:                 #ffd208 !default;
+$green-dark:            #8b7417 !default;
 
-$orange:                #d30014;
-$orange-dark:           #C75B3B;
+$orange:                #ef7d00;
+$orange-dark:           #e84e1b;
 $purple:                #925D97;
 $purple-dark:           #6A396F;
+$kothe:                 #222423;
 
-$text-color:            $black !default;
-$border-color:          $gray-light !default;
+$transparent:            transparent !default;
 
-$page-background:       $green;
-$content-background:    $gray-light;
-$footer-background:     $blue;
-$body-background:       $blue;
+$text-color:            light-dark($black, $gray-lighter) !default;
+$border-color:          light-dark($gray-light, $gray-darker) !default;
 
-$focus-color:           $purple;
-$shadow-color:          $gray-dark;
+$page-background:       light-dark($white, $black) !default;
+$content-background:    $gray-darker !default; // plain color — used in Sass lighten()
+$footer-background:     light-dark($blue, $black) !default;
+$body-background:       light-dark($white, darken($black, 8%)) !default;
+
+$focus-color:           $kothe;
+$shadow-color:          light-dark(rgba($kothe, 0.5), darken($black, 8%));
 $link-color:            $blue !default;
-$link-hover-color:      $purple-dark !default;
+$link-hover-color:      $kothe !default;
 
 $footer-color:          $white;
 $footer-color-hover:    $white;
 
 $table-color-hover:      lighten($purple, 50%);
 
+// Custom header design
+
+// Height of the blue-yellow bar added above the header (see #page::before),
+// added on top of the .logo offsets that already compensate for .environment-header
+$top-bar-height: 15px;
+
+// Where the blue/yellow cut falls along the bar's width, and how much horizontal
+// run its diagonal covers. The run is a fixed px value (not %) so the angle stays
+// static instead of flattening out as the viewport gets wider.
+$top-bar-split: 70%;
+$top-bar-slant: 6px;
+
+// Footer nav link decoration
+
+// Underline decoration mirroring beitritt.pfadfinden.de's footer nav links.
+// Implemented as a CSS mask (rather than embedding the SVG in the markup) so
+// it can pick up currentColor and swap between the normal/hover link colors
+// for free.
+$footer-nav-link-hover-color: #ffe984;
+$footer-nav-link-decoration: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 525 11'%3E%3Cpath fill='black' d='M41.841 2.682 7.26 2.574 2.396 2.56c-3.193-.01-3.196 4.95 0 4.96l34.582.107 4.863.015c3.193.01 3.197-4.95 0-4.96m58.463 0L66.98 5.187l-4.79.36c-1.337.101-2.482 1.068-2.482 2.481 0 1.264 1.138 2.581 2.481 2.48l33.324-2.506 4.791-.36c1.336-.1 2.481-1.068 2.481-2.48 0-1.264-1.137-2.58-2.48-2.48m60.273-.266-33.442 2.741-4.765.39c-1.335.11-2.48 1.062-2.48 2.481 0 1.257 1.138 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.063 2.48-2.48 0-1.258-1.138-2.592-2.48-2.482m62.078-.712-34.582-.107-4.864-.015c-3.192-.01-3.197 4.95 0 4.96l34.582.108 4.864.015c3.192.01 3.197-4.95 0-4.96m58.463 0L247.794 4.21l-4.79.36c-1.337.101-2.48 1.068-2.48 2.48 0 1.265 1.135 2.582 2.48 2.481l33.323-2.506 4.792-.36c1.336-.1 2.48-1.068 2.48-2.48 0-1.265-1.137-2.582-2.48-2.48m59.53.132-34.583-.108-4.863-.015c-3.192-.01-3.197 4.951 0 4.961l39.445.122c3.193.01 3.197-4.95 0-4.96m58.463 0-33.324 2.505-4.79.361c-1.337.1-2.48 1.068-2.48 2.48 0 1.264 1.136 2.581 2.48 2.48l33.323-2.505 4.791-.36c1.336-.1 2.481-1.069 2.481-2.48 0-1.265-1.138-2.582-2.48-2.48m60.273-.266-33.442 2.74-4.765.391c-1.335.11-2.48 1.061-2.48 2.48 0 1.257 1.137 2.59 2.48 2.48l33.442-2.74 4.765-.39c1.335-.11 2.48-1.062 2.48-2.48 0-1.258-1.138-2.59-2.48-2.48M522.128.005l-33.44 2.741-4.766.39c-1.335.11-2.48 1.062-2.48 2.48 0 1.258 1.137 2.591 2.48 2.481l33.442-2.74 4.764-.39c1.336-.11 2.481-1.063 2.481-2.482 0-1.257-1.138-2.59-2.48-2.48'/%3E%3C/svg%3E");
+
+// Shared left inset for the footer content and the logo above it, replacing
+// the old dedicated `.margin-left-col` grid column.
+$footer-gutter-left: 2rem;
+
+
 // Typography
 // -------------------------
 
-$sans-font-family:      Aleo, sans-serif;
-$heading-font-family:   Immenhausen, sans-serif;
-$font-family-base:      Aleo, sans-serif;
-$headings-font-weight:  normal !default; // instead of browser default, bold
+$sans-font-family:      sans-serif;
+$heading-font-family:   einfachBdP, sans-serif;
+$font-family-base:      sans-serif;
 
 // Decoration
 // -------------------------
@@ -68,6 +97,9 @@ $border-radius:         6px;
 // -------------------------
 $v-space:               24px;
 
+// Sizing
+// -------------------------
+$logo-height: 60px;
 
 // FLUID GRID
 // --------------------------------------------------

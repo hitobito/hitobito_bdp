@@ -3,7 +3,912 @@
 //  or later. See the COPYING file at the top-level directory or at
 //  https://github.com/hitobito/hitobito_bdp.
 
+footer#page-footer-bdp {
+  background-color: $blue-light;
+  padding-top: calc(4vh + 3vw);
+}
+
+.footer-swoosh {
+  fill: $blue;
+}
+
+.footer-logo-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: $footer-gutter-left;
+}
+
+.footer-logo {
+  height: 5rem;
+  width: auto;
+}
+
+.footer-content {
+  padding-left: $footer-gutter-left;
+}
+
+#page-footer .footer-content .footer-nav-link,
+#page-footer .footer-content .footer-changelog a {
+  position: relative;
+  display: inline-block;
+  color: $green;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  padding-bottom: 10px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background-color: currentColor;
+    mask: {
+      image: $footer-nav-link-decoration;
+      repeat: no-repeat;
+      position: left center;
+      size: auto 100%;
+    }
+    -webkit-mask-image: $footer-nav-link-decoration;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    -webkit-mask-size: auto 100%;
+  }
+
+  &:hover,
+  &:focus {
+    color: $footer-nav-link-hover-color;
+  }
+}
+
+#page-footer .footer-content .footer-nav-link {
+  margin-bottom: 1rem;
+}
+
+#page-footer .footer-content .footer-links {
+  margin-bottom: 0;
+}
+
+#page-footer .footer-content .footer-changelog {
+  a[data-bs-toggle="collapse"] i.fa-chevron-right {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  a[data-bs-toggle="collapse"][aria-expanded="true"] i.fa-chevron-right {
+    transform: rotate(90deg);
+  }
+}
 
 #page-header a {
   color: $blue;
+}
+
+.svg-bdp-text {
+  fill: $blue;
+}
+
+html body.is-logged-out.oauth-dialog div#page {
+  .main-header {
+    &::before {
+      height: 0vh;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+
+  & .container-fluid {
+    width: 100vw;
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+
+body {
+  background-color: $blue;
+  min-height: 100vh;
+}
+
+#page {
+  position: relative;
+  background: inherit;
+  padding: 0;
+  background-color: $blue-light;
+
+  .main-header {
+    position: relative;
+    background-color: $white;
+    height: 60px;
+    margin-top: $top-bar-height;
+    box-shadow: 0 2px 4px rgba($kothe, 0.2);
+
+    // Blue-yellow bar above the header
+    // Drawn into the margin-top reserved above via a negative offset;
+    // ::before paints the blue portion, ::after overlays the yellow
+    // portion, sliced off at an angle.
+    &::before {
+      content: "";
+      position: absolute;
+      top: -#{$top-bar-height};
+      left: 0;
+      width: 100%;
+      height: $top-bar-height;
+      background-color: $blue;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -#{$top-bar-height};
+      left: 0;
+      right: 0;
+      height: #{$top-bar-height};
+      background-color: $green;
+      clip-path: polygon(
+        calc(#{$top-bar-split} - #{$top-bar-slant}) 0,
+        100% 0,
+        100% 100%,
+        calc(#{$top-bar-split} + #{$top-bar-slant}) 100%
+      );
+    }
+
+    > div.container-fluid {
+      min-width: unset;
+      display: flex;
+      margin-inline-end: 0.5rem;
+    }
+
+    #page-header {
+      margin-bottom: 0.25rem;
+      flex-grow: 1;
+    }
+  }
+
+  $page-background-blue-yellow-bar-height: 15vh;
+
+  > div.container-fluid {
+    position: relative;
+    padding-top: 1.5rem;
+    background: linear-gradient(
+      180deg,
+      $blue 0%,
+      $blue $page-background-blue-yellow-bar-height,
+      $transparent $page-background-blue-yellow-bar-height
+    );
+
+    // Continues the header bar's diagonal accent down through
+    // the blue backdrop area.
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      // 1px taller, overlapping past the 15vh mark, for the same reason as
+      // #page::after above: guards against a hairline gap from subpixel rounding.
+      height: $page-background-blue-yellow-bar-height;
+      background-color: $green;
+      clip-path: polygon(
+        calc(#{$top-bar-split} + 50px) 0,
+        100% 0,
+        100% 100%,
+        calc(#{$top-bar-split} + 170px) 100%
+      );
+    }
+  }
+}
+
+.logo {
+  margin: $top-bar-height 0 0 1rem;
+  padding: 0;
+}
+.logo-image {
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  max-height: 60px;
+}
+
+// Position the header just above the logo but behind the mobile menü 
+// (Default from layout.scss is = to logo, which pushes it to the back)
+.environment-header {
+  z-index: 95;
+}
+
+.spacer {
+  flex: 1;
+}
+
+// The topmost sheet only (not nested .sheet.parent > .sheet children) —
+// gives it its own containing block now that #page establishes a stacking
+// context, so content positioned inside it doesn't fall back to #page.
+#page .sheet:not(.sheet .sheet) {
+  position: relative;
+}
+
+.sheet.parent {
+  background: $gray-lighter !important;
+}
+
+.sheet.current {
+  background: darken($white, 10%); /* needed? */
+}
+
+.nav-left .divider {
+  text-transform: uppercase;
+  font-size: 85%;
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem;
+}
+
+a:hover {
+  color: $kothe;
+}
+
+.btn {
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background: $kothe;
+    text-shadow: 0 -1px 1px false $kothe;
+    border-color: $kothe;
+  }
+}
+
+// When logged out, the header postitioning must be adjusted
+.is-logged-out #page,
+#page.is-nav-not-rendered {
+  padding-top: 0rem;
+
+  > .container-fluid {
+    padding-top: 10vh;
+  }
+}
+
+.autoComplete_wrapper ul li:hover {
+  background-color: rgba($gray-light, 0.3);
+  color: $black;
+
+  & > mark {
+    color: $black;
+  }
+}
+
+// Dark Mode color settings for BdP
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  .autoComplete_wrapper ul li:hover {
+    background-color: rgba($gray-dark, 0.3);
+    color: $white;
+
+    & > mark {
+      color: $white;
+    }
+  }
+
+  .svg-bdp-text {
+    fill: $white;
+  }
+
+  a {
+    color: $white;
+  }
+
+  a:hover {
+    color: $green;
+  }
+
+  #page-header a {
+    color: $white;
+  }
+
+  #page-header a:hover {
+    color: $green;
+  }
+
+  input {
+    background-color: $gray-darker;
+  }
+
+  .sheet,
+  #content {
+    color: $gray-lighter;
+  }
+
+  .breadcrumb ul li {
+    text-shadow: none;
+  }
+
+  .sheet.parent {
+    background: $gray-darker !important;
+
+    .sheet.parent {
+      background: $gray-darker !important;
+    }
+  }
+
+  body {
+    background-color: $black;
+  }
+
+  #page, footer#page-footer-bdp {
+    background: $gray-darker;
+  }
+
+  #page > .main-header {
+    background-color: inherit;
+  }
+
+  #page .main-header::before {
+    background-color: $black;
+  }
+
+  #page:has(nav.is-visible) .main-header::before {
+    background-color: $blue-dark;
+    transition: all 300ms ease-in-out;
+  }
+
+  #page:has(nav.is-visible) .main-header::after {
+    position: unset;
+    transition: all 300ms ease-in-out;
+  }
+
+  #page .main-header::after {
+    background-color: $blue-dark;
+  }
+
+  #page > div.container-fluid {
+    background: linear-gradient(
+      180deg,
+      $black 0%,
+      $black 15vh,
+      $transparent 15vh
+    );
+
+    // $blue-dark would be invisible against this element's own $blue-dark
+    // background above, so use $black to stay visible as a distinct accent.
+    &::before {
+      background-color: $blue-dark;
+    }
+  }
+
+  #content {
+    background: $gray-darker;
+  }
+
+  .nav-left {
+    background-color: $gray-darker;
+
+    .nav-left-section {
+      background-color: $gray-darker;
+      border-top-color: $gray-dark;
+
+      &.active {
+        background-color: lighten($gray-darker, 5%);
+      }
+    }
+
+    a {
+      color: $white;
+    }
+
+    a:hover {
+      color: $green;
+    }
+
+    .divider {
+      color: $gray-lighter;
+    }
+
+    a.is-active,
+    li.is-active > a {
+      background-color: rgba($green, 0.1);
+      border-color: $green;
+      color: $gray-lighter;
+    }
+
+    div.sheet.parent > .nav > li.active > a {
+      color: $gray-lighter !important;
+    }
+
+    a.is-archived,
+    li.is-archived > a {
+      color: $gray;
+    }
+
+    .nav-left-back {
+      color: $gray-light;
+    }
+  }
+
+  .nav-sub li.active > a {
+    color: $gray-lighter !important;
+  }
+
+  .table-responsive .table {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .table {
+    --bs-table-color: #{$gray-lighter};
+    --bs-table-bg: #{darken($gray-darker, 5%)};
+    --bs-table-border-color: #{$gray-dark};
+    --bs-table-striped-color: #{$gray-lighter};
+    --bs-table-striped-bg: #{darken($gray-darker, 2%)};
+    --bs-table-hover-color: #{$gray-lighter};
+    --bs-table-hover-bg: #{darken($gray-darker, 10%)};
+    --bs-table-active-color: #{$gray-lighter};
+    --bs-table-active-bg: #{darken($gray-darker, 5%)};
+  }
+
+  .table.table-grouped th {
+    background-color: $gray-darker;
+  }
+
+  .table.table-basic td,
+  .table.table-basic th {
+    background-color: transparent;
+  }
+
+  .table.table-basic table td,
+  .table.table-basic table th {
+    border-bottom: none;
+  }
+
+  .table.table-basic td {
+    border-bottom: 1px solid $gray-dark;
+  }
+
+  .table.table-basic table td {
+    border-bottom: none;
+  }
+
+  .table-hover tbody tr:hover > td,
+  .table-hover tbody tr:hover > th {
+    background-color: darken($gray-lighter, 10%);
+  }
+
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not(
+      [type="checkbox"]
+    ):not([type="radio"]):not([type="range"]),
+  select,
+  textarea,
+  .form-control,
+  .form-select {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+    color-scheme: dark; // lets browser render native widgets (date pickers etc.) dark
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+
+  .input-group-text {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+  }
+
+  // compiled $blue-dark is near-black and invisible on dark backgrounds
+  .btn {
+    color: $white;
+
+    // compiled hover uses $purple background — use a subtle dark fill instead
+    &:hover,
+    &:focus,
+    &:active {
+      background: $gray-dark;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  .contactable {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .btn-outline-primary {
+    --bs-btn-color: #{$white};
+    --bs-btn-border-color: #{$white};
+    --bs-btn-hover-color: #{$black};
+    --bs-btn-hover-bg: #{$white};
+    --bs-btn-hover-border-color: #{$white};
+    --bs-btn-active-color: #{$black};
+    --bs-btn-active-bg: #{$white};
+    --bs-btn-active-border-color: #{$white};
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$gray-darker};
+    --bs-dropdown-color: #{$gray-lighter};
+    --bs-dropdown-border-color: #{$gray-dark};
+    --bs-dropdown-link-color: #{$gray-lighter};
+    --bs-dropdown-link-hover-color: #{$gray-lighter};
+    --bs-dropdown-link-hover-bg: #{darken($gray-darker, 8%)};
+    --bs-dropdown-link-active-color: #{$white};
+    --bs-dropdown-link-active-bg: #{$purple};
+    --bs-dropdown-link-disabled-color: #{$gray};
+    --bs-dropdown-divider-bg: #{$gray-dark};
+  }
+
+  [role="listbox"] {
+    background-color: $gray-darker;
+    border: 1px solid $gray-dark;
+    border-radius: 0.25rem;
+
+    [role="option"] {
+      color: $gray-lighter;
+      padding: 0.5rem 0.75rem;
+
+      &:hover {
+        background-color: darken($gray-darker, 8%);
+      }
+
+      mark {
+        background-color: rgba($green, 0.25);
+        color: $white;
+        padding: 0.1rem 0.2rem;
+        border-radius: 0.15rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .autoComplete_wrapper ul {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  #role_info {
+    .well.help {
+      background-color: darken($gray-darker, 5%);
+      border-color: $gray-dark;
+      color: $gray-lighter;
+
+      p {
+        color: $gray-lighter;
+      }
+
+      ul {
+        color: $gray-lighter;
+
+        li {
+          color: $gray-lighter;
+        }
+      }
+    }
+  }
+
+  #job_observations {
+    .bg-light {
+      background-color: darken($gray-darker, 5%) !important;
+    }
+
+    .container-fluid {
+      color: $gray-lighter;
+
+      i {
+        color: $gray-lighter;
+      }
+
+      a {
+        color: $gray-lighter;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .invoice-state {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .alert-success a {
+    color: $gray-darker;
+  }
+
+  .alert-success a:hover {
+    color: $blue;
+  }
+
+  .blue {
+    color: $green;
+  }
+
+  .pagination {
+    --bs-pagination-bg: #{$gray-darker};
+    --bs-pagination-color: #{$gray-lighter};
+    --bs-pagination-border-color: #{$gray-dark};
+    --bs-pagination-hover-bg: #{darken($gray-darker, 8%)};
+    --bs-pagination-hover-color: #{$white};
+    --bs-pagination-hover-border-color: #{$gray-dark};
+    --bs-pagination-active-bg: #{$blue};
+    --bs-pagination-active-color: #{$white};
+    --bs-pagination-active-border-color: #{$blue};
+    --bs-pagination-disabled-bg: #{$gray-darker};
+    --bs-pagination-disabled-color: #{$gray};
+    --bs-pagination-disabled-border-color: #{$gray-dark};
+  }
+
+  .nav-pills .nav-link {
+    color: $gray-lighter;
+
+    &:hover {
+      color: $white;
+      background-color: darken($gray-darker, 8%);
+    }
+
+    &.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  .nav-tabs {
+    border-color: $gray-dark;
+
+    .nav-link {
+      color: $gray-lighter;
+      border-color: $transparent;
+
+      &:hover {
+        border-color: $gray-dark;
+        color: $white;
+      }
+
+      &.active {
+        background-color: darken($gray-darker, 5%);
+        border-color: $gray-dark $gray-dark $transparent $gray-dark;
+        color: $white;
+      }
+    }
+  }
+
+  .ui-datepicker {
+    background-color: $gray-darker;
+    border: 1px solid $gray-dark;
+    color: $gray-lighter;
+
+    .ui-datepicker-header {
+      background-color: darken($gray-darker, 5%);
+      border-color: $gray-dark;
+      color: $gray-lighter;
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+      background-color: $gray-dark;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+
+      &:hover {
+        background-color: darken($gray-darker, 8%);
+        color: $white;
+      }
+
+      .ui-icon {
+        background-color: $transparent;
+        color: $gray-lighter;
+      }
+    }
+
+    .ui-datepicker-month,
+    .ui-datepicker-year {
+      background-color: $gray-darker;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+    }
+
+    .ui-datepicker-calendar {
+      th,
+      td {
+        color: $gray-lighter;
+        border-color: $gray-dark;
+      }
+
+      th {
+        background-color: darken($gray-darker, 5%);
+      }
+    }
+
+    .ui-state-default {
+      background-color: transparent;
+      color: $gray-lighter;
+      border-color: $gray-dark;
+
+      &:hover {
+        background-color: $gray-dark;
+        color: $white;
+      }
+    }
+
+    .ui-state-highlight {
+      background-color: $blue;
+      color: $white;
+      border-color: $blue;
+    }
+
+    .ui-state-disabled {
+      opacity: 0.5;
+      color: $gray;
+    }
+
+    .ui-datepicker-other-month {
+      color: $gray;
+    }
+  }
+
+  .ui-datepicker td .ui-state-default:hover {
+    background-color: $gray-dark;
+    color: $white;
+  }
+
+  .ui-datepicker td .ui-state-active {
+    background-color: $blue;
+    color: $white;
+  }
+
+  .well {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .invoice-form-recipient-fields {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .group-pills {
+    border-color: $gray-dark !important;
+
+    .border-start {
+      border-color: $gray-dark !important;
+    }
+  }
+
+  .contactable .address {
+    background-color: $gray-darker;
+  }
+
+  .form-striped fieldset:nth-of-type(2n) {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .progress {
+    background-color: $black;
+    border: 1px solid $gray-dark;
+  }
+
+  .progress-bar {
+    background-color: $blue;
+  }
+
+  .footer-swoosh {
+    fill: $black;
+  }
+
+  .chip {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .chip.chip-add:hover {
+    background-color: darken($gray-darker, 5%);
+  }
+
+  .accordion {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-header {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-body {
+    background-color: darken($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .accordion-button {
+    color: $gray-lighter !important;
+  }
+
+  .accordion-button:after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d3d3d3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+
+  .bg-white {
+    background-color: darken($gray-darker, 5%) !important;
+  }
+
+  .form-select {
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border-color: $gray-dark;
+  }
+
+  .form-select:disabled {
+    background-color: lighten($gray-darker, 5%);
+  }
+
+  .ts-dropdown .active {
+    background-color: lighten($gray-darker, 5%);
+    color: $gray-lighter;
+  }
+
+  .label-columns .controls label:hover {
+    background-color: $transparent;
+  }
+
+  .popover {
+    --bs-popover-bg: #{$gray-darker};
+    --bs-popover-color: #{$gray-lighter};
+    --bs-popover-body-color: #{$gray-lighter};
+    --bs-popover-header-bg: $transparent;
+  }
+
+  .popover-header {
+    background-color: darken($gray-darker, 10%);
+    color: $gray-lighter;
+  }
+
+  .bs-popover-bottom > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after {
+    border-bottom-color: darken($gray-darker, 10%);
+  }
+
+  a.anchor {
+    color: $gray-lighter;
+  }
+
+  .ts-control {
+    color: $gray-lighter;
+  }
+
+  .documentation-markdown code {
+    background-color: inherit;
+    color: var(--bs-code-color);
+  }
+
+  .documentation-markdown pre {
+    background-color: $black;
+  }
+
+  .documentation-markdown a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  .documentation-markdown a:hover {
+    color: $green;
+  }
+
+  .documentation-markdown blockquote {
+    color: $green;
+  }
 }
