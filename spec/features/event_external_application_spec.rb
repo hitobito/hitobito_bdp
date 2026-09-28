@@ -37,6 +37,7 @@ describe :event_external_application do
     end.to change { Person.count }.by(1)
 
     click_link("Anmelden")
+    click_link("als #{Event::Role::Participant.label}")
     find_all(".bottom .btn-group").first.click_button "Weiter"
 
     fill_in("Bemerkungen", with: "Wichtige Bemerkungen über meine Teilnahme")

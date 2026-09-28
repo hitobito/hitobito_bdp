@@ -22,6 +22,7 @@ describe :event_participation do
     visit group_event_path(group_id: group, id: event)
 
     click_link("Anmelden")
+    click_link("als #{Event::Role::Participant.label}")
 
     find_all('.top .btn-group button[type="submit"]').first.click # "Weiter"
 
