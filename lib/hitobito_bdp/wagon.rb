@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#  Copyright (c) 2012-2025, Bund der Pfadfinderinnen und Pfadfinder e.V.. This file is part of
+#  Copyright (c) 2012-2026, Bund der Pfadfinderinnen und Pfadfinder e.V.. This file is part of
 #  hitobito_bdp and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
@@ -22,7 +22,13 @@ module HitobitoBdp
     config.to_prepare do
       # extend application classes here
       RoleAbility.prepend Bdp::RoleAbility
+      GroupAbility.prepend Bdp::GroupAbility
       Person.prepend Bdp::Person
+      Group::PeopleManagers.prepend Bdp::Group::PeopleManagers
+      GroupDecorator.prepend Bdp::GroupDecorator
+      GroupResource.prepend Bdp::GroupResource
+      GroupsController.prepend Bdp::GroupsController
+      SessionsHelper.prepend Bdp::SessionsHelper
 
       Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
       Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController

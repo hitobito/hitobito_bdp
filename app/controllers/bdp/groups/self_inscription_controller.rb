@@ -8,4 +8,11 @@
 module Bdp::Groups::SelfInscriptionController
   extend ActiveSupport::Concern
   include Bdp::MissingMembershipRoleCreatePermission
+
+  private
+
+  # Self registration is only possible via the API in BdP, see Bdp::Group::PeopleManagers.
+  def self_registration_active?
+    false
+  end
 end
