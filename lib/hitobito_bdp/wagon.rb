@@ -29,6 +29,13 @@ module HitobitoBdp
 
       Group::Gruppen.children Group::StammGruppeGilde
 
+      {Group::Bundesebene => Group::BundKursteams,
+       Group::Landesverband => Group::LandKursteams,
+       Group::Bezirk => Group::BezirkKursteams}.each do |layer_group, kursteams_type|
+        layer_group.children kursteams_type
+        layer_group.default_children += [kursteams_type]
+      end
+
       Group::Stamm.used_attributes += [:efz_in_aufnahmeantrag]
 
       [Group::Bundesebene, Group::Landesverband, Group::Bezirk, Group::Stamm].each do |layer_group|
