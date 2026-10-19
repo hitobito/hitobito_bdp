@@ -146,6 +146,231 @@ de:
         one: AK Freie*r Mitarbeiter*in
         description: AK Freie*r Mitarbeiter*in
 
+      group/bund_kursteams:
+        one: Kursteams
+        other: Kursteams
+
+      group/basiskurs:
+        one: Basiskurs
+        other: Basiskurse
+
+      group/kurs_fuer_meutenfuehrungen:
+        one: Kurs für Meutenführungen
+        other: Kurse für Meutenführungen
+
+      group/kurs_fuer_sippenfuehrungen:
+        one: Kurs für Sippenführungen
+        other: Kurse für Sippenführungen
+
+      group/kurs_fuer_gildenfuehrungen:
+        one: Kurs für Gildenführungen
+        other: Kurse für Gildenführungen
+
+      group/kurs_fuer_ranger_rover:
+        one: Kurs für Ranger/Rover
+        other: Kurse für Ranger/Rover
+
+      group/grundkurs:
+        one: Grundkurs
+        other: Grundkurse
+
+      group/gilwellkurs:
+        one: Gilwellkurs
+        other: Gilwellkurse
+
+      group/querkurs:
+        one: Querkurs
+        other: Querkurse
+
+      group/ib_seminar:
+        one: IB-Seminar
+        other: IB-Seminare
+
+      group/lv_spezifische_ausbildung:
+        one: LV-spezifische Ausbildung
+        other: LV-spezifische Ausbildungen
+
+      group/sonstiger_kurs:
+        one: Sonstiger Kurs
+        other: Sonstige Kurse
+
+      group/basiskurs/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/basiskurs/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/basiskurs/referent:
+        one: Referent*in
+        description: Referent*in
+      group/basiskurs/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/basiskurs/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/kurs_fuer_meutenfuehrungen/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/kurs_fuer_meutenfuehrungen/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/kurs_fuer_meutenfuehrungen/referent:
+        one: Referent*in
+        description: Referent*in
+      group/kurs_fuer_meutenfuehrungen/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/kurs_fuer_meutenfuehrungen/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/kurs_fuer_sippenfuehrungen/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/kurs_fuer_sippenfuehrungen/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/kurs_fuer_sippenfuehrungen/referent:
+        one: Referent*in
+        description: Referent*in
+      group/kurs_fuer_sippenfuehrungen/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/kurs_fuer_sippenfuehrungen/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/kurs_fuer_gildenfuehrungen/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/kurs_fuer_gildenfuehrungen/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/kurs_fuer_gildenfuehrungen/referent:
+        one: Referent*in
+        description: Referent*in
+      group/kurs_fuer_gildenfuehrungen/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/kurs_fuer_gildenfuehrungen/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/kurs_fuer_ranger_rover/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/kurs_fuer_ranger_rover/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/kurs_fuer_ranger_rover/referent:
+        one: Referent*in
+        description: Referent*in
+      group/kurs_fuer_ranger_rover/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/kurs_fuer_ranger_rover/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/grundkurs/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/grundkurs/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/grundkurs/referent:
+        one: Referent*in
+        description: Referent*in
+      group/grundkurs/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/grundkurs/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/gilwellkurs/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/gilwellkurs/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/gilwellkurs/referent:
+        one: Referent*in
+        description: Referent*in
+      group/gilwellkurs/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/gilwellkurs/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/querkurs/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/querkurs/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/querkurs/referent:
+        one: Referent*in
+        description: Referent*in
+      group/querkurs/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/querkurs/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/ib_seminar/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/ib_seminar/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/ib_seminar/referent:
+        one: Referent*in
+        description: Referent*in
+      group/ib_seminar/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/ib_seminar/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+
+      group/lv_spezifische_ausbildung/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/lv_spezifische_ausbildung/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/lv_spezifische_ausbildung/referent:
+        one: Referent*in
+        description: Referent*in
+      group/lv_spezifische_ausbildung/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/lv_spezifische_ausbildung/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
+      group/sonstiger_kurs/kursleiter:
+        one: Kursleiter*in
+        description: Kursleiter*in
+      group/sonstiger_kurs/kursteamer:
+        one: Kursteamer*in
+        description: Kursteamer*in
+      group/sonstiger_kurs/referent:
+        one: Referent*in
+        description: Referent*in
+      group/sonstiger_kurs/mitarbeiter:
+        one: Mitarbeiter*in
+        description: Mitarbeiter*in
+      group/sonstiger_kurs/kurs_kuechenteamer:
+        one: Kurs-Küchenteamer*in
+        description: Kurs-Küchenteamer*in
+
       group/land_arbeitsbereiche:
         one: Arbeitsbereiche
         other: Arbeitsbereiche
@@ -239,6 +464,10 @@ de:
         one: AK Freie*r Mitarbeiter*in
         description: AK Freie*r Mitarbeiter*in
 
+      group/land_kursteams:
+        one: Kursteams
+        other: Kursteams
+
       group/bezirk_arbeitsbereiche:
         one: Arbeitsbereiche
         other: Arbeitsbereiche
@@ -331,6 +560,10 @@ de:
       group/bezirk_arbeitsbereich/ak_freier_mitarbeiter:
         one: AK Freie*r Mitarbeiter*in
         description: AK Freie*r Mitarbeiter*in
+
+      group/bezirk_kursteams:
+        one: Kursteams
+        other: Kursteams
 
       group/stamm_arbeitsbereiche:
         one: Arbeitsbereiche
