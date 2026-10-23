@@ -23,6 +23,8 @@ module HitobitoBdp
       # extend application classes here
       RoleAbility.prepend Bdp::RoleAbility
       Person.prepend Bdp::Person
+      Export::Pdf::Document.prepend Bdp::Export::Pdf::Document
+      Export::Pdf::EfzAntrag.prepend Bdp::Export::Pdf::EfzAntrag
 
       Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
       Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController
