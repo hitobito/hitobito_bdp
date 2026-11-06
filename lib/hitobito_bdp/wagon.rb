@@ -30,7 +30,6 @@ module HitobitoBdp
       GroupDecorator.prepend Bdp::GroupDecorator
       GroupResource.prepend Bdp::GroupResource
       GroupsController.prepend Bdp::GroupsController
-      SessionsHelper.prepend Bdp::SessionsHelper
 
       Groups::SelfRegistrationController.prepend Bdp::Groups::SelfRegistrationController
       Groups::SelfInscriptionController.prepend Bdp::Groups::SelfInscriptionController

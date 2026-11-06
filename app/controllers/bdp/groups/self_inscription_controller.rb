@@ -11,7 +11,7 @@ module Bdp::Groups::SelfInscriptionController
 
   private
 
-  # Self registration is only possible via the API in BdP, see Bdp::Group::PeopleManagers.
+  # Self registration is only possible via the API in BdP.
   def self_registration_active?
     false
   end

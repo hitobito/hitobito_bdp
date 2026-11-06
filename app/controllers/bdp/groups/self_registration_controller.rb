@@ -11,7 +11,7 @@ module Bdp::Groups::SelfRegistrationController
 
   private
 
-  # Self registration is only possible via the API in BdP, see Bdp::Group::PeopleManagers.
+  # Self registration is only possible via the API in BdP.
   def assert_self_registration_active
     redirect_to group_path(group), alert: I18n.t("groups.self_registration.alert.not_active")
   end

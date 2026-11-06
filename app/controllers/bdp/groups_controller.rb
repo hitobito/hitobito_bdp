@@ -5,9 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp
 
-# Self registration is only ever enabled automatically, for Group::PeopleManagers, see
-# Bdp::Group::PeopleManagers. It must not be settable through the group form either, on any
-# group, even though Bdp::GroupDecorator already hides the form field everywhere.
 module Bdp::GroupsController
   extend ActiveSupport::Concern
 
