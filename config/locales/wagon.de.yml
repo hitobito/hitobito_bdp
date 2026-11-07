@@ -1093,6 +1093,19 @@ de:
     actions_show:
       impersonate_user_tooltip: "Du kannst die BdP Mitgliederverwaltung so bedienen, als wärst du als diese Person eingeloggt."
 
+  dropdown/external_membership_actions:
+    button: "Mitgliedschaft"
+    mitgliedsbescheinigung: "Mitgliedsbescheinigung"
+    austritt: "Austritt erklären"
+    stammeswechsel: "Stamm wechseln"
+    zweitmitgliedschaft: "Zweitmitgliedschaft beantragen"
+    mitgliedsart: "Mitgliedsart wechseln"
+    mitgliedsbescheinigung_full: "Mitgliedsbescheinigung"
+    austritt_full: "Austritt erfassen"
+    stammeswechsel_full: "Stammwechsel initieren"
+    zweitmitgliedschaft_full: "Zweitmitgliedschaft hinzufügen"
+    mitgliedsart_full: "Mitgliedsart ändern"
+
   groups:
     self_registration:
       alert:
