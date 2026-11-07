@@ -278,6 +278,13 @@ a:hover {
   }
 }
 
+// Logged in without nav (e.g. after an external event registration): the
+// header sits at the logo's height, so push its links to the right like the
+// core does for .is-logged-out, instead of letting the logo cover them.
+#page.is-nav-not-rendered #page-header {
+  justify-content: flex-end;
+}
+
 .autoComplete_wrapper ul li:hover {
   background-color: rgba($gray-light, 0.3);
   color: $black;
