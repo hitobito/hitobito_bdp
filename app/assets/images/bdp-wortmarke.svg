@@ -5,20 +5,17 @@
 >
   <defs>
     <style>
-      svg {
-        color-scheme: light dark;
-      }
       .cls-1 {
         fill: none;
       }
       .cls-2 {
-        fill: light-dark(#0e4278, #000000);
+        fill: #0e4278;
       }
       .cls-3 {
-        fill: light-dark(#ffd208, #ffffff);
+        fill: #ffd208;
       }
       .cls-text {
-        fill: light-dark(#0e4278, #ffffff);
+        fill: #0e4278;
       }
     </style>
   </defs>
