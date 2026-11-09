@@ -1107,6 +1107,8 @@ de:
     mitgliedsart_full: "Mitgliedsart ändern"
 
   groups:
+    actions_show_bdp:
+      berichte: "Berichte"
     self_registration:
       alert:
         membership_role_not_allowed: "Für die Aufnahme als Mitglied muss das offizielle Aufnahmetool verwendet werden."

@@ -27,17 +27,17 @@ application:
 
 # URL/Links to external tooling, leave one blank to hide the button.
 external_actions:
-  group_reporting: "http://localhost:3036/select?groupId=%{group_id}"
+  group_reporting: ~
 
   person:
-    mitgliedsbescheinigung_url: "http://localhost:3036/personal?personId=%{person_id}"
+    mitgliedsbescheinigung_url: ~
     austritt_url: ~
     stammeswechsel_url: ~
     zweitmitgliedschaft_url: ~
     mitgliedsart_url: ~
 
   person_full:
-    mitgliedsbescheinigung_url: "http://localhost:3036/select?groupId=%{group_id}&reportId=mitgliedsbescheinigung&p_A_Mitgliedsnummer=%{person_id}"
+    mitgliedsbescheinigung_url: ~
     austritt_url: ~
     stammeswechsel_url: ~
     zweitmitgliedschaft_url: ~

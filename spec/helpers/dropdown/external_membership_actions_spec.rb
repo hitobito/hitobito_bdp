@@ -21,7 +21,9 @@ describe "Dropdown::ExternalMembershipActions" do
   subject { Capybara::Node::Simple.new(dropdown.to_s) }
 
   def can?(ability, subject_person)
-    subject_person == person && full_access_abilities.include?(ability)
+    subject_person == current_user ||
+      current_user&.manageds&.include?(subject_person) ||
+      full_access_abilities.include?(ability)
   end
 
   def menu

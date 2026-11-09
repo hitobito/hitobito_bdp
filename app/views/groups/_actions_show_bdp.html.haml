@@ -4,4 +4,4 @@
 -#  https://github.com/hitobito/hitobito_bdp.
 
 - if Settings.external_actions.group_reporting.present?
-  = action_button('Berichte', format(Settings.external_actions.group_reporting, group_id: entry.id, layer_id: entry.layer_group_id), 'external-link-alt', target: :_blank)
+  = action_button(t('.berichte'), format(Settings.external_actions.group_reporting, group_id: entry.id, layer_id: entry.layer_group_id), 'external-link-alt', target: :_blank)
