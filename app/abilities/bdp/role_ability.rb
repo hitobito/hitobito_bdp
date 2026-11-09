@@ -6,12 +6,9 @@
 #  https://github.com/hitobito/hitobito_bdp
 
 module Bdp::RoleAbility
-  extend ActiveSupport::Concern
-
-  prepended do
-    on(Role) do
-      general(:create).not_membership_role_or_can_create_membership_roles
-    end
+  def require_relevant_create_permissions
+    not_membership_role_or_can_create_membership_roles &&
+      super
   end
 
   def not_membership_role_or_can_create_membership_roles
