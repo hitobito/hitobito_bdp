@@ -7,8 +7,7 @@
 
 module Dropdown
   class ExternalMembershipActions < Base
-    # Ability required to see the full-access variant of each action, for viewers who are
-    # neither the person themselves nor a registered manager (PeopleManager) of them.
+    # Ability required to perform each action; self and managed people always have it.
     FULL_ACCESS_ABILITIES = {
       mitgliedsbescheinigung: :show_full,
       austritt: :update,
@@ -21,8 +20,6 @@ module Dropdown
       super(template, translate(:button), "external-link-alt")
       @person = person
       @group = group
-      @normal_access = person == template.current_user ||
-        template.current_user&.manageds&.include?(person) || false
 
       init_items
     end
@@ -33,22 +30,25 @@ module Dropdown
       return unless active_membership_role?
 
       FULL_ACCESS_ABILITIES.each do |key, full_ability|
-        if @normal_access
-          add_report_item(key, Settings.external_actions.person, key.to_s)
-        elsif template.can?(full_ability, @person)
-          add_report_item(key, Settings.external_actions.person_full, "#{key}_full")
+        next unless template.can?(full_ability, @person)
+
+        if self_or_managed?
+          add_action_item(key, Settings.external_actions.person, key.to_s)
+        else
+          add_action_item(key, Settings.external_actions.person_full, "#{key}_full")
         end
       end
     end
 
-    def active_membership_role?
-      membership_role_types = Role.all_types.select(&:membership_role).map(&:sti_name)
-      # @person may be a PersonDecorator, whose #roles returns a plain Array rather
-      # than a Relation, so filter in Ruby instead of chaining #where.
-      @person.roles.any? { |role| membership_role_types.include?(role.type) }
+    def self_or_managed?
+      @person == template.current_user || template.current_user&.manageds&.include?(@person)
     end
 
-    def add_report_item(key, settings, translation_key)
+    def active_membership_role?
+      @person.roles.any? { |role| role.class.membership_role }
+    end
+
+    def add_action_item(key, settings, translation_key)
       url = settings.public_send(:"#{key}_url")
       return if url.blank?
 
