@@ -1116,6 +1116,7 @@ de:
         meta_description: "Selbstregistrierungsseite für die BdP Mitgliederverwaltung"
 
   filter_navigation/people:
+    gruppenmitglieder: "Gruppenmitglieder"
     stammesfuehrung: "Stammesführung"
     funktionstraeger: "Funktionsträger*innen"
     stammesfuehrungen: "Stammesführungen"
