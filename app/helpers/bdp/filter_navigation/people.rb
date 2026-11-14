@@ -170,6 +170,11 @@ module Bdp::FilterNavigation::People
 
   private
 
+  def init_kind_filter_names
+    super
+    @kind_filter_names[:member].sub!(member_kind_name, translate(:gruppenmitglieder))
+  end
+
   def init_labels
     key, = Bdp::FilterNavigation::People.default_filter(group.klass)
     if key && name == translate(key)
