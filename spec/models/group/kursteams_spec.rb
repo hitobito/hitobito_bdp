@@ -25,7 +25,7 @@ describe "Kursteams group structure" do
   kurs_roles = {
     "Kursleiter" => {permissions: [:group_read, :contact_data], sgbviii_required: true,
                      label: "Kursleiter*in"},
-    "Kursteamer" => {permissions: [:group_read], sgbviii_required: true,
+    "Kursteamer" => {permissions: [:group_read_contact_data], sgbviii_required: true,
                      label: "Kursteamer*in"},
     "Referent" => {permissions: [], sgbviii_required: true, label: "Referent*in"},
     "Mitarbeiter" => {permissions: [], sgbviii_required: true, label: "Mitarbeiter*in"},

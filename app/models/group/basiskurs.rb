@@ -14,7 +14,7 @@ class Group::Basiskurs < Group::Kurs
   end
 
   class Kursteamer < ::Role
-    self.permissions = [:group_read]
+    self.permissions = [:group_read_contact_data]
     self.sgbviii_required = true
   end
 
