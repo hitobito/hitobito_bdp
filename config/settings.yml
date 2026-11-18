@@ -27,17 +27,17 @@ application:
 
 # URL/Links to external tooling, leave one blank to hide the button.
 external_actions:
-  group_reporting: ~
+  group_reporting: "https://reports.meinbdp.de/select?groupId=%{group_id}"
 
   person:
-    mitgliedsbescheinigung_url: ~
+    mitgliedsbescheinigung_url: "https://reports.meinbdp.de/personal?personId=%{person_id}"
     austritt_url: ~
     stammeswechsel_url: ~
     zweitmitgliedschaft_url: ~
     mitgliedsart_url: ~
 
   person_full:
-    mitgliedsbescheinigung_url: ~
+    mitgliedsbescheinigung_url: "https://reports.meinbdp.de/select?groupId=%{group_id}&reportId=mitgliedsbescheinigung&p_A_Mitgliedsnummer=%{person_id}"
     austritt_url: ~
     stammeswechsel_url: ~
     zweitmitgliedschaft_url: ~
