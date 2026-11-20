@@ -92,6 +92,14 @@ describe "Bdp::FilterNavigation::People" do
       expect(selected.active_label).to eq("Funktionsträger*innen")
       expect(selected.dropdown.active).to be_falsey
     end
+
+    it "links Gruppenmitglieder by name, so it is not replaced by the default filter" do
+      url = subject.main_items.find { |i| i.include?("Gruppenmitglieder") }[/href="([^"]+)"/, 1]
+      expect(filter_params(url)["name"]).to eq("Gruppenmitglieder")
+
+      selected = select_main_item("Gruppenmitglieder")
+      expect(selected.active_label).to eq("Gruppenmitglieder")
+    end
   end
 
   context "Group::Mitglieder" do
