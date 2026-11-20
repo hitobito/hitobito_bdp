@@ -19,7 +19,7 @@ module HitobitoBdp
       #{config.root}/app/jobs
     ]
 
-    config.to_prepare do
+    config.to_prepare do # rubocop:disable Metrics/BlockLength
       # extend application classes here
       RoleAbility.prepend Bdp::RoleAbility
       GroupAbility.prepend Bdp::GroupAbility
@@ -50,6 +50,8 @@ module HitobitoBdp
       [Group::Bundesebene, Group::Landesverband, Group::Bezirk, Group::Stamm].each do |layer_group|
         layer_group.used_attributes += [:rechtsform]
       end
+
+      Group::Landesverband.fee_kind_restrictable = true
 
       Role::Permissions << :create_membership_roles
 
