@@ -5,7 +5,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_bdp.
 
-module Bdp::FilterNavigation::People
+module Bdp::FilterNavigation::People # rubocop:todo Metrics/ModuleLength
   GRUPPENLEITUNG_ROLES = [
     Group::StammGruppeWoelflinge::Leitung,
     Group::StammGruppeWoelflinge::Hilfsleitung,
@@ -176,7 +176,7 @@ module Bdp::FilterNavigation::People
   end
 
   def init_labels
-    key, = Bdp::FilterNavigation::People.default_filter(group.klass)
+    key, = bdp_default_filter
     if key && name == translate(key)
       @active_label = name
     else
@@ -184,13 +184,19 @@ module Bdp::FilterNavigation::People
     end
   end
 
+  def kind_path(kind, name, role_types)
+    (kind == :member && bdp_default_filter) ? path(name: name) : super
+  end
+
+  def bdp_default_filter = Bdp::FilterNavigation::People.default_filter(group.klass)
+
   def init_dropdown_links
     super
     add_bdp_dropdown_links
   end
 
   def add_bdp_main_items
-    key, role_types, range = Bdp::FilterNavigation::People.default_filter(group.klass)
+    key, role_types, range = bdp_default_filter
     return unless key
 
     name = translate(key)
