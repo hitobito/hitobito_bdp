@@ -32,13 +32,13 @@ describe RoleAbility do
       end
     end
 
-    context "as non-admin with layer_and_below_full permission" do
+    context "as non-admin with layer_full permission" do
       let(:user) { people(:mauersegler_mitgliederverwalter) }
 
       before do
         # make sure our test user has the expected permission
         expect(ability.user_context.all_permissions).not_to include(:create_membership_roles)
-        expect(ability.user_context.permission_layer_ids(:layer_and_below_full))
+        expect(ability.user_context.permission_layer_ids(:layer_full))
           .to include(membership_role.group.layer_group_id)
       end
 
@@ -57,7 +57,7 @@ describe RoleAbility do
   context "regular roles" do
     let(:stamm_group) { groups(:oberbayern_mauersegler_die_pfadfinder) }
 
-    context "as non-admin with layer_and_below_full permission" do
+    context "as non-admin with layer_full permission" do
       let(:user) { people(:mauersegler_mitgliederverwalter) }
       let(:regular_role) { roles(:mauersegler_mitglied_pfadfinder) }
 
